@@ -166,8 +166,6 @@
     CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
     self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, scrollViewSize.height * 2);
     self.scrollViewWeeklyPrice.backgroundColor = [UIColor steelBlueColor];
-    self.scrollViewWeeklyPrice.layer.cornerRadius = 5.0;
-    self.scrollViewWeeklyPrice.layer.masksToBounds = YES;
     
     NSString *tariffDisplayName = [NSString stringWithFormat:@"%@ - %@", self.tariff.tariffCode, self.tariff.tariffName];
     self.textTariffName.text = tariffDisplayName;
@@ -184,6 +182,10 @@
     self.viewLSENameBackground.backgroundColor = [UIColor steelBlueColor];
 
     self.labelLSEName.text = self.tariff.lseName;
+
+    self.viewUpcomingLabelBackground.layer.cornerRadius = 5.0;
+    self.viewUpcomingLabelBackground.layer.masksToBounds = YES;
+    self.viewUpcomingLabelBackground.backgroundColor = [UIColor steelBlueColor];
     
     self.labelCurrentPrice.layer.cornerRadius = 5.0;
     self.labelCurrentPrice.layer.masksToBounds = YES;

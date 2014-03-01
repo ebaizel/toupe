@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewWeeklyPrice;
 @property (weak, nonatomic) IBOutlet UIView *viewLSENameBackground;
 @property (weak, nonatomic) IBOutlet UILabel *labelLSEName;
+@property (weak, nonatomic) IBOutlet UIView *viewUpcomingLabelBackground;
 
 - (IBAction)buttonpressed:(id)sender;
 - (id)initWithTariff:(FBTariff *)tariff;

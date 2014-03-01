@@ -23,7 +23,6 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="0.050000000000000003" colorSpace="deviceRGB"/>
         </view>
     </objects>
 </document>
