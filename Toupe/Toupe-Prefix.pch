@@ -5,6 +5,7 @@
 //
 
 #import <Availability.h>
+#import "Colours.h"
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
@@ -14,3 +15,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define BaseColor [UIColor steelBlueColor]
+#define BaseURL @"http://api-prod-env.elasticbeanstalk.com"
+#define AuthCreds @"appId=3b5ba2f0&appKey=9ddcfa56f00b45dcf83f62150c3e8b70"
+#define BaseImageURL @"http://genability.net/img/lses/"

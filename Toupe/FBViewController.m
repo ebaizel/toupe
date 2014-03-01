@@ -7,6 +7,7 @@
 //
 
 #import "FBViewController.h"
+#import "FBUserProfileStore.h"
 
 @interface FBViewController ()
 
@@ -14,10 +15,18 @@
 
 @implementation FBViewController
 
+- (IBAction)updateZipcode:(id)sender {
+    [[FBUserProfileStore sharedStore] saveChanges];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // if no zipcode data has been saved, display label 'Please setup'
+    
+    // else push the current price view controller
 }
 
 - (void)didReceiveMemoryWarning

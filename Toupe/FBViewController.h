@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface FBViewController : UIViewController
-
+{
+    IBOutlet UIView *nowView;
+    IBOutlet UIView *zipCodeView;
+}
 @end

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FBChooseUtilityViewController">
+            <connections>
+                <outlet property="lseTable" destination="hdV-Fk-7Ox" id="az8-TU-RmP"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28t-23-lqR">
+                    <rect key="frame" x="143" y="247" width="34" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="34" id="2oq-U6-dRU"/>
+                        <constraint firstAttribute="height" constant="30" id="oaL-53-feH"/>
+                    </constraints>
+                    <state key="normal" title="Save">
+                        <color key="titleColor" red="0.52549019610000003" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="continue:" destination="-1" eventType="touchUpInside" id="V77-Cb-9Qv"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="We have pre-selected the most popular utility in your area.  You can change this at any time." translatesAutoresizingMaskIntoConstraints="NO" id="p7z-lt-ZBB">
+                    <rect key="frame" x="0.0" y="66" width="320" height="67"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="SGE-WT-SCI"/>
+                        <constraint firstAttribute="height" constant="67" id="snS-YF-vpu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hdV-Fk-7Ox">
+                    <rect key="frame" x="0.0" y="120" width="320" height="119"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.52549019610000003" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="119" id="uML-qn-bvp"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="w6M-Xv-VXp"/>
+                        <outlet property="delegate" destination="-1" id="hSg-Xz-L8q"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="28t-23-lqR" secondAttribute="bottom" constant="203" id="5bD-iJ-DIx"/>
+                <constraint firstAttribute="centerX" secondItem="28t-23-lqR" secondAttribute="centerX" id="61f-Pv-ugC"/>
+                <constraint firstItem="p7z-lt-ZBB" firstAttribute="top" secondItem="1" secondAttribute="top" constant="66" id="LUd-8e-82H"/>
+                <constraint firstItem="hdV-Fk-7Ox" firstAttribute="leading" secondItem="p7z-lt-ZBB" secondAttribute="leading" id="LVT-We-ynm"/>
+                <constraint firstAttribute="centerX" secondItem="p7z-lt-ZBB" secondAttribute="centerX" id="OOs-Wy-oAT"/>
+                <constraint firstItem="28t-23-lqR" firstAttribute="top" secondItem="hdV-Fk-7Ox" secondAttribute="bottom" constant="8" id="elH-T1-fAy"/>
+                <constraint firstItem="hdV-Fk-7Ox" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="pZ7-bc-lbe"/>
+                <constraint firstAttribute="trailing" secondItem="hdV-Fk-7Ox" secondAttribute="trailing" id="qdq-nL-S71"/>
+                <constraint firstItem="hdV-Fk-7Ox" firstAttribute="trailing" secondItem="p7z-lt-ZBB" secondAttribute="trailing" id="z8r-8Y-AHg"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

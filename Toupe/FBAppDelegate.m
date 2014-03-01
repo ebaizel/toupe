@@ -7,12 +7,44 @@
 //
 
 #import "FBAppDelegate.h"
+#import "FBCurrentPriceViewController.h"
+#import "FBRootNavigationController.h"
+#import "FBHomeViewController.h"
+#import "FBEnterZipCodeViewController.h"
+#import "FBUserProfileStore.h"
 
 @implementation FBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UINavigationController *navc = [[UINavigationController alloc]init];
+        
+    FBHomeViewController *home = [[FBHomeViewController alloc]init];
+    [navc pushViewController:home animated:YES];
+
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                           fontWithName:@"Helvetica" size:24], NSFontAttributeName,
+                                [UIColor moneyGreenColor], NSForegroundColorAttributeName, nil];
+    navc.navigationBar.titleTextAttributes = attributes;
+    
+    [[UIBarButtonItem appearance] setTintColor:[UIColor moneyGreenColor]];
+    
+    FBUserProfile *userProfile = [[FBUserProfileStore sharedStore] userProfile];
+    
+    if ((userProfile == nil) || (userProfile.lse == nil)) {
+        [navc setNavigationBarHidden:YES animated:NO];
+        FBEnterZipCodeViewController *zipCVC = [[FBEnterZipCodeViewController alloc]init];
+        [zipCVC setIsRootView:YES];
+        [navc pushViewController:zipCVC animated:YES];
+    }
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [[self window] setRootViewController:navc];
+
+    self.window.backgroundColor = [UIColor redColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

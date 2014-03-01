@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FBHomeViewController">
+            <connections>
+                <outlet property="bannerAd" destination="Cvv-X8-qeD" id="Zja-2h-jW5"/>
+                <outlet property="buttonFAQ" destination="oyf-q9-fqa" id="NnV-jX-gal"/>
+                <outlet property="buttonSettings" destination="fxN-Ph-BhQ" id="jxs-ER-tqd"/>
+                <outlet property="pageControl" destination="At0-dc-SWc" id="fh3-Lw-YDy"/>
+                <outlet property="scrollViewCurrentPrice" destination="Xbo-Gb-MJJ" id="gpW-Zu-tbi"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbo-Gb-MJJ">
+                    <rect key="frame" x="0.0" y="45" width="320" height="388"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="OvD-9y-Vu7"/>
+                    </connections>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="At0-dc-SWc">
+                    <rect key="frame" x="140" y="20" width="39" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="pageIndicatorTintColor" red="0.40392156862745099" green="0.59999999999999998" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="currentPageIndicatorTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+                <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cvv-X8-qeD">
+                    <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.87058830259999997" green="0.062745101750000004" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="tintColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="MvB-Kv-QE3"/>
+                    </constraints>
+                </adBannerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyf-q9-fqa">
+                    <rect key="frame" x="278" y="32" width="15" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="Acq-Fy-Fm0"/>
+                        <constraint firstAttribute="height" constant="15" id="RDE-3o-9B0"/>
+                    </constraints>
+                    <state key="normal" title="FQ">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="displayFAQ:" destination="-1" eventType="touchUpInside" id="lwq-SW-kHN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxN-Ph-BhQ">
+                    <rect key="frame" x="253" y="32" width="15" height="15"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="F5x-gv-bRI"/>
+                        <constraint firstAttribute="width" constant="15" id="jIG-M4-f3M"/>
+                    </constraints>
+                    <state key="normal" title="ST">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="displaySettings:" destination="-1" eventType="touchUpInside" id="bEd-Tm-mCg"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.98431378599999997" green="0.28627452250000002" blue="0.011764707040000001" alpha="1" colorSpace="deviceRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oyf-q9-fqa" secondAttribute="trailing" constant="27" id="2cj-ze-HvX"/>
+                <constraint firstAttribute="centerX" secondItem="At0-dc-SWc" secondAttribute="centerX" id="5Cz-o9-m4M"/>
+                <constraint firstItem="oyf-q9-fqa" firstAttribute="leading" secondItem="fxN-Ph-BhQ" secondAttribute="trailing" constant="10" id="7Jp-Lr-8B6"/>
+                <constraint firstItem="oyf-q9-fqa" firstAttribute="top" secondItem="1" secondAttribute="top" constant="32" id="9Ai-zU-pok"/>
+                <constraint firstItem="fxN-Ph-BhQ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="32" id="HEv-vZ-o6u"/>
+                <constraint firstItem="Cvv-X8-qeD" firstAttribute="top" secondItem="Xbo-Gb-MJJ" secondAttribute="bottom" constant="-3" id="L7N-kX-00u"/>
+                <constraint firstAttribute="centerX" secondItem="Cvv-X8-qeD" secondAttribute="centerX" id="Ot5-xL-eak"/>
+                <constraint firstAttribute="centerX" secondItem="Xbo-Gb-MJJ" secondAttribute="centerX" id="Pae-hJ-K1r"/>
+                <constraint firstItem="Xbo-Gb-MJJ" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="RIi-K9-Xns"/>
+                <constraint firstItem="Xbo-Gb-MJJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="45" id="cl7-uI-ECR"/>
+                <constraint firstItem="At0-dc-SWc" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="jSg-gJ-3t7"/>
+                <constraint firstAttribute="trailing" secondItem="Xbo-Gb-MJJ" secondAttribute="trailing" id="o4N-AU-KF8"/>
+                <constraint firstAttribute="bottom" secondItem="Cvv-X8-qeD" secondAttribute="bottom" id="rOX-sU-cG5"/>
+                <constraint firstItem="Cvv-X8-qeD" firstAttribute="leading" secondItem="Xbo-Gb-MJJ" secondAttribute="leading" id="sfO-hd-q2L"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
