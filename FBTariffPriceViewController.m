@@ -15,8 +15,9 @@
 #import "FBPricePeriod.h"
 #import "FBLSE.h"
 #import "SDWebImage/UIImageView+WebCache.h"
-#import "FBDayViewController.h"
+//#import "FBDayViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FBPricePeriodViewController.h"
 
 
 @interface FBTariffPriceViewController ()
@@ -75,30 +76,67 @@
         }
     }
     
+    // Add the last day
     if (oneDay) {
         [allDays addObject:oneDay];
         oneDay = nil;
     }
     
+    // OLD WAY OF DISPLAYING PRICE CHANGES
     // Add each day as a subview
+//    int count = 0;
+//    int width, height;
+//    for (NSMutableArray *oneDayPrices in allDays) {
+//        FBDayViewController *dvc = [[FBDayViewController alloc]initWithPricePeriods:oneDayPrices];
+//        [self addChildViewController:dvc];
+//        [dvc didMoveToParentViewController:self];
+//        width = dvc.view.frame.size.width;
+//        height = dvc.view.frame.size.height;
+//        CGRect frame = CGRectMake(0, height*count + 15, width, height);
+//        dvc.view.frame = frame;
+//        [self.scrollViewWeeklyPrice addSubview:dvc.view];
+//        count++;
+//    }
+//
+//    CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
+//    self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, height * count);
+//    NSLog(@"scroll content size is: %@", NSStringFromCGSize(self.scrollViewWeeklyPrice.contentSize));
+//    NSLog(@"scroll frame size is: %@", NSStringFromCGSize(scrollViewSize));
+
+    // 3-1-14.  New and improved way
     int count = 0;
     int width, height;
     for (NSMutableArray *oneDayPrices in allDays) {
-        FBDayViewController *dvc = [[FBDayViewController alloc]initWithPricePeriods:oneDayPrices];
-        [self addChildViewController:dvc];
-        [dvc didMoveToParentViewController:self];
-        width = dvc.view.frame.size.width;
-        height = dvc.view.frame.size.height;
-        CGRect frame = CGRectMake(0, height*count + 15, width, height);
-        dvc.view.frame = frame;
-        [self.scrollViewWeeklyPrice addSubview:dvc.view];
-        count++;
-    }
+        for (FBPricePeriod *pricePeriod in oneDayPrices) {
+            FBPricePeriodViewController *ppvc = [[FBPricePeriodViewController alloc]initWithPricePeriod:pricePeriod];
+            [self addChildViewController:ppvc];
+            [ppvc didMoveToParentViewController:self];
+            width = ppvc.view.frame.size.width;
+            height = ppvc.view.frame.size.height;
+            CGRect frame = CGRectMake(0, height*count + 21, width, height);
+            ppvc.view.frame = frame;
+            [self.scrollViewWeeklyPrice addSubview:ppvc.view];
+            count++;
+        }
+//            FBDayPricePeriodViewController *dppvc = [[FBDayPricePeriodViewController alloc]initWithPricePeriod:pricePeriod];
+//            [self addChildViewController:dppvc];
+//            [dppvc didMoveToParentViewController:self];
+//            int width = dppvc.view.frame.size.width;
+//            int height = dppvc.view.frame.size.height;
+//            CGRect frame = CGRectMake((width * count) + (10 * (count + 1)), 20, width, height);
+//            dppvc.view.frame = frame;
+//            [self.view addSubview:dppvc.view];
+//            count++;
+//        [self addChildViewController:dvc];
+//        [dvc didMoveToParentViewController:self];
 
+    }
+    
     CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
     self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, height * count);
     NSLog(@"scroll content size is: %@", NSStringFromCGSize(self.scrollViewWeeklyPrice.contentSize));
     NSLog(@"scroll frame size is: %@", NSStringFromCGSize(scrollViewSize));
+
 }
 
 - (void)updatePrice
