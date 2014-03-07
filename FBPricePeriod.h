@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic) float rateAmount;
+@property (nonatomic) float nextRateAmount;
+@property (nonatomic) float prevRateAmount;
 @property (nonatomic) float rateMeanDelta;
 @property (nonatomic, copy) NSDate *fromDateTime;
 @property (nonatomic, copy) NSDate *toDateTime;

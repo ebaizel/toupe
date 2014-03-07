@@ -16,7 +16,7 @@
 @implementation FBViewController
 
 - (IBAction)updateZipcode:(id)sender {
-    [[FBUserProfileStore sharedStore] saveChanges];
+    [[FBUserProfileStore sharedStore] saveUser];
 }
 
 - (void)viewDidLoad

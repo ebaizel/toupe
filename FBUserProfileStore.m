@@ -25,11 +25,26 @@
     return [self sharedStore];
 }
 
-
-- (BOOL)saveChanges
+- (BOOL)saveUser
 {
     NSString *path = [self userArchivePath];
     return [NSKeyedArchiver archiveRootObject:[self userProfile] toFile:path];
+}
+
+- (BOOL)resetUser
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    BOOL success = [fileManager removeItemAtPath:[self userArchivePath] error:&error];
+    if (success) {
+        [self createNewUserProfile];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedOut" object:self];
+    }
+    else
+    {
+        NSLog(@"Could not logout; can't delete file -:%@ ",[error localizedDescription]);
+    }
+    return success;
 }
 
 - (id)init {
@@ -38,13 +53,16 @@
         NSString *path = [self userArchivePath];
         [self setUserProfile:[NSKeyedUnarchiver unarchiveObjectWithFile:path]];
         if (![self userProfile]) {
-            [self setUserProfile:[[FBUserProfile alloc] init]];
-//            _userProfile.tariffIdTOU = @"518";
-//            _userProfile.monthlyConsumption = 200;
-//            _userProfile.zipCode = @"94115";
+            [self createNewUserProfile];
         }
     }
     return self;
+}
+
+- (void)createNewUserProfile
+{
+    [self setUserProfile:[[FBUserProfile alloc] init]];
+    self.userProfile.monthlyConsumption = 100;
 }
 
 - (NSString *)userArchivePath
@@ -52,7 +70,7 @@
     NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [documentDirectories objectAtIndex:0];
     
-    return [documentDirectory stringByAppendingPathComponent:@"users.archive"];
+    return [documentDirectory stringByAppendingPathComponent:@"user.archive"];
 }
 
 @end

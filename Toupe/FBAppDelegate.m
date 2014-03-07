@@ -10,8 +10,9 @@
 #import "FBCurrentPriceViewController.h"
 #import "FBRootNavigationController.h"
 #import "FBHomeViewController.h"
-#import "FBEnterZipCodeViewController.h"
+//#import "FBEnterZipCodeViewController.h"
 #import "FBUserProfileStore.h"
+#import "FBWelcomeViewController.h"
 
 @implementation FBAppDelegate
 
@@ -19,6 +20,7 @@
 {
     // Override point for customization after application launch.
     UINavigationController *navc = [[UINavigationController alloc]init];
+    [navc setNavigationBarHidden:YES];
         
     FBHomeViewController *home = [[FBHomeViewController alloc]init];
     [navc pushViewController:home animated:YES];
@@ -34,9 +36,9 @@
     
     if ((userProfile == nil) || (userProfile.lse == nil)) {
         [navc setNavigationBarHidden:YES animated:NO];
-        FBEnterZipCodeViewController *zipCVC = [[FBEnterZipCodeViewController alloc]init];
-        [zipCVC setIsRootView:YES];
-        [navc pushViewController:zipCVC animated:YES];
+        FBWelcomeViewController *welcomeVC = [[FBWelcomeViewController alloc]init];
+        //[welcomeVC setIsRootView:YES];
+        [navc pushViewController:welcomeVC animated:YES];
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

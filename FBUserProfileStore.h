@@ -14,6 +14,7 @@
 + (FBUserProfileStore *)sharedStore;
 
 @property (nonatomic, strong) FBUserProfile *userProfile;
-- (BOOL)saveChanges;
+- (BOOL)saveUser;
+- (BOOL)resetUser;
 
 @end

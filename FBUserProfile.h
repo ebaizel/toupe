@@ -16,4 +16,5 @@
 @property (nonatomic, strong) FBLSE *lse;
 @property (nonatomic, strong) NSMutableArray *tariffs;
 @property (nonatomic, assign) int monthlyConsumption;
+@property (nonatomic, assign) BOOL showHelp;
 @end

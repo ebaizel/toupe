@@ -29,35 +29,39 @@
     return UIStatusBarStyleDefault;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [[self navigationController] setNavigationBarHidden:_isRootView];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[self navigationItem] setTitle:@"Zip Code"];
     _zipCodeTextField.text = [[[FBUserProfileStore sharedStore] userProfile] zipCode];
+    [[self navigationController] setNavigationBarHidden:YES];
+    self.viewButtonBackground.layer.cornerRadius = 5.0;
+    self.viewButtonBackground.layer.masksToBounds = YES;
+    self.viewButtonBackground.backgroundColor = [UIColor moneyGreenColor];
 }
 
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-//    return (textField.text.length <= 6);
-//}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self navigationController] setNavigationBarHidden:YES];
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)backgroundTapped:(id)sender {
     [[self view] endEditing:YES];
 }
 
 - (IBAction)continue:(id)sender {
     [[[FBUserProfileStore sharedStore] userProfile] setZipCode:_zipCodeTextField.text];
-    [[self navigationController] setNavigationBarHidden:NO animated:NO];
+    [[FBUserProfileStore sharedStore] saveUser];
     [[self navigationController] pushViewController:[[FBChooseUtilityViewController alloc] init] animated: YES];
+}
+
+- (IBAction)goBack:(id)sender {
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 @end

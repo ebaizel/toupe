@@ -36,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.viewBackground.backgroundColor = [UIColor skyBlueColor];
 
     // Set the Day Name
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -53,7 +55,17 @@
     NSString *fromDateString =[timeFormatter stringFromDate:self.pricePeriod.fromDateTime];
     NSString *toDateString =[timeFormatter stringFromDate:self.pricePeriod.toDateTime];
     self.labelFromToTime.text = [NSString stringWithFormat:@"%@ - %@", fromDateString, toDateString];
-
+    
+    if (self.pricePeriod.prevRateAmount > self.pricePeriod.rateAmount) {
+        [[self imageArrow] setImage:[UIImage imageNamed:@"greenarrow.png"]];
+    } else {
+        // If it's the first element, we don't want to display anything
+        if (self.pricePeriod.prevRateAmount == 0) {
+            [[self imageArrow] setImage:nil];
+        } else if (self.pricePeriod.prevRateAmount < self.pricePeriod.rateAmount) {
+            [[self imageArrow] setImage:[UIImage imageNamed:@"redarrow.png"]];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

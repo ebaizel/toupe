@@ -11,20 +11,27 @@
 #import "FBDayViewController.h"
 
 @interface FBTariffPriceViewController : UIViewController <UIScrollViewDelegate>
+{
+    UIColor *tileBackgroundColor;
+}
 
 @property (strong, nonatomic) FBTariff *tariff;
 @property (weak, nonatomic) IBOutlet UILabel *labelCurrentPrice;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIImageView *imageLSE;
-@property (weak, nonatomic) IBOutlet UIView *viewImageBackground;
-@property (weak, nonatomic) IBOutlet UITextView *textTariffName;
-@property (weak, nonatomic) IBOutlet UITextView *textTariffDescription;
-//@property (strong, nonatomic) FBWeeklyPriceViewController *weeklyPriceViewController;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewWeeklyPrice;
-@property (weak, nonatomic) IBOutlet UIView *viewLSENameBackground;
-@property (weak, nonatomic) IBOutlet UILabel *labelLSEName;
-@property (weak, nonatomic) IBOutlet UIView *viewUpcomingLabelBackground;
 
+@property (weak, nonatomic) IBOutlet UITextView *textTariffName;
+@property (weak, nonatomic) IBOutlet UILabel *labelTariffName;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewWeeklyPrice;
+@property (weak, nonatomic) IBOutlet UILabel *labelLSEName;
+@property (weak, nonatomic) IBOutlet UIView *viewPricesTile;
+@property (weak, nonatomic) IBOutlet UILabel *labelAction1;
+@property (weak, nonatomic) IBOutlet UILabel *labelAction2;
+@property (weak, nonatomic) IBOutlet UIImageView *imageArrow;
+@property (weak, nonatomic) IBOutlet UILabel *labelUpcomingPriceChanges;
+
+@property (weak, nonatomic) IBOutlet UIView *viewLSETile;
 - (IBAction)buttonpressed:(id)sender;
 - (id)initWithTariff:(FBTariff *)tariff;
 @end

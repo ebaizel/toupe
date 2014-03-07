@@ -14,6 +14,7 @@
 -(void)readFromJSONDictionary:(NSDictionary *)d
 {
     NSArray *results = [d objectForKey:@"results"];
+    
     for (id result in results) {
         self.masterTariffId = [result objectForKey:@"masterTariffId"];
         self.tariffName = [result objectForKey:@"description"];
@@ -24,11 +25,14 @@
         
         NSArray *priceChangesDictionary = [result objectForKey:@"priceChanges"];
         NSMutableArray *priceChanges = [[NSMutableArray alloc]init];
-        
+
+        float prevRateAmount = 0;
         for (id pcd in priceChangesDictionary) {
             FBPricePeriod *pc = [[FBPricePeriod alloc]init];
             [pc readFromJSONDictionary:pcd];
+            pc.prevRateAmount = prevRateAmount;
             [priceChanges addObject:pc];
+            prevRateAmount = pc.rateAmount;
         }
         self.priceChanges = priceChanges;
     }

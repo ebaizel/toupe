@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FBEnterZipCodeViewController">
             <connections>
+                <outlet property="buttonGoBack" destination="HQI-GW-zkM" id="Gpr-pi-RoR"/>
                 <outlet property="view" destination="1" id="3"/>
+                <outlet property="viewButtonBackground" destination="VB4-oR-cIu" id="Ojr-tT-UFr"/>
                 <outlet property="zipCodeTextField" destination="FPg-Qv-Zyv" id="2gu-0g-tlc"/>
             </connections>
         </placeholder>
@@ -15,57 +17,91 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8MC-8f-cWo">
-                    <rect key="frame" x="129" y="329" width="62" height="30"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VB4-oR-cIu" customClass="UIControl">
+                    <rect key="frame" x="82" y="282" width="160" height="47"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.82969320260000001" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="wdY-Jh-3cW"/>
+                    </constraints>
+                    <connections>
+                        <action selector="continue:" destination="-1" eventType="touchUpInside" id="9Cf-Sw-SvW"/>
+                    </connections>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toupe.png" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-zI-vUj">
+                    <rect key="frame" x="100" y="75" width="120" height="120"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8MC-8f-cWo">
+                    <rect key="frame" x="114" y="288" width="92" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="Continue">
-                        <color key="titleColor" red="0.52549019610000003" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="continue:" destination="-1" eventType="touchUpInside" id="KwC-71-qaX"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your zip code to get started." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-17-8TU">
-                    <rect key="frame" x="20" y="215" width="280" height="68"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your zip code?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="wSP-17-8TU">
+                    <rect key="frame" x="20" y="203" width="280" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="3sm-b5-xj0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.52549019610000003" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Toupe!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="h67-IO-lc3">
-                    <rect key="frame" x="20" y="78" width="280" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.52549019610000003" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your zip code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPg-Qv-Zyv">
-                    <rect key="frame" x="78" y="291" width="164" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. 94115" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPg-Qv-Zyv">
+                    <rect key="frame" x="82" y="242" width="160" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="textColor" red="0.52549019610000003" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="bUQ-c9-5DW"/>
                     </connections>
                 </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Toupe is a simple app that helps you learn what you are paying for electricity right now, and what the prices will be soon." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-5e-2LX">
-                    <rect key="frame" x="20" y="115" width="280" height="119"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQI-GW-zkM">
+                    <rect key="frame" x="130" y="336" width="60" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="textColor" red="0.52549019610000003" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                    <state key="normal" title="Go Back">
+                        <color key="titleColor" red="0.52549019610000003" green="0.77647058820000003" blue="0.48627450979999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="goBack:" destination="-1" eventType="touchUpInside" id="lDz-dz-PDw"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="FPg-Qv-Zyv" firstAttribute="top" secondItem="1" secondAttribute="top" constant="242" id="1IB-sq-nRn"/>
+                <constraint firstItem="8MC-8f-cWo" firstAttribute="leading" secondItem="VB4-oR-cIu" secondAttribute="trailing" constant="-128" id="4P5-a0-LKK"/>
+                <constraint firstItem="VB4-oR-cIu" firstAttribute="width" secondItem="FPg-Qv-Zyv" secondAttribute="width" id="7g2-Ix-zz8"/>
+                <constraint firstItem="wSP-17-8TU" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="Bg1-b4-jHC"/>
+                <constraint firstItem="wSP-17-8TU" firstAttribute="top" secondItem="l6f-zI-vUj" secondAttribute="bottom" constant="8" symbolic="YES" id="Btx-u3-7Nx"/>
+                <constraint firstItem="VB4-oR-cIu" firstAttribute="top" secondItem="FPg-Qv-Zyv" secondAttribute="bottom" constant="10" id="DPw-mM-o7u"/>
+                <constraint firstItem="HQI-GW-zkM" firstAttribute="top" secondItem="VB4-oR-cIu" secondAttribute="bottom" constant="7" id="bSy-Rj-8D8"/>
+                <constraint firstItem="wSP-17-8TU" firstAttribute="centerX" secondItem="l6f-zI-vUj" secondAttribute="centerX" id="c0f-kg-dZP"/>
+                <constraint firstItem="8MC-8f-cWo" firstAttribute="top" secondItem="VB4-oR-cIu" secondAttribute="bottom" constant="-41" id="dzl-06-Tjd"/>
+                <constraint firstAttribute="centerX" secondItem="VB4-oR-cIu" secondAttribute="centerX" constant="-2" id="eZB-43-bQI"/>
+                <constraint firstAttribute="trailing" secondItem="wSP-17-8TU" secondAttribute="trailing" constant="20" symbolic="YES" id="fnP-1f-efR"/>
+                <constraint firstItem="FPg-Qv-Zyv" firstAttribute="top" secondItem="wSP-17-8TU" secondAttribute="bottom" constant="8" symbolic="YES" id="njG-FF-5RY"/>
+                <constraint firstItem="FPg-Qv-Zyv" firstAttribute="leading" secondItem="VB4-oR-cIu" secondAttribute="leading" id="pvI-OE-Pfk"/>
+                <constraint firstItem="wSP-17-8TU" firstAttribute="centerX" secondItem="8MC-8f-cWo" secondAttribute="centerX" id="qIR-WE-WeE"/>
+                <constraint firstItem="wSP-17-8TU" firstAttribute="centerX" secondItem="HQI-GW-zkM" secondAttribute="centerX" id="raM-Ql-3Ze"/>
+                <constraint firstItem="FPg-Qv-Zyv" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="82" id="uwZ-Ce-Eos"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="Pnx-K5-IVp"/>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="toupe.png" width="120" height="120"/>
+    </resources>
 </document>

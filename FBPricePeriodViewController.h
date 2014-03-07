@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) FBPricePeriod *pricePeriod;
 @property (strong, nonatomic) FBTariff *tariff;
+@property (weak, nonatomic) IBOutlet UIImageView *imageArrow;
+@property (weak, nonatomic) IBOutlet UIView *viewBackground;
 
 - (id)initWithPricePeriod:(FBPricePeriod *)pricePeriod;
 

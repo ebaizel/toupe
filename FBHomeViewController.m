@@ -13,6 +13,8 @@
 #import "FBUserProfileStore.h"
 #import "QuartzCore/QuartzCore.h"
 #import "Colours.h"
+#import "FBSettingsViewController.h"
+#import "FBWelcomeViewController.h"
 
 @interface FBHomeViewController ()
 
@@ -28,8 +30,26 @@
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(refreshEverything)
                                                      name:@"LSEUpdated" object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(refreshEverything)
+                                                     name:@"UpdatedUserSettings" object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reset)
+                                                     name:@"ResetUserSettings" object:nil];
     }
     return self;
+}
+
+- (void)reset
+{
+//    [[self navigationController] popToRootViewControllerAnimated:NO];
+    UINavigationController *navc = [self navigationController];
+    NSLog(@"*** number of controllers on stack are %d", navc.viewControllers.count);
+    FBWelcomeViewController *welcomeVC = [[FBWelcomeViewController alloc]init];
+    welcomeVC.isRootView = YES;
+    [[self navigationController] pushViewController:welcomeVC animated:YES];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
@@ -78,8 +98,6 @@
     // First, determine which page is currently visible
     CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
     NSInteger page = (NSInteger)floor((self.scrollViewCurrentPrice.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
-    //    NSInteger page = floor((self.scrollView.contentOffset.x - pageWidth / 2) / pageWidth);
-    //    NSInteger page = floor((self.scrollView.contentOffset.x) / (pageWidth / 4));
     
     // Update the page control
     self.pageControl.currentPage = page;
@@ -121,6 +139,7 @@
     [[self buttonSettings] setTintColor:[UIColor whiteColor]];
     
     self.scrollViewCurrentPrice.pagingEnabled=YES;
+    self.pageControl.pageIndicatorTintColor = [UIColor blueberryColor];
     
     // Setup the background
 //    UIImageView *backgroundView;
@@ -135,8 +154,11 @@
 //    [self.view addSubview:backgroundView];
 //    [self.view sendSubviewToBack:backgroundView];
     
-    self.view.backgroundColor = [UIColor icebergColor];
-    
+//    self.view.backgroundColor = [UIColor icebergColor];
+    self.view.backgroundColor = [UIColor skyBlueColor];
+//    self.view.backgroundColor = [UIColor moneyGreenColor];
+//    self.view.backgroundColor = [UIColor hollyGreenColor];
+
 //    self.scrollViewWeeklyPrices = (UIScrollView *)self.weeklyPriceViewController.view;
     
     [self refreshEverything];
@@ -145,7 +167,6 @@
 - (void)refreshEverything
 {
     // Remove all subviews of the scrollview
-//    [self.scrollViewCurrentPrice.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     CGPoint point = CGPointMake(0.0f, 0.0f);
     self.scrollViewCurrentPrice.contentOffset = point;
     
@@ -158,21 +179,7 @@
     for (NSInteger i = 0; i < _tariffs.count; ++i) {
         [self.pageViews addObject:[NSNull null]];
     }
-    
-//    CGSize pagesScrollViewSize = self.scrollView.frame.size;
-//    self.scrollView.contentSize = CGSizeMake(pagesScrollViewSize.width * self.tariffs.count, pagesScrollViewSize.height - 200);
-//    [self loadVisiblePages];
-//    
-//    int numPages = 8;
-//    if ([self.tariffs count] < numPages) {
-//        numPages = self.tariffs.count;
-//    }
-//    [[self pageControl] setNumberOfPages:numPages];
 
-    // Purge all pages
-//    for (int i=0; i < [_tariffs count]; i++) {
-//        [self purgePage:i];
-//    }
 }
 
 - (void)loadPage:(NSInteger)page {
@@ -215,6 +222,9 @@
 }
 
 - (IBAction)displaySettings:(id)sender {
-    [[self navigationController] pushViewController:[[FBEnterZipCodeViewController alloc] init] animated:YES];
+//    FBEnterZipCodeViewController *ezcvc = [[FBEnterZipCodeViewController alloc]init];
+//    [[self navigationController] pushViewController:ezcvc animated:YES];
+    FBSettingsViewController *svc = [[FBSettingsViewController alloc]init];
+    [[self navigationController] pushViewController:svc animated:YES];
 }
 @end

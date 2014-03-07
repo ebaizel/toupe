@@ -10,7 +10,12 @@
 
 @interface FBEnterZipCodeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *viewButtonBackground;
 @property (assign, nonatomic) BOOL isRootView;
 @property (weak, nonatomic) IBOutlet UITextField *zipCodeTextField;
+- (IBAction)goBack:(id)sender;
+
+- (IBAction)continue:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonGoBack;
 
 @end

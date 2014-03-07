@@ -15,9 +15,9 @@
 #import "FBPricePeriod.h"
 #import "FBLSE.h"
 #import "SDWebImage/UIImageView+WebCache.h"
-//#import "FBDayViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "FBPricePeriodViewController.h"
+#import "Colours.h"
 
 
 @interface FBTariffPriceViewController ()
@@ -30,7 +30,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        tileBackgroundColor = [UIColor blueberryColor];
+        [self setDefaults];
     }
     return self;
 }
@@ -39,11 +40,20 @@
     NSLog(@"button was pressed!");
 }
 
+-(void)setDefaults
+{
+    tileBackgroundColor = [UIColor blueberryColor];
+    self.imageArrow = nil;
+    self.labelAction1.text = @"";
+    self.labelAction2.text = @"";
+}
+
 - (id)initWithTariff:(FBTariff *)tariff
 {
     self = [super init];
     if (self) {
         self.tariff = tariff;
+        [self setDefaults];
     }
     
     return self;
@@ -81,27 +91,6 @@
         [allDays addObject:oneDay];
         oneDay = nil;
     }
-    
-    // OLD WAY OF DISPLAYING PRICE CHANGES
-    // Add each day as a subview
-//    int count = 0;
-//    int width, height;
-//    for (NSMutableArray *oneDayPrices in allDays) {
-//        FBDayViewController *dvc = [[FBDayViewController alloc]initWithPricePeriods:oneDayPrices];
-//        [self addChildViewController:dvc];
-//        [dvc didMoveToParentViewController:self];
-//        width = dvc.view.frame.size.width;
-//        height = dvc.view.frame.size.height;
-//        CGRect frame = CGRectMake(0, height*count + 15, width, height);
-//        dvc.view.frame = frame;
-//        [self.scrollViewWeeklyPrice addSubview:dvc.view];
-//        count++;
-//    }
-//
-//    CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
-//    self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, height * count);
-//    NSLog(@"scroll content size is: %@", NSStringFromCGSize(self.scrollViewWeeklyPrice.contentSize));
-//    NSLog(@"scroll frame size is: %@", NSStringFromCGSize(scrollViewSize));
 
     // 3-1-14.  New and improved way
     int count = 0;
@@ -113,23 +102,14 @@
             [ppvc didMoveToParentViewController:self];
             width = ppvc.view.frame.size.width;
             height = ppvc.view.frame.size.height;
-            CGRect frame = CGRectMake(0, height*count + 21, width, height);
+//            ppvc.viewBackground.layer.cornerRadius = 5.0;
+//            ppvc.viewBackground.layer.masksToBounds = YES;
+//            CGRect frame = CGRectMake(0, height*count + 21, width, height);
+            CGRect frame = CGRectMake(0, height*count + count*2, width, height);
             ppvc.view.frame = frame;
             [self.scrollViewWeeklyPrice addSubview:ppvc.view];
             count++;
         }
-//            FBDayPricePeriodViewController *dppvc = [[FBDayPricePeriodViewController alloc]initWithPricePeriod:pricePeriod];
-//            [self addChildViewController:dppvc];
-//            [dppvc didMoveToParentViewController:self];
-//            int width = dppvc.view.frame.size.width;
-//            int height = dppvc.view.frame.size.height;
-//            CGRect frame = CGRectMake((width * count) + (10 * (count + 1)), 20, width, height);
-//            dppvc.view.frame = frame;
-//            [self.view addSubview:dppvc.view];
-//            count++;
-//        [self addChildViewController:dvc];
-//        [dvc didMoveToParentViewController:self];
-
     }
     
     CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
@@ -137,6 +117,62 @@
     NSLog(@"scroll content size is: %@", NSStringFromCGSize(self.scrollViewWeeklyPrice.contentSize));
     NSLog(@"scroll frame size is: %@", NSStringFromCGSize(scrollViewSize));
 
+}
+
+-(void)setCurrentDisplay:(FBSmartPriceSummary *)smartPriceSummary
+{
+    if (smartPriceSummary.priceChanges != nil) {
+        
+        // Set current price
+        NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
+        [timeFormatter setTimeZone:[NSTimeZone localTimeZone]];
+        timeFormatter.dateFormat = @"HH:mm";
+        
+        FBPricePeriod *currentPrice = nil;
+        if ([[smartPriceSummary priceChanges] count] > 0) {
+            currentPrice = (FBPricePeriod *) [[smartPriceSummary priceChanges]objectAtIndex:0];
+        }
+        
+        if (currentPrice) {
+            self.labelCurrentPrice.text = [NSString stringWithFormat:@" %.2f¢",(currentPrice.rateAmount * 100)];
+            
+            // Set arrow and action text
+            FBPricePeriod *nextPrice = nil;
+            if ([[smartPriceSummary priceChanges] count] > 1) {
+                nextPrice = (FBPricePeriod *) [[smartPriceSummary priceChanges]objectAtIndex:1];
+            }
+            
+            if (nextPrice!=nil) {
+                [[self labelUpcomingPriceChanges] setHidden:NO];
+                [[self scrollViewWeeklyPrice] setHidden:NO];
+                
+                NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
+                [timeFormatter setTimeZone:[NSTimeZone localTimeZone]];
+                timeFormatter.dateFormat = @"HH:mm";
+                NSString *fromDateString =[timeFormatter stringFromDate:nextPrice.fromDateTime];
+                
+                if (nextPrice.rateAmount > currentPrice.rateAmount) {
+                    [[self imageArrow] setImage:[UIImage imageNamed:@"redarrow.png"]];
+                    [[self labelAction1] setText:[NSString stringWithFormat:@"Price goes up to %.2f¢ at %@.", (nextPrice.rateAmount * 100), fromDateString]];
+                    [[self labelAction2] setText:@"Now is a good time to use electricity."];
+                } else if (nextPrice.rateAmount < currentPrice.rateAmount) {
+                    [[self imageArrow] setImage: [UIImage imageNamed:@"greenarrow.png"]];
+                    [[self labelAction1] setText:[NSString stringWithFormat:@"Price goes down to %.2f¢ at %@.", (nextPrice.rateAmount * 100), fromDateString]];
+                    [[self labelAction2] setText:@"Try to wait to use electricity."];
+                }
+            } else {
+                // This is a steady price
+                [[self imageArrow] setImage:nil];
+                [[self labelAction1] setText:@"This rate plan has constant pricing."];
+                [[self labelAction2] setText:@"Try a time of use plan for variable pricing."];
+                [[self labelUpcomingPriceChanges] setHidden:YES];
+                [[self scrollViewWeeklyPrice] setHidden:YES];
+            }
+        }
+
+        // Add weekly prices to scroll view
+        [self addDayPrices:[smartPriceSummary priceChanges]];
+    }
 }
 
 - (void)updatePrice
@@ -151,41 +187,7 @@
 
         [[weakSelf activityIndicator] stopAnimating];
         if (!err) {
-            
-            if (smartPriceSummary.priceChanges != nil) {
-                
-                NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
-                [timeFormatter setTimeZone:[NSTimeZone localTimeZone]];
-                timeFormatter.dateFormat = @"HH:mm";
-                
-                if (smartPriceSummary.priceChanges[0]!=nil) {
-                    FBPricePeriod *price = (FBPricePeriod *) [[smartPriceSummary priceChanges]objectAtIndex:0];
-                    self.labelCurrentPrice.text = [NSString stringWithFormat:@" %.2f¢",(price.rateAmount * 100)];
-                }
-                
-                // Add weekly prices to scroll view
-                [self addDayPrices:[smartPriceSummary priceChanges]];
-
-//                if ((smartPriceSummary.priceChanges.count > 1) && (smartPriceSummary.priceChanges[1]!=nil)) {
-//                    FBPricePeriod *price = (FBPricePeriod *) [[smartPriceSummary priceChanges]objectAtIndex:1];
-//                    self.nextPrice1.text = [NSString stringWithFormat:@"%.2f ¢",(price.rateAmount * 100)];
-//                    self.nextPrice1Time.text = [timeFormatter stringFromDate: [price fromDateTime]];
-//                }
-//                
-//                if ((smartPriceSummary.priceChanges.count > 2) && (smartPriceSummary.priceChanges[2]!=nil)) {
-//                    FBPricePeriod *price = (FBPricePeriod *) [[smartPriceSummary priceChanges]objectAtIndex:2];
-//                    self.nextPrice2.text = [NSString stringWithFormat:@"%.2f ¢",(price.rateAmount * 100)];
-//                    self.nextPrice2Time.text = [timeFormatter stringFromDate: [price fromDateTime]];
-//                }
-//                
-//                if ((smartPriceSummary.priceChanges.count > 3) && (smartPriceSummary.priceChanges[3]!=nil)) {
-//                    FBPricePeriod *price = (FBPricePeriod *) [[smartPriceSummary priceChanges]objectAtIndex:3];
-//                    self.nextPrice3.text = [NSString stringWithFormat:@"%.2f ¢",(price.rateAmount * 100)];
-//                    self.nextPrice3Time.text = [timeFormatter stringFromDate: [price fromDateTime]];
-//                }
-                
-            }
-            
+            [self setCurrentDisplay:smartPriceSummary];
         } else {
             UIAlertView *av =[[UIAlertView alloc]
                               initWithTitle:@"Error"
@@ -203,48 +205,23 @@
 {
     CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
     self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, scrollViewSize.height * 2);
-    self.scrollViewWeeklyPrice.backgroundColor = [UIColor steelBlueColor];
     
     NSString *tariffDisplayName = [NSString stringWithFormat:@"%@ - %@", self.tariff.tariffCode, self.tariff.tariffName];
-    self.textTariffName.text = tariffDisplayName;
-    self.textTariffName.layer.cornerRadius = 5.0;
-    self.textTariffName.layer.masksToBounds = YES;
-    self.textTariffName.backgroundColor = [UIColor steelBlueColor];
+    self.textTariffName.text = @"";
+    self.labelTariffName.text = tariffDisplayName;
+    self.labelLSEName.text = [NSString stringWithFormat:@"  %@",self.tariff.lseName];
+    
+    self.viewLSETile.layer.cornerRadius = 5.0;
+    self.viewLSETile.layer.masksToBounds = YES;
+    self.viewLSETile.backgroundColor = tileBackgroundColor;
+    
+    self.viewPricesTile.layer.cornerRadius = 5.0;
+    self.viewPricesTile.layer.masksToBounds = YES;
+    self.viewPricesTile.backgroundColor = tileBackgroundColor;
 
-    self.viewImageBackground.layer.cornerRadius = 5.0;
-    self.viewImageBackground.layer.masksToBounds = YES;
-    self.viewImageBackground.backgroundColor = [UIColor steelBlueColor];
-    
-    self.viewLSENameBackground.layer.cornerRadius = 5.0;
-    self.viewLSENameBackground.layer.masksToBounds = YES;
-    self.viewLSENameBackground.backgroundColor = [UIColor steelBlueColor];
-
-    self.labelLSEName.text = self.tariff.lseName;
-
-    self.viewUpcomingLabelBackground.layer.cornerRadius = 5.0;
-    self.viewUpcomingLabelBackground.layer.masksToBounds = YES;
-    self.viewUpcomingLabelBackground.backgroundColor = [UIColor steelBlueColor];
-    
-    self.labelCurrentPrice.layer.cornerRadius = 5.0;
-    self.labelCurrentPrice.layer.masksToBounds = YES;
-    self.labelCurrentPrice.backgroundColor = [UIColor steelBlueColor];
-    
-    NSString *tariffDescription;
-    if ([self.tariff.tariffType isEqualToString:@"DEFAULT"]) {
-        tariffDescription = [NSString stringWithFormat:@"This is the standard rate plan offered to residential customers.  Standard plans tend to have constant pricing at all times of day, limiting opportunities to save money."];
-    } else {
-        tariffDescription = [NSString stringWithFormat:@"This rate plan is an alternative to the standard default rate plan.  Contact %@ to see if you are eligible to switch to this plan.", self.tariff.lseName];
-    }
-    self.textTariffDescription.text = tariffDescription;
-    self.textTariffDescription.layer.cornerRadius = 5.0;
-    self.textTariffDescription.layer.masksToBounds = YES;
-    self.textTariffDescription.backgroundColor = [UIColor steelBlueColor];
-    
     FBUserProfile *user = [[FBUserProfileStore sharedStore] userProfile];
     NSString *imageURL = [NSString stringWithFormat:@"%@%@.png", BaseImageURL, user.lse.lseId];
     [self.imageLSE setImageWithURL:[NSURL URLWithString:imageURL]];
-    self.imageLSE.layer.cornerRadius = 2.0;
-    self.imageLSE.layer.masksToBounds = YES;
     
     [self updatePrice];
 }

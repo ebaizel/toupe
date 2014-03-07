@@ -44,7 +44,8 @@
     UIFont *cellFont = [UIFont fontWithName: @"Arial" size: 16.0 ];
     cell.textLabel.font = cellFont;
     cell.tag = [indexPath row];
-    [cell setBackgroundColor:[UIColor whiteColor]];
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.tintColor = [UIColor whiteColor];
 
     //    FBTariff *tariff = [[self tariffs] objectAtIndex:[indexPath row]];
     FBLSE *lse = [[self lses] objectAtIndex:[indexPath row]];
@@ -52,9 +53,9 @@
     NSString *imageURL = [NSString stringWithFormat:@"%@%@.png", BaseImageURL, lse.lseId];
     [cell.imageLSE setImageWithURL:[NSURL URLWithString:imageURL]];
 
-    UIView *selectionColor = [[UIView alloc] init];
-    selectionColor.backgroundColor = [UIColor honeydewColor];
-    cell.selectedBackgroundView = selectionColor;
+//    UIView *selectionColor = [[UIView alloc] init];
+//    selectionColor.backgroundColor = [UIColor honeydewColor];
+//    cell.selectedBackgroundView = selectionColor;
     
     cell.labelTariffName.textColor = [UIColor moneyGreenColor];
     //    cell.labelTariffName.text = [NSString stringWithFormat:@"%@ - %@",[tariff tariffCode], [tariff tariffName]];
@@ -63,7 +64,7 @@
     cell.labelLSEName.text = [lse lseName];
 
     if ([indexPath row] == _selectedLSEIndex) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [cell setBackgroundColor:[UIColor honeydewColor]];        
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -90,8 +91,8 @@
 {
     _selectedLSEIndex = [indexPath row];
     [_lseTable reloadData];
-    
 }
+
 
 - (void)fetchTariffs
 {
@@ -113,6 +114,7 @@
             _lses = [self parseLSEsFromTariffs];
             
             [[weakSelf lseTable] reloadData];
+            [weakSelf adjustLSETableHeight];
         } else {
             UIAlertView *av =[[UIAlertView alloc]
                               initWithTitle:@"Error"
@@ -151,13 +153,14 @@
 {
     _selectedLSEIndex = cell.tag;
     [_lseTable reloadData];
+    [self adjustLSETableHeight];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        _selectedLSEIndex = 0;
+        _selectedLSEIndex = -1;
     }
     return self;
 }
@@ -169,7 +172,23 @@
     UINib *nib = [UINib nibWithNibName:@"FBChooseTariffViewCell" bundle:nil];
     [[self lseTable] registerNib:nib forCellReuseIdentifier:@"FBChooseTariffViewCell"];
     [self fetchTariffs];
+    [self adjustLSETableHeight];
     
+    self.viewButtonBackground.layer.cornerRadius = 5.0;
+    self.viewButtonBackground.layer.masksToBounds = YES;
+    self.viewButtonBackground.backgroundColor = [UIColor moneyGreenColor];
+
+}
+
+
+-(void)adjustLSETableHeight
+{
+    CGRect bounds = [[self lseTable] bounds];
+    [[self lseTable] setBounds:CGRectMake(bounds.origin.x,
+                                          bounds.origin.y,
+                                          bounds.size.width,
+                                          [[self lses]count] * 60)];
+//                                          bounds.size.height + 60)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -180,23 +199,40 @@
 
 - (IBAction)continue:(id)sender {
     
-    FBLSE *lse = [_lses objectAtIndex:_selectedLSEIndex];
-    [[[FBUserProfileStore sharedStore] userProfile] setLse:lse];
-    [[[FBUserProfileStore sharedStore] userProfile] setTariffs:_tariffs];
+    if (_selectedLSEIndex >= 0) {
+        FBLSE *lse = [_lses objectAtIndex:_selectedLSEIndex];
+        [[[FBUserProfileStore sharedStore] userProfile] setLse:lse];
+        [[[FBUserProfileStore sharedStore] userProfile] setTariffs:_tariffs];
+        [[FBUserProfileStore sharedStore] saveUser];
 
-    NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
-    
-    //prune tariffs not belonging to the chosen lse
-    for (int i = 0; i < [_tariffs count]; i++) {
-        if (![[[_tariffs objectAtIndex:i] lseId] isEqualToString:lse.lseId]) {
-            [indexes addIndex:i];
+        NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
+        
+        //prune tariffs not belonging to the chosen lse
+        for (int i = 0; i < [_tariffs count]; i++) {
+            if (![[[_tariffs objectAtIndex:i] lseId] isEqualToString:lse.lseId]) {
+                [indexes addIndex:i];
+            }
         }
-    }
-    [_tariffs removeObjectsAtIndexes:indexes];
+        [_tariffs removeObjectsAtIndexes:indexes];
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"LSEUpdated" object:self];    
-    [[self navigationController] popToRootViewControllerAnimated:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LSEUpdated" object:self];    
+        [[self navigationController] popToRootViewControllerAnimated:YES];
+    } else {
+        NSString *msg = [NSString stringWithFormat:@"Select a utility"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:msg
+                                                        message:@"Please select a utility"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        
+    }
 }
+- (IBAction)goBack:(id)sender {
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
 @end
 
 

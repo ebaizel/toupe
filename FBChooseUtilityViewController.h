@@ -15,7 +15,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *lseTable;
 @property (strong, nonatomic) NSMutableArray *tariffs;
+@property (weak, nonatomic) IBOutlet UIControl *viewButtonBackground;
 @property (strong, nonatomic) NSMutableArray *lses;
 @property (nonatomic, assign) NSInteger selectedLSEIndex;
 - (IBAction)continue:(id)sender;
+- (IBAction)goBack:(id)sender;
 @end
