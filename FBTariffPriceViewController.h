@@ -30,8 +30,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelAction2;
 @property (weak, nonatomic) IBOutlet UIImageView *imageArrow;
 @property (weak, nonatomic) IBOutlet UILabel *labelUpcomingPriceChanges;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSetFavorite;
 
 @property (weak, nonatomic) IBOutlet UIView *viewLSETile;
-- (IBAction)buttonpressed:(id)sender;
+- (IBAction)setFavorite:(id)sender;
+- (IBAction)jumpToTariff:(id)sender;
 - (id)initWithTariff:(FBTariff *)tariff;
 @end

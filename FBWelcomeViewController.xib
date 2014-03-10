@@ -50,7 +50,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="All we'll need is your zip code and utility.  Let's get started." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usc-WQ-AMN">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="All we'll need is your zip code and utility so let's get started." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usc-WQ-AMN">
                     <rect key="frame" x="20" y="307" width="280" height="53"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

@@ -215,7 +215,7 @@
         }
         [_tariffs removeObjectsAtIndexes:indexes];
 
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"LSEUpdated" object:self];    
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LSEUpdated" object:self];
         [[self navigationController] popToRootViewControllerAnimated:YES];
     } else {
         NSString *msg = [NSString stringWithFormat:@"Select a utility"];

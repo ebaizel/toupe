@@ -36,8 +36,14 @@
     return self;
 }
 
-- (IBAction)buttonpressed:(id)sender {
-    NSLog(@"button was pressed!");
+- (IBAction)setFavorite:(id)sender {
+    [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
+    [[FBUserProfileStore sharedStore] saveUser];
+    [self setFavoriteIcon];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedFavorite" object:self];
+}
+
+- (IBAction)jumpToTariff:(id)sender {
 }
 
 -(void)setDefaults
@@ -201,6 +207,21 @@
     
 }
 
+-(void)setFavoriteIcon
+{
+    FBUserProfile *user = [[FBUserProfileStore sharedStore]userProfile];
+    if ([user isFavoriteTariff:_tariff.masterTariffId forLse:_tariff.lseId]) {
+        NSLog(@"** tariff IS favorite");
+        [[self buttonSetFavorite] setBackgroundColor:[UIColor clearColor]];
+//        self.buttonSetFavorite = UIButton from
+        [[self buttonSetFavorite] setBackgroundImage:[UIImage imageNamed:@"goldstar.png"] forState:UIControlStateNormal];
+    } else {
+        NSLog(@"** tariff IS NOT favorite");
+        [[self buttonSetFavorite] setBackgroundColor:[UIColor clearColor]];
+        [[self buttonSetFavorite] setBackgroundImage:[UIImage imageNamed:@"whitestar.png"] forState:UIControlStateNormal];
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
@@ -224,6 +245,7 @@
     [self.imageLSE setImageWithURL:[NSURL URLWithString:imageURL]];
     
     [self updatePrice];
+    [self setFavoriteIcon];
 }
 
 - (void)viewDidLoad

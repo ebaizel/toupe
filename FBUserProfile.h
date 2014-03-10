@@ -17,4 +17,9 @@
 @property (nonatomic, strong) NSMutableArray *tariffs;
 @property (nonatomic, assign) int monthlyConsumption;
 @property (nonatomic, assign) BOOL showHelp;
+@property (nonatomic, strong) NSMutableDictionary *favorites;
+
+-(void)setFavorite:(NSString *)lseId forTariffId:(NSString *)tariffId;
+-(BOOL)isFavoriteTariff:(NSString *)tariffId forLse:(NSString *)lseId;
+-(NSString *)getFavoriteTariff:(NSString *)lseId;
 @end

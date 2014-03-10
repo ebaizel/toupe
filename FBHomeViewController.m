@@ -38,6 +38,10 @@
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(reset)
                                                      name:@"ResetUserSettings" object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(refreshEverything)
+                                                     name:@"UpdatedFavorite" object:nil];
     }
     return self;
 }
@@ -65,11 +69,11 @@
     self.scrollViewCurrentPrice.contentSize = CGSizeMake(pagesScrollViewSize.width * self.tariffs.count, pagesScrollViewSize.height - 200);
     [self loadVisiblePages];
     
-    int numPages = 8;
-    if ([self.tariffs count] < numPages) {
-        numPages = self.tariffs.count;
-    }
-    [[self pageControl] setNumberOfPages:numPages];
+//    int numPages = 8;
+//    if ([self.tariffs count] < numPages) {
+//        numPages = self.tariffs.count;
+//    }
+//    [[self pageControl] setNumberOfPages:numPages];
 
 }
 
@@ -93,12 +97,60 @@
     }
 }
 
+- (void)jumpToTariff:(NSString *)tariffId
+{
+    FBTariff *selectedTariff = nil;
+    NSInteger count = 0;
+    for (FBTariff *tariff in self.tariffs) {
+        if ([tariff.masterTariffId isEqualToString:tariffId]) {
+            selectedTariff = tariff;
+            break;
+        } else {
+            count++;
+        }
+    }
+    
+    if (selectedTariff) {
+        //Move the scroll view content offset
+        CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
+        CGPoint newOffset = CGPointMake(pageWidth * count, 0);
+        [self.scrollViewCurrentPrice setContentOffset:newOffset animated:NO];
+    }
+}
+
+//- (void)loadPageAtIndex:(NSInteger)page
+//{
+//    // Update the page control
+//    self.pageControl.currentPage = page;
+//    
+//    // Work out which pages you want to load
+//    NSInteger firstPage = page - 1;
+//    NSInteger lastPage = page + 1;
+//    
+//    // Purge anything before the first page
+//    for (NSInteger i=0; i<firstPage; i++) {
+//        [self purgePage:i];
+//    }
+//    
+//    if (firstPage < 0) firstPage = 0;
+//    
+//	// Load pages in our range
+//    for (NSInteger i=firstPage; i<=lastPage; i++) {
+//        [self loadPage:i];
+//    }
+//    
+//	// Purge anything after the last page
+//    for (NSInteger i=lastPage+1; i<self.tariffs.count; i++) {
+//        [self purgePage:i];
+//    }
+//}
+
 - (void)loadVisiblePages {
     
     // First, determine which page is currently visible
     CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
     NSInteger page = (NSInteger)floor((self.scrollViewCurrentPrice.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
-    
+    //[self loadPageAtIndex:page];
     // Update the page control
     self.pageControl.currentPage = page;
     
@@ -167,18 +219,53 @@
 - (void)refreshEverything
 {
     // Remove all subviews of the scrollview
-    CGPoint point = CGPointMake(0.0f, 0.0f);
-    self.scrollViewCurrentPrice.contentOffset = point;
-    
     self.tariffs = [[[FBUserProfileStore sharedStore] userProfile] tariffs];
     
-    self.pageControl.currentPage = 0;
     self.pageControl.numberOfPages = [_tariffs count];
+    NSLog(@"**number of pages is %d", self.pageControl.numberOfPages);
     
     self.pageViews = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < _tariffs.count; ++i) {
         [self.pageViews addObject:[NSNull null]];
     }
+    
+    FBTariff *selectedTariff = nil;
+    FBTariff *firstTariff = (FBTariff *)[[self tariffs]objectAtIndex:0];
+    if (firstTariff) {
+        NSString *favoriteTariffId = [[[FBUserProfileStore sharedStore]userProfile]getFavoriteTariff:firstTariff.lseId];
+        NSInteger count = 0;
+        for (FBTariff *tariff in self.tariffs) {
+            if ([tariff.masterTariffId isEqualToString:favoriteTariffId]) {
+                selectedTariff = tariff;
+                break;
+            } else {
+                count++;
+            }
+        }
+        
+        if (selectedTariff) {
+            //Move the scroll view content offset
+            self.pageControl.currentPage = count;
+            CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
+            CGPoint newOffset = CGPointMake(pageWidth * count, 0);
+            [self.scrollViewCurrentPrice setContentOffset:newOffset animated:NO];
+
+        } else {
+            self.pageControl.currentPage = 0;
+            CGPoint point = CGPointMake(0.0f, 0.0f);
+            self.scrollViewCurrentPrice.contentOffset = point;
+        }
+    } else {
+        self.pageControl.currentPage = 0;
+        CGPoint point = CGPointMake(0.0f, 0.0f);
+        self.scrollViewCurrentPrice.contentOffset = point;
+    }
+    
+    int numPages = 8;
+    if ([self.tariffs count] < numPages) {
+        numPages = self.tariffs.count;
+    }
+    [[self pageControl] setNumberOfPages:numPages];
 
 }
 
