@@ -37,15 +37,28 @@
 }
 
 - (IBAction)toggleFavorite:(id)sender {
-    if ([[[FBUserProfileStore sharedStore] userProfile] getFavoriteTariff:_tariff.lseId] == nil) {
-        [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
-    } else {
+    FBUserProfile *currentUser = [[FBUserProfileStore sharedStore] userProfile];
+    NSString *favTariffId = [currentUser getFavoriteTariff:_tariff.lseId];
+    
+    if (favTariffId) {
         [[[FBUserProfileStore sharedStore] userProfile] unsetFavorite:_tariff.lseId];
+        if (![favTariffId isEqualToString:_tariff.masterTariffId]) {
+            [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
+        }
+    } else {
+        [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];        
     }
+    
+//    if ([[[FBUserProfileStore sharedStore] userProfile] getFavoriteTariff:_tariff.lseId] == nil) {
+//        [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
+//        //[[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedFavorite" object:self];
+//    } else {
+//        [[[FBUserProfileStore sharedStore] userProfile] unsetFavorite:_tariff.lseId];
+//    }
 
     [[FBUserProfileStore sharedStore] saveUser];
     [self setFavoriteIcon];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedFavorite" object:self];
+
 }
 
 -(void)setDefaults

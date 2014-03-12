@@ -109,9 +109,15 @@
     }
     
     // Remove a page from the scroll view and reset the container array
-    UIView *pageView = [self.pageViews objectAtIndex:page];
+//    UIView *pageView = [self.pageViews objectAtIndex:page];
+//    if ((NSNull*)pageView != [NSNull null]) {
+//        [pageView removeFromSuperview];
+//        [self.pageViews replaceObjectAtIndex:page withObject:[NSNull null]];
+//    }
+    
+    FBTariffPriceViewController *pageView = [self.pageViews objectAtIndex:page];
     if ((NSNull*)pageView != [NSNull null]) {
-        [pageView removeFromSuperview];
+        [pageView.view removeFromSuperview];
         [self.pageViews replaceObjectAtIndex:page withObject:[NSNull null]];
     }
 }
@@ -302,7 +308,9 @@
         return;
     }
     
-    UIView *pageView = [self.pageViews objectAtIndex:page];
+//    UIView *pageView = [self.pageViews objectAtIndex:page];
+//    UIView *pageView = ([self.pageViews objectAtIndex:page] != [NSNull null] ? [[self.pageViews objectAtIndex:page]view] : [NSNull null]);
+    FBTariffPriceViewController *pageView = [self.pageViews objectAtIndex:page];
     if ((NSNull*)pageView == [NSNull null]) {
 
         CGRect frame = self.scrollViewCurrentPrice.bounds;
