@@ -209,6 +209,8 @@
     [[self buttonFAQ] setTintColor:[UIColor whiteColor]];
     [[self buttonSettings] setImage:[UIImage imageNamed:@"tool.png"] forState:UIControlStateNormal];
     [[self buttonSettings] setTintColor:[UIColor whiteColor]];
+    [[self buttonRefresh] setImage:[UIImage imageNamed:@"refresh.png"] forState:UIControlStateNormal];
+    [[self buttonRefresh] setTintColor:[UIColor whiteColor]];
     
     self.scrollViewCurrentPrice.pagingEnabled=YES;
     self.pageControl.pageIndicatorTintColor = [UIColor blueberryColor];
@@ -318,7 +320,8 @@
 
         [self.scrollViewCurrentPrice addSubview:tpvc.view];
         tpvc.view.layer.zPosition = 1;
-        [self.pageViews replaceObjectAtIndex:page withObject:tpvc.view];
+        //[self.pageViews replaceObjectAtIndex:page withObject:tpvc.view];
+        [self.pageViews replaceObjectAtIndex:page withObject:tpvc];
         NSLog(@"scroll view is %@", NSStringFromCGPoint(self.scrollViewCurrentPrice.contentOffset));
     }
 }
@@ -327,6 +330,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)refresh:(id)sender {
+    
+    NSLog(@"refreshing");
+    // First, determine which page is currently visible
+    CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
+    NSInteger page = (NSInteger)floor((self.scrollViewCurrentPrice.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+    
+    // Work out which pages you want to load
+    NSInteger firstPage = page - 1;
+    NSInteger lastPage = page + 1;
+    
+    if (firstPage < 0) firstPage = 0;
+    
+	// Load pages in our range
+    for (NSInteger i=firstPage; i<=lastPage; i++) {
+        FBTariffPriceViewController *ctpvc = (FBTariffPriceViewController *)[self.pageViews objectAtIndex:page];
+        [ctpvc updatePrice];
+    }
 }
 
 - (IBAction)displayFAQ:(id)sender {

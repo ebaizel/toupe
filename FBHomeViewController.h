@@ -15,6 +15,7 @@
 
 {
     FBTariffDrawerViewController *tdvc;
+    FBTariffPriceViewController *currentTpvc;
 }
 
 
@@ -23,10 +24,12 @@
 @property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
 @property (weak, nonatomic) IBOutlet UIButton *buttonFAQ;
+@property (weak, nonatomic) IBOutlet UIButton *buttonRefresh;
 
 @property (strong, nonatomic) NSMutableArray *tariffs;
 @property (strong, nonatomic) NSMutableArray *pageViews;
 
+- (IBAction)refresh:(id)sender;
 - (IBAction)displayFAQ:(id)sender;
 - (IBAction)displaySettings:(id)sender;
 - (IBAction)displayTariffDrawer:(id)sender;

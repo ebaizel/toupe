@@ -38,6 +38,8 @@
 @property (weak, nonatomic) IBOutlet UIView *viewLSETile;
 - (IBAction)toggleFavorite:(id)sender;
 - (id)initWithTariff:(FBTariff *)tariff;
+
+- (void)updatePrice;
 @end
 
 @protocol TariffPriceViewDelegate
