@@ -50,7 +50,7 @@
 {
 //    [[self navigationController] popToRootViewControllerAnimated:NO];
     UINavigationController *navc = [self navigationController];
-    NSLog(@"*** number of controllers on stack are %d", navc.viewControllers.count);
+    NSLog(@"*** number of controllers on stack are %i", navc.viewControllers.count);
     FBWelcomeViewController *welcomeVC = [[FBWelcomeViewController alloc]init];
     welcomeVC.isRootView = YES;
     [[self navigationController] pushViewController:welcomeVC animated:YES];
@@ -97,7 +97,7 @@
     }
 }
 
-- (void)jumpToTariff:(NSString *)tariffId
+- (void)displayTariff:(NSString *)tariffId
 {
     FBTariff *selectedTariff = nil;
     NSInteger count = 0;
@@ -112,6 +112,7 @@
     
     if (selectedTariff) {
         //Move the scroll view content offset
+        self.pageControl.currentPage = (count > _tariffs.count ? _tariffs.count : count);
         CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
         CGPoint newOffset = CGPointMake(pageWidth * count, 0);
         [self.scrollViewCurrentPrice setContentOffset:newOffset animated:NO];
@@ -216,13 +217,14 @@
     [self refreshEverything];
 }
 
+
 - (void)refreshEverything
 {
     // Remove all subviews of the scrollview
     self.tariffs = [[[FBUserProfileStore sharedStore] userProfile] tariffs];
     
     self.pageControl.numberOfPages = [_tariffs count];
-    NSLog(@"**number of pages is %d", self.pageControl.numberOfPages);
+    NSLog(@"**number of pages is %i", self.pageControl.numberOfPages);
     
     self.pageViews = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < _tariffs.count; ++i) {
@@ -263,7 +265,7 @@
     
     int numPages = 8;
     if ([self.tariffs count] < numPages) {
-        numPages = self.tariffs.count;
+        numPages = (unsigned long)self.tariffs.count;
     }
     [[self pageControl] setNumberOfPages:numPages];
 
@@ -285,6 +287,7 @@
         
 //        UIView *newView = [[UIView alloc]init];
         FBTariffPriceViewController *tpvc = [[FBTariffPriceViewController alloc]initWithTariff:[self.tariffs objectAtIndex:page]];
+        [tpvc setDelegate:self];
         [tpvc.view setFrame:frame];
         [self addChildViewController:tpvc];
         [tpvc didMoveToParentViewController:self];
@@ -295,6 +298,7 @@
         [self.scrollViewCurrentPrice addSubview:tpvc.view];
         tpvc.view.layer.zPosition = 1;
         [self.pageViews replaceObjectAtIndex:page withObject:tpvc.view];
+        NSLog(@"scroll view is %@", NSStringFromCGPoint(self.scrollViewCurrentPrice.contentOffset));
     }
 }
 

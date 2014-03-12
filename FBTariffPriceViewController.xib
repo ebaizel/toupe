@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FBTariffPriceViewController">
             <connections>
                 <outlet property="activityIndicator" destination="7mO-TN-c1t" id="26r-7p-Umy"/>
                 <outlet property="buttonSetFavorite" destination="fEJ-ng-vco" id="Bb6-GV-lT1"/>
+                <outlet property="buttonTariffDrawer" destination="VOV-lN-Yfm" id="dnS-Fr-HIv"/>
                 <outlet property="imageArrow" destination="Qr5-bl-ozy" id="cVD-bD-Vco"/>
                 <outlet property="imageLSE" destination="Y8f-xg-A65" id="rkZ-Yg-fdF"/>
                 <outlet property="labelAction1" destination="XIw-Qz-N0s" id="ofn-Sf-Q2x"/>
@@ -76,13 +77,14 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOV-lN-Yfm">
-                            <rect key="frame" x="0.0" y="30" width="32" height="30"/>
+                            <rect key="frame" x="3" y="30" width="32" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Jt">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" backgroundImage="drawer.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="jumpToTariff:" destination="-1" eventType="touchUpInside" id="mT6-b8-rLC"/>
+                                <action selector="displayTariffDrawer:" destination="-1" eventType="touchUpInside" id="B81-tU-VTM"/>
                             </connections>
                         </button>
                     </subviews>
@@ -116,7 +118,7 @@
                                 <outlet property="delegate" destination="-1" id="i5t-YK-eHI"/>
                             </connections>
                         </scrollView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Upcoming Price Changes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO1-oT-EBi">
+                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Upcoming Price Changes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO1-oT-EBi">
                             <rect key="frame" x="-1" y="124" width="285" height="18"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -193,4 +195,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="drawer.png" width="48" height="48"/>
+    </resources>
 </document>

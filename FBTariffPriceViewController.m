@@ -18,7 +18,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "FBPricePeriodViewController.h"
 #import "Colours.h"
-
+#import "FBTariffDrawerViewController.h"
 
 @interface FBTariffPriceViewController ()
 
@@ -36,6 +36,15 @@
     return self;
 }
 
+- (void)selectTariff:(NSString *)tariffId
+{
+//    [self dismissDrawer];
+//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[self delegate] displayTariff:tariffId];
+    }];
+}
+
 - (IBAction)setFavorite:(id)sender {
     [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
     [[FBUserProfileStore sharedStore] saveUser];
@@ -43,7 +52,15 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedFavorite" object:self];
 }
 
-- (IBAction)jumpToTariff:(id)sender {
+- (IBAction)displayTariffDrawer:(id)sender {
+    tdvc = [[FBTariffDrawerViewController alloc]init];
+    tdvc.delegate = self;
+    [self presentViewController:tdvc animated:YES completion:nil];
+}
+
+- (void)dismissDrawer
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)setDefaults
@@ -211,12 +228,9 @@
 {
     FBUserProfile *user = [[FBUserProfileStore sharedStore]userProfile];
     if ([user isFavoriteTariff:_tariff.masterTariffId forLse:_tariff.lseId]) {
-        NSLog(@"** tariff IS favorite");
         [[self buttonSetFavorite] setBackgroundColor:[UIColor clearColor]];
-//        self.buttonSetFavorite = UIButton from
         [[self buttonSetFavorite] setBackgroundImage:[UIImage imageNamed:@"goldstar.png"] forState:UIControlStateNormal];
     } else {
-        NSLog(@"** tariff IS NOT favorite");
         [[self buttonSetFavorite] setBackgroundColor:[UIColor clearColor]];
         [[self buttonSetFavorite] setBackgroundImage:[UIImage imageNamed:@"whitestar.png"] forState:UIControlStateNormal];
     }
@@ -251,6 +265,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self buttonTariffDrawer] setBackgroundColor:[UIColor clearColor]];
+    [[self buttonTariffDrawer] setBackgroundImage:[UIImage imageNamed:@"drawer.png"] forState:UIControlStateNormal];
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FBChooseUtilityViewController">
@@ -41,7 +41,7 @@
                         <action selector="continue:" destination="-1" eventType="touchUpInside" id="5dO-EC-x2A"/>
                     </connections>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" text="We found these utilities offering service in your area.  Select your utility." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="p7z-lt-ZBB">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" text="We found these utilities offering service in your area.  Select your utility." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="p7z-lt-ZBB">
                     <rect key="frame" x="29" y="167" width="263" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,10 +49,11 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hdV-Fk-7Ox">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hdV-Fk-7Ox">
                     <rect key="frame" x="29" y="248" width="263" height="119"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="119" id="blZ-xm-4LZ"/>
                         <constraint firstAttribute="width" constant="263" id="voD-PE-G29"/>
                     </constraints>
                     <connections>
@@ -80,14 +81,15 @@
             <constraints>
                 <constraint firstItem="2me-jm-bsn" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="80" id="6Jk-eH-aiG"/>
                 <constraint firstItem="2me-jm-bsn" firstAttribute="top" secondItem="1" secondAttribute="top" constant="375" id="BXt-pE-Vm0"/>
-                <constraint firstAttribute="centerX" secondItem="p7z-lt-ZBB" secondAttribute="centerX" constant="-0.5" id="C2i-Ka-iWw"/>
                 <constraint firstItem="2me-jm-bsn" firstAttribute="centerX" secondItem="hdV-Fk-7Ox" secondAttribute="centerX" id="RRx-Ha-KN2"/>
                 <constraint firstItem="2me-jm-bsn" firstAttribute="top" secondItem="hdV-Fk-7Ox" secondAttribute="bottom" constant="8" id="Str-x5-lbt"/>
                 <constraint firstItem="SkT-6V-LuX" firstAttribute="top" secondItem="2me-jm-bsn" secondAttribute="bottom" constant="8" symbolic="YES" id="TfR-81-o3v"/>
                 <constraint firstItem="pvN-BX-aWJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="44" id="UI8-eH-BAg"/>
-                <constraint firstItem="2me-jm-bsn" firstAttribute="top" secondItem="hdV-Fk-7Ox" secondAttribute="bottom" constant="8" symbolic="YES" id="Ubh-nB-8dp"/>
+                <constraint firstItem="hdV-Fk-7Ox" firstAttribute="top" secondItem="p7z-lt-ZBB" secondAttribute="bottom" constant="11" id="cHd-xl-gIR"/>
                 <constraint firstItem="2me-jm-bsn" firstAttribute="centerX" secondItem="SkT-6V-LuX" secondAttribute="centerX" id="eqK-tO-sD6"/>
                 <constraint firstItem="2me-jm-bsn" firstAttribute="centerX" secondItem="pvN-BX-aWJ" secondAttribute="centerX" id="fl0-q1-vKs"/>
+                <constraint firstItem="hdV-Fk-7Ox" firstAttribute="leading" secondItem="p7z-lt-ZBB" secondAttribute="leading" id="iSK-gx-cEQ"/>
+                <constraint firstItem="hdV-Fk-7Ox" firstAttribute="trailing" secondItem="p7z-lt-ZBB" secondAttribute="trailing" id="mty-Ih-fZv"/>
                 <constraint firstItem="2me-jm-bsn" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="z1g-Fs-fo7"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

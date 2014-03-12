@@ -13,6 +13,11 @@
 		0A018C6818C9273700A9787F /* FBSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A018C6618C9273700A9787F /* FBSettingsViewController.xib */; };
 		0A3E8E3418CE4A4000E45DBA /* whitestar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3218CE4A4000E45DBA /* whitestar.png */; };
 		0A3E8E3518CE4A4000E45DBA /* goldstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3318CE4A4000E45DBA /* goldstar.png */; };
+		0A3E8E3918CE75E300E45DBA /* drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3818CE75E300E45DBA /* drawer.png */; };
+		0A3E8E4218CE770C00E45DBA /* FBTariffDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3E8E4018CE770C00E45DBA /* FBTariffDrawerViewController.m */; };
+		0A3E8E4318CE770C00E45DBA /* FBTariffDrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E4118CE770C00E45DBA /* FBTariffDrawerViewController.xib */; };
+		0A3E8E4718CE7D1900E45DBA /* FBTariffDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3E8E4618CE7D1900E45DBA /* FBTariffDrawerTableViewCell.m */; };
+		0A3E8E4918CE7D5D00E45DBA /* FBTariffDrawerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E4818CE7D5D00E45DBA /* FBTariffDrawerTableViewCell.xib */; };
 		0A5FC5181864D5D300F69BA5 /* FBSmartPriceSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC5171864D5D300F69BA5 /* FBSmartPriceSummary.m */; };
 		0A5FC51B1864D8B300F69BA5 /* FBPricePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC51A1864D8B300F69BA5 /* FBPricePeriod.m */; };
 		0A5FC51E1864DC6000F69BA5 /* FBGenabilityStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC51D1864DC6000F69BA5 /* FBGenabilityStore.m */; };
@@ -81,6 +86,10 @@
 		0AC9FAEA18C5021C0086B48F /* FBWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9FAE818C5021C0086B48F /* FBWelcomeViewController.m */; };
 		0AC9FAEB18C5021C0086B48F /* FBWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9FAE918C5021C0086B48F /* FBWelcomeViewController.xib */; };
 		0AC9FAED18C503B50086B48F /* toupe.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9FAEC18C503B50086B48F /* toupe.png */; };
+		0AD6127418CF911500FB4667 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD6126E18CF911500FB4667 /* libTestFlight.a */; };
+		0AD6127518CF911500FB4667 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6126F18CF911500FB4667 /* README.md */; };
+		0AD6127618CF911500FB4667 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6127018CF911500FB4667 /* release_notes.md */; };
+		0AD6127818CF917000FB4667 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD6127718CF917000FB4667 /* libz.dylib */; };
 		0AE9DEB318985F7B008B615D /* faq.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB218985F7B008B615D /* faq.png */; };
 		0AE9DEB518986019008B615D /* setup.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB418986019008B615D /* setup.png */; };
 		0AE9DEB71898667C008B615D /* genability.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB61898667C008B615D /* genability.png */; };
@@ -114,6 +123,13 @@
 		0A018C6618C9273700A9787F /* FBSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBSettingsViewController.xib; sourceTree = "<group>"; };
 		0A3E8E3218CE4A4000E45DBA /* whitestar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitestar.png; sourceTree = "<group>"; };
 		0A3E8E3318CE4A4000E45DBA /* goldstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldstar.png; sourceTree = "<group>"; };
+		0A3E8E3818CE75E300E45DBA /* drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawer.png; sourceTree = "<group>"; };
+		0A3E8E3F18CE770C00E45DBA /* FBTariffDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTariffDrawerViewController.h; sourceTree = "<group>"; };
+		0A3E8E4018CE770C00E45DBA /* FBTariffDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTariffDrawerViewController.m; sourceTree = "<group>"; };
+		0A3E8E4118CE770C00E45DBA /* FBTariffDrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBTariffDrawerViewController.xib; sourceTree = "<group>"; };
+		0A3E8E4518CE7D1900E45DBA /* FBTariffDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBTariffDrawerTableViewCell.h; sourceTree = "<group>"; };
+		0A3E8E4618CE7D1900E45DBA /* FBTariffDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBTariffDrawerTableViewCell.m; sourceTree = "<group>"; };
+		0A3E8E4818CE7D5D00E45DBA /* FBTariffDrawerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBTariffDrawerTableViewCell.xib; sourceTree = "<group>"; };
 		0A5FC5151864D59400F69BA5 /* JSONSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONSerializable.h; sourceTree = "<group>"; };
 		0A5FC5161864D5D300F69BA5 /* FBSmartPriceSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSmartPriceSummary.h; sourceTree = "<group>"; };
 		0A5FC5171864D5D300F69BA5 /* FBSmartPriceSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSmartPriceSummary.m; sourceTree = "<group>"; };
@@ -224,6 +240,13 @@
 		0AC9FAE818C5021C0086B48F /* FBWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBWelcomeViewController.m; sourceTree = "<group>"; };
 		0AC9FAE918C5021C0086B48F /* FBWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBWelcomeViewController.xib; sourceTree = "<group>"; };
 		0AC9FAEC18C503B50086B48F /* toupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toupe.png; sourceTree = "<group>"; };
+		0AD6126E18CF911500FB4667 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		0AD6126F18CF911500FB4667 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		0AD6127018CF911500FB4667 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		0AD6127118CF911500FB4667 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		0AD6127218CF911500FB4667 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		0AD6127318CF911500FB4667 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		0AD6127718CF917000FB4667 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0AE9DEB218985F7B008B615D /* faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq.png; sourceTree = "<group>"; };
 		0AE9DEB418986019008B615D /* setup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setup.png; sourceTree = "<group>"; };
 		0AE9DEB61898667C008B615D /* genability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genability.png; sourceTree = "<group>"; };
@@ -247,9 +270,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD6127818CF917000FB4667 /* libz.dylib in Frameworks */,
 				0A84C258189B1A8800E4A91D /* ImageIO.framework in Frameworks */,
 				0AC2DACF18983F34005CB500 /* iAd.framework in Frameworks */,
 				0A9D7E1A184D744500BAE38D /* CoreGraphics.framework in Frameworks */,
+				0AD6127418CF911500FB4667 /* libTestFlight.a in Frameworks */,
 				0A9D7E1C184D744500BAE38D /* UIKit.framework in Frameworks */,
 				0A9D7E18184D744500BAE38D /* Foundation.framework in Frameworks */,
 			);
@@ -268,6 +293,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3E8E4418CE7CEA00E45DBA /* Tariff Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				0A3E8E3F18CE770C00E45DBA /* FBTariffDrawerViewController.h */,
+				0A3E8E4018CE770C00E45DBA /* FBTariffDrawerViewController.m */,
+				0A3E8E4118CE770C00E45DBA /* FBTariffDrawerViewController.xib */,
+				0A3E8E4518CE7D1900E45DBA /* FBTariffDrawerTableViewCell.h */,
+				0A3E8E4618CE7D1900E45DBA /* FBTariffDrawerTableViewCell.m */,
+				0A3E8E4818CE7D5D00E45DBA /* FBTariffDrawerTableViewCell.xib */,
+			);
+			name = "Tariff Drawer";
+			sourceTree = "<group>";
+		};
 		0A6D13841890817C00C8F977 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +384,7 @@
 		0A9D7E0B184D744500BAE38D = {
 			isa = PBXGroup;
 			children = (
+				0A3E8E4418CE7CEA00E45DBA /* Tariff Drawer */,
 				0AC9FAE118C2BAE50086B48F /* Day Price 2 */,
 				0AB66DFE18A1710D00441562 /* Day Price */,
 				0AE9DEB118985D0D008B615D /* Current Price */,
@@ -360,6 +399,7 @@
 				0A9D7E3F184D744500BAE38D /* ToupeTests */,
 				0A9D7E16184D744500BAE38D /* Frameworks */,
 				0A9D7E15184D744500BAE38D /* Products */,
+				0AD6126D18CF911500FB4667 /* TestFlightSDK3.0.0 */,
 				0A6D138918909C4100C8F977 /* Project Recycle Bin */,
 			);
 			sourceTree = "<group>";
@@ -376,6 +416,7 @@
 		0A9D7E16184D744500BAE38D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AD6127718CF917000FB4667 /* libz.dylib */,
 				0A84C257189B1A8800E4A91D /* ImageIO.framework */,
 				0AC2DACE18983F34005CB500 /* iAd.framework */,
 				0A9D7E17184D744500BAE38D /* Foundation.framework */,
@@ -506,6 +547,19 @@
 			name = "Day Price 2";
 			sourceTree = "<group>";
 		};
+		0AD6126D18CF911500FB4667 /* TestFlightSDK3.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				0AD6126E18CF911500FB4667 /* libTestFlight.a */,
+				0AD6126F18CF911500FB4667 /* README.md */,
+				0AD6127018CF911500FB4667 /* release_notes.md */,
+				0AD6127118CF911500FB4667 /* TestFlight+AsyncLogging.h */,
+				0AD6127218CF911500FB4667 /* TestFlight+ManualSessions.h */,
+				0AD6127318CF911500FB4667 /* TestFlight.h */,
+			);
+			path = TestFlightSDK3.0.0;
+			sourceTree = "<group>";
+		};
 		0AE9DEB118985D0D008B615D /* Current Price */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +576,7 @@
 		0AE9DEB8189867E3008B615D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0A3E8E3818CE75E300E45DBA /* drawer.png */,
 				0A3E8E3218CE4A4000E45DBA /* whitestar.png */,
 				0A3E8E3318CE4A4000E45DBA /* goldstar.png */,
 				0A018C6018C655D500A9787F /* greenarrow.png */,
@@ -588,9 +643,12 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FB;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Fresh Basil";
 				TargetAttributes = {
+					0A9D7E13184D744500BAE38D = {
+						DevelopmentTeam = 8AL33R6B84;
+					};
 					0A9D7E37184D744500BAE38D = {
 						TestTargetID = 0A9D7E13184D744500BAE38D;
 					};
@@ -620,6 +678,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A3E8E4918CE7D5D00E45DBA /* FBTariffDrawerTableViewCell.xib in Resources */,
 				0A84C262189B324D00E4A91D /* ciudad640x960@2x.png in Resources */,
 				0A6D1387189095C200C8F977 /* FBCurrentPriceViewController.xib in Resources */,
 				0AE9DEB518986019008B615D /* setup.png in Resources */,
@@ -629,6 +688,7 @@
 				0A3E8E3518CE4A4000E45DBA /* goldstar.png in Resources */,
 				0A018C6318C655D500A9787F /* redarrow.png in Resources */,
 				0AE9DEB71898667C008B615D /* genability.png in Resources */,
+				0A3E8E4318CE770C00E45DBA /* FBTariffDrawerViewController.xib in Resources */,
 				0AE9DEB318985F7B008B615D /* faq.png in Resources */,
 				0AE9DEBE18986B65008B615D /* calculator.png in Resources */,
 				0AE9DEBC18986AA5008B615D /* tool.png in Resources */,
@@ -638,15 +698,18 @@
 				0AE9DEC818987C75008B615D /* FBEnterZipCodeViewController.xib in Resources */,
 				0AE9DECD18987F2A008B615D /* FBChooseTariffViewController.xib in Resources */,
 				0A766C9E189AD00300869088 /* FBChooseTariffViewCell.xib in Resources */,
+				0A3E8E3918CE75E300E45DBA /* drawer.png in Resources */,
 				0AE9DED118988587008B615D /* refresh.png in Resources */,
 				0AB66E0318A17FDA00441562 /* FBDayViewController.xib in Resources */,
 				0AC9FAE618C2BB4F0086B48F /* FBPricePeriodViewController.xib in Resources */,
+				0AD6127618CF911500FB4667 /* release_notes.md in Resources */,
 				0A84C264189B35EB00E4A91D /* ciudad640x1136@2x.png in Resources */,
 				0AC9FAEB18C5021C0086B48F /* FBWelcomeViewController.xib in Resources */,
 				0A9D7E33184D744500BAE38D /* Images.xcassets in Resources */,
 				0A766CA0189AD1AB00869088 /* pge.jpg in Resources */,
 				0A9D7E2B184D744500BAE38D /* Main_iPhone.storyboard in Resources */,
 				0A9D7E22184D744500BAE38D /* InfoPlist.strings in Resources */,
+				0AD6127518CF911500FB4667 /* README.md in Resources */,
 				0AB66DF4189EE89E00441562 /* FBTariffPriceViewController.xib in Resources */,
 				0A018C6218C655D500A9787F /* greenarrow.png in Resources */,
 				0AB66DFD18A01D1C00441562 /* blueorange640x1136@2x.png in Resources */,
@@ -705,6 +768,7 @@
 				0A5FC51B1864D8B300F69BA5 /* FBPricePeriod.m in Sources */,
 				0AC9FAE518C2BB4F0086B48F /* FBPricePeriodViewController.m in Sources */,
 				0AE9DEC718987C75008B615D /* FBEnterZipCodeViewController.m in Sources */,
+				0A3E8E4718CE7D1900E45DBA /* FBTariffDrawerTableViewCell.m in Sources */,
 				0AC9FAEA18C5021C0086B48F /* FBWelcomeViewController.m in Sources */,
 				0AB66E0218A17FDA00441562 /* FBDayViewController.m in Sources */,
 				0A9D7E51184E574C00BAE38D /* FBSetupViewController.m in Sources */,
@@ -712,6 +776,7 @@
 				0A9D7E31184D744500BAE38D /* FBViewController.m in Sources */,
 				0A5FC5181864D5D300F69BA5 /* FBSmartPriceSummary.m in Sources */,
 				0AB66DF7189EF5A900441562 /* FBLSE.m in Sources */,
+				0A3E8E4218CE770C00E45DBA /* FBTariffDrawerViewController.m in Sources */,
 				0AE9DECC18987F2A008B615D /* FBChooseTariffViewController.m in Sources */,
 				0AC2DAD7189844C6005CB500 /* FBFAQViewController.m in Sources */,
 				0A9D7E54184E63AC00BAE38D /* FBCurrentPriceViewController.m in Sources */,
@@ -778,7 +843,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -819,7 +883,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -843,7 +906,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-Objc";
+				PROVISIONING_PROFILE = "CDAFEE50-2CB3-4D6A-9CEE-AEF09C5007DF";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -855,11 +920,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toupe/Toupe-Prefix.pch";
 				INFOPLIST_FILE = "Toupe/Toupe-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestFlightSDK3.0.0",
+				);
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -869,11 +940,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toupe/Toupe-Prefix.pch";
 				INFOPLIST_FILE = "Toupe/Toupe-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TestFlightSDK3.0.0",
+				);
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -881,7 +958,6 @@
 		0A9D7E4D184D744500BAE38D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toupe.app/Toupe";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -904,7 +980,6 @@
 		0A9D7E4E184D744500BAE38D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toupe.app/Toupe";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

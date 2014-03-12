@@ -13,11 +13,17 @@
 //#import "FBEnterZipCodeViewController.h"
 #import "FBUserProfileStore.h"
 #import "FBWelcomeViewController.h"
+#import "TestFlight.h"
 
 @implementation FBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // start of your application:didFinishLaunchingWithOptions // ...
+    [TestFlight takeOff:@"6c5d44fa-b298-4cfe-b92e-40498a77a4da"];
+    // The rest of your application:didFinishLaunchingWithOptions method// ...
+
+    
     // Override point for customization after application launch.
     UINavigationController *navc = [[UINavigationController alloc]init];
     [navc setNavigationBarHidden:YES];

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "iAd/ADBannerView.h"
+#import "FBTariffPriceViewController.h"
+#import "FBTariffDrawerViewController.h"
 
-@interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate>
+@interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate, TariffDrawerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewCurrentPrice;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
