@@ -33,11 +33,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageArrow;
 @property (weak, nonatomic) IBOutlet UILabel *labelUpcomingPriceChanges;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSetFavorite;
-@property (weak, nonatomic) IBOutlet UIButton *buttonTariffDrawer;
 @property (assign, nonatomic) id <TariffPriceViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIView *viewLSETile;
-- (IBAction)setFavorite:(id)sender;
+- (IBAction)toggleFavorite:(id)sender;
 - (id)initWithTariff:(FBTariff *)tariff;
 @end
 

@@ -212,6 +212,9 @@
     
     self.scrollViewCurrentPrice.pagingEnabled=YES;
     self.pageControl.pageIndicatorTintColor = [UIColor blueberryColor];
+
+//    [[self buttonTariffDrawer] setBackgroundColor:[UIColor clearColor]];
+//    [[self buttonTariffDrawer] setBackgroundImage:[UIImage imageNamed:@"drawer.png"] forState:UIControlStateNormal];
     
     // Setup the background
 //    UIImageView *backgroundView;

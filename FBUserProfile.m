@@ -40,6 +40,13 @@
     [_favorites setObject:tariffId forKey:lseId];
 }
 
+-(void)unsetFavorite:(NSString *)lseId
+{
+    if (_favorites) {
+        [_favorites removeObjectForKey:lseId];
+    }
+}
+
 -(BOOL)isFavoriteTariff:(NSString *)tariffId forLse:(NSString *)lseId
 {
     NSString *favorite;

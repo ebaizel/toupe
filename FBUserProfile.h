@@ -20,6 +20,8 @@
 @property (nonatomic, strong) NSMutableDictionary *favorites;
 
 -(void)setFavorite:(NSString *)lseId forTariffId:(NSString *)tariffId;
+-(void)unsetFavorite:(NSString *)lseId;
 -(BOOL)isFavoriteTariff:(NSString *)tariffId forLse:(NSString *)lseId;
+
 -(NSString *)getFavoriteTariff:(NSString *)lseId;
 @end

@@ -36,18 +36,16 @@
     return self;
 }
 
-- (IBAction)setFavorite:(id)sender {
-    [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
+- (IBAction)toggleFavorite:(id)sender {
+    if ([[[FBUserProfileStore sharedStore] userProfile] getFavoriteTariff:_tariff.lseId] == nil) {
+        [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
+    } else {
+        [[[FBUserProfileStore sharedStore] userProfile] unsetFavorite:_tariff.lseId];
+    }
+
     [[FBUserProfileStore sharedStore] saveUser];
     [self setFavoriteIcon];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedFavorite" object:self];
-}
-
-- (IBAction)unsetFavorite:(id)sender {
-//    [[[FBUserProfileStore sharedStore] userProfile] unsetFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
-//    [[FBUserProfileStore sharedStore] saveUser];
-//    [self setFavoriteIcon];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedFavorite" object:self];
 }
 
 -(void)setDefaults
@@ -252,9 +250,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[self buttonTariffDrawer] setBackgroundColor:[UIColor clearColor]];
-    [[self buttonTariffDrawer] setBackgroundImage:[UIImage imageNamed:@"drawer.png"] forState:UIControlStateNormal];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

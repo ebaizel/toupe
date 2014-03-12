@@ -72,7 +72,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="setFavorite:" destination="-1" eventType="touchUpInside" id="itq-KC-QxE"/>
+                                <action selector="toggleFavorite:" destination="-1" eventType="touchUpInside" id="WQo-OH-Dk8"/>
                             </connections>
                         </button>
                     </subviews>
