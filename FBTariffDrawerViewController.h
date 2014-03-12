@@ -11,6 +11,7 @@
 @protocol TariffDrawerDelegate;
 
 @interface FBTariffDrawerViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableDrawer;
 @property (assign, nonatomic) id <TariffDrawerDelegate> delegate;
 - (IBAction)dismiss:(id)sender;
 @end

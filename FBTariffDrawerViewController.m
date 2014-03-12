@@ -29,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UINib *nib = [UINib nibWithNibName:@"FBTariffDrawerTableViewCell" bundle:nil];
+    [[self tableDrawer] registerNib:nib forCellReuseIdentifier:@"FBTariffDrawerTableViewCell"];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -74,7 +76,11 @@
     
     // Configure the cell...
     FBTariff *tariff = (FBTariff *)[[[[FBUserProfileStore sharedStore] userProfile] tariffs] objectAtIndex:[indexPath row]];
-    cell.textLabel.text = tariff.tariffName;
+//    cell.textLabel.text = tariff.tariffName;
+//    cell.textLabel.textColor = [UIColor moneyGreenColor];
+    cell.labelTariffName.text = tariff.tariffName;
+    cell.labelTariffName.textColor = [UIColor blueberryColor];
+//    cell.labelTariffName.textColor
     return cell;
 }
 
