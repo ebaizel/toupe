@@ -13,6 +13,11 @@
 
 @interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate, TariffDrawerDelegate>
 
+{
+    FBTariffDrawerViewController *tdvc;
+}
+
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewCurrentPrice;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
@@ -24,4 +29,5 @@
 
 - (IBAction)displayFAQ:(id)sender;
 - (IBAction)displaySettings:(id)sender;
+- (IBAction)displayTariffDrawer:(id)sender;
 @end

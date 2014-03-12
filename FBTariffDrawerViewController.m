@@ -17,9 +17,18 @@
 
 @implementation FBTariffDrawerViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//    self = [super initWithStyle:style];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -45,7 +54,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Jumping to tariff at index %d", [indexPath row]);
+    NSLog(@"Jumping to tariff at index %ld", (long)[indexPath row]);
     FBTariff *tariff = (FBTariff *)[[[[FBUserProfileStore sharedStore] userProfile] tariffs] objectAtIndex:[indexPath row]];
     [[self delegate]selectTariff:tariff.masterTariffId];
 }
@@ -135,4 +144,7 @@
  
  */
 
+- (IBAction)dismiss:(id)sender {
+    [[self delegate] dismissDrawer];
+}
 @end

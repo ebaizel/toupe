@@ -10,12 +10,14 @@
 
 @protocol TariffDrawerDelegate;
 
-@interface FBTariffDrawerViewController : UITableViewController
+@interface FBTariffDrawerViewController : UIViewController
 @property (assign, nonatomic) id <TariffDrawerDelegate> delegate;
+- (IBAction)dismiss:(id)sender;
 @end
 
 @protocol TariffDrawerDelegate
 
 - (void)selectTariff:(NSString *)tariffId;
+- (void)dismissDrawer;
 
 @end

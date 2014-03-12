@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="activityIndicator" destination="7mO-TN-c1t" id="26r-7p-Umy"/>
                 <outlet property="buttonSetFavorite" destination="fEJ-ng-vco" id="Bb6-GV-lT1"/>
-                <outlet property="buttonTariffDrawer" destination="VOV-lN-Yfm" id="dnS-Fr-HIv"/>
                 <outlet property="imageArrow" destination="Qr5-bl-ozy" id="cVD-bD-Vco"/>
                 <outlet property="imageLSE" destination="Y8f-xg-A65" id="rkZ-Yg-fdF"/>
                 <outlet property="labelAction1" destination="XIw-Qz-N0s" id="ofn-Sf-Q2x"/>
@@ -44,7 +43,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-ro-QjZ">
-                            <rect key="frame" x="107" y="30" width="165" height="30"/>
+                            <rect key="frame" x="71" y="30" width="212" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,7 +57,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y8f-xg-A65">
-                            <rect key="frame" x="39" y="33" width="60" height="25"/>
+                            <rect key="frame" x="3" y="33" width="60" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -76,17 +75,6 @@
                                 <action selector="setFavorite:" destination="-1" eventType="touchUpInside" id="itq-KC-QxE"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOV-lN-Yfm">
-                            <rect key="frame" x="3" y="30" width="32" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <state key="normal" backgroundImage="drawer.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="displayTariffDrawer:" destination="-1" eventType="touchUpInside" id="B81-tU-VTM"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -94,7 +82,7 @@
                         <constraint firstAttribute="bottom" secondItem="oJr-fH-f13" secondAttribute="bottom" constant="27" id="dug-kp-5Hd"/>
                         <constraint firstAttribute="width" secondItem="oJr-fH-f13" secondAttribute="width" constant="-2" id="jfb-c8-krn"/>
                         <constraint firstItem="oJr-fH-f13" firstAttribute="leading" secondItem="PgV-Nk-uUN" secondAttribute="leading" constant="-1" id="tIX-WU-rmN"/>
-                        <constraint firstItem="Y8f-xg-A65" firstAttribute="leading" secondItem="PgV-Nk-uUN" secondAttribute="leading" constant="39" id="yY3-wL-A2b"/>
+                        <constraint firstItem="Y8f-xg-A65" firstAttribute="leading" secondItem="PgV-Nk-uUN" secondAttribute="leading" constant="3" id="yY3-wL-A2b"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOq-Qs-m9p">
@@ -195,7 +183,4 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <resources>
-        <image name="drawer.png" width="48" height="48"/>
-    </resources>
 </document>

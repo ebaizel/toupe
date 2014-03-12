@@ -15,6 +15,7 @@
 #import "Colours.h"
 #import "FBSettingsViewController.h"
 #import "FBWelcomeViewController.h"
+#import "FBTariffDrawerViewController.h"
 
 @interface FBHomeViewController ()
 
@@ -46,11 +47,29 @@
     return self;
 }
 
+- (void)selectTariff:(NSString *)tariffId
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self displayTariff:tariffId];
+    }];
+}
+
+- (IBAction)displayTariffDrawer:(id)sender {
+    tdvc = [[FBTariffDrawerViewController alloc]init];
+    tdvc.delegate = self;
+    [self presentViewController:tdvc animated:YES completion:nil];
+}
+
+- (void)dismissDrawer
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)reset
 {
 //    [[self navigationController] popToRootViewControllerAnimated:NO];
     UINavigationController *navc = [self navigationController];
-    NSLog(@"*** number of controllers on stack are %i", navc.viewControllers.count);
+    NSLog(@"*** number of controllers on stack are %lu", (unsigned long)navc.viewControllers.count);
     FBWelcomeViewController *welcomeVC = [[FBWelcomeViewController alloc]init];
     welcomeVC.isRootView = YES;
     [[self navigationController] pushViewController:welcomeVC animated:YES];
@@ -224,7 +243,7 @@
     self.tariffs = [[[FBUserProfileStore sharedStore] userProfile] tariffs];
     
     self.pageControl.numberOfPages = [_tariffs count];
-    NSLog(@"**number of pages is %i", self.pageControl.numberOfPages);
+    NSLog(@"**number of pages is %li", (long)self.pageControl.numberOfPages);
     
     self.pageViews = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < _tariffs.count; ++i) {
@@ -265,7 +284,7 @@
     
     int numPages = 8;
     if ([self.tariffs count] < numPages) {
-        numPages = (unsigned long)self.tariffs.count;
+        numPages = (unsigned int)self.tariffs.count;
     }
     [[self pageControl] setNumberOfPages:numPages];
 
@@ -287,7 +306,6 @@
         
 //        UIView *newView = [[UIView alloc]init];
         FBTariffPriceViewController *tpvc = [[FBTariffPriceViewController alloc]initWithTariff:[self.tariffs objectAtIndex:page]];
-        [tpvc setDelegate:self];
         [tpvc.view setFrame:frame];
         [self addChildViewController:tpvc];
         [tpvc didMoveToParentViewController:self];
@@ -318,4 +336,5 @@
     FBSettingsViewController *svc = [[FBSettingsViewController alloc]init];
     [[self navigationController] pushViewController:svc animated:YES];
 }
+
 @end

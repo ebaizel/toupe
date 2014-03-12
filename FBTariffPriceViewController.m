@@ -36,15 +36,6 @@
     return self;
 }
 
-- (void)selectTariff:(NSString *)tariffId
-{
-//    [self dismissDrawer];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    [self dismissViewControllerAnimated:YES completion:^{
-        [[self delegate] displayTariff:tariffId];
-    }];
-}
-
 - (IBAction)setFavorite:(id)sender {
     [[[FBUserProfileStore sharedStore] userProfile] setFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
     [[FBUserProfileStore sharedStore] saveUser];
@@ -52,15 +43,11 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedFavorite" object:self];
 }
 
-- (IBAction)displayTariffDrawer:(id)sender {
-    tdvc = [[FBTariffDrawerViewController alloc]init];
-    tdvc.delegate = self;
-    [self presentViewController:tdvc animated:YES completion:nil];
-}
-
-- (void)dismissDrawer
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (IBAction)unsetFavorite:(id)sender {
+//    [[[FBUserProfileStore sharedStore] userProfile] unsetFavorite:_tariff.lseId forTariffId:_tariff.masterTariffId];
+//    [[FBUserProfileStore sharedStore] saveUser];
+//    [self setFavoriteIcon];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedFavorite" object:self];
 }
 
 -(void)setDefaults

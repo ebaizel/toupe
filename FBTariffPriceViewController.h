@@ -9,14 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "FBTariff.h"
 #import "FBDayViewController.h"
-#import "FBTariffDrawerViewController.h"
 
 @protocol TariffPriceViewDelegate;
 
-@interface FBTariffPriceViewController : UIViewController <UIScrollViewDelegate,  TariffDrawerDelegate>
+@interface FBTariffPriceViewController : UIViewController <UIScrollViewDelegate>
 {
     UIColor *tileBackgroundColor;
-    FBTariffDrawerViewController *tdvc;
 }
 
 @property (strong, nonatomic) FBTariff *tariff;
@@ -40,7 +38,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewLSETile;
 - (IBAction)setFavorite:(id)sender;
-- (IBAction)displayTariffDrawer:(id)sender;
 - (id)initWithTariff:(FBTariff *)tariff;
 @end
 
