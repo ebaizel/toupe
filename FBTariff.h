@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "JSONSerializable.h"
 
-@interface FBTariff : NSObject <JSONSerializable>
+@interface FBTariff : NSObject <JSONSerializable, NSCoding>
 
 @property (nonatomic, strong) NSString *masterTariffId;
 @property (nonatomic, strong) NSString *tariffName;

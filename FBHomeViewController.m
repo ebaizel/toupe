@@ -16,6 +16,7 @@
 #import "FBSettingsViewController.h"
 #import "FBWelcomeViewController.h"
 #import "FBTariffDrawerViewController.h"
+#import "FBUserProfileStore.h"
 
 @interface FBHomeViewController ()
 
@@ -54,9 +55,17 @@
     }];
 }
 
+- (void)dismissHelp:(BOOL)alwaysShow
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[[FBUserProfileStore sharedStore] userProfile] setShowHelp:alwaysShow];
+    }];
+}
+
 - (IBAction)displayTariffDrawer:(id)sender {
     tdvc = [[FBTariffDrawerViewController alloc]init];
     tdvc.delegate = self;
+    [tdvc setSelectedTariff:(FBTariff *)[[self tariffs] objectAtIndex:[self getCurrentPage]]];
     [self presentViewController:tdvc animated:YES completion:nil];
 }
 
@@ -87,6 +96,13 @@
     CGSize pagesScrollViewSize = self.scrollViewCurrentPrice.frame.size;
     self.scrollViewCurrentPrice.contentSize = CGSizeMake(pagesScrollViewSize.width * self.tariffs.count, pagesScrollViewSize.height - 200);
     [self loadVisiblePages];
+    
+    if ([[[FBUserProfileStore sharedStore] userProfile]showHelp]) {
+        helpvc = [[FBHelpViewController alloc] init];
+        helpvc.delegate = self;
+//        helpvc.view.backgroundColor = [UIColor whiteColor  alpha = 0.5;
+        [self presentViewController:helpvc animated:NO completion:nil];
+    }
     
 //    int numPages = 8;
 //    if ([self.tariffs count] < numPages) {
@@ -171,13 +187,21 @@
 //    }
 //}
 
+- (NSInteger)getCurrentPage
+{
+    CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
+    NSInteger page = (NSInteger)floor((self.scrollViewCurrentPrice.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+    return page;
+}
+
 - (void)loadVisiblePages {
     
     // First, determine which page is currently visible
-    CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
-    NSInteger page = (NSInteger)floor((self.scrollViewCurrentPrice.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+//    CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
+//    NSInteger page = (NSInteger)floor((self.scrollViewCurrentPrice.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
     //[self loadPageAtIndex:page];
     // Update the page control
+    NSInteger page = [self getCurrentPage];
     self.pageControl.currentPage = page;
     
     // Work out which pages you want to load
@@ -205,6 +229,12 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // Load the pages that are now on screen
     [self loadVisiblePages];
+    [self setPageLabel];
+}
+
+- (void)setPageLabel
+{
+    self.labelPageOfPage.text = [NSString stringWithFormat:@"%d of %d", ([self getCurrentPage] +1), [[self tariffs]count]];
 }
 
 - (void)viewDidLoad
@@ -220,6 +250,8 @@
     
     self.scrollViewCurrentPrice.pagingEnabled=YES;
     self.pageControl.pageIndicatorTintColor = [UIColor blueberryColor];
+    [self setPageLabel];
+    
 
 //    [[self buttonTariffDrawer] setBackgroundColor:[UIColor clearColor]];
 //    [[self buttonTariffDrawer] setBackgroundImage:[UIImage imageNamed:@"drawer.png"] forState:UIControlStateNormal];
@@ -297,6 +329,7 @@
     if ([self.tariffs count] < numPages) {
         numPages = (unsigned int)self.tariffs.count;
     }
+    [self setPageLabel];
     [[self pageControl] setNumberOfPages:numPages];
 
 }

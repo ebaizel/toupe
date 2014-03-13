@@ -9,12 +9,14 @@
 #import "FBUserProfile.h"
 
 @implementation FBUserProfile
-@synthesize zipCode, tariffIdTOU;
+@synthesize zipCode, tariffs, lse, showHelp;
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:zipCode forKey:@"zipCode"];
-    [aCoder encodeObject:tariffIdTOU forKey:@"tariffIdTOU"];
+    [aCoder encodeObject:tariffs forKey:@"tariffs"];
+    [aCoder encodeObject:lse forKey:@"lse"];
+    [aCoder encodeBool:showHelp forKey:@"showHelp"];
     [aCoder encodeInt:_monthlyConsumption forKey:@"monthlyConsumption"];
     [aCoder encodeObject:_favorites forKey:@"favorites"];
 }
@@ -24,7 +26,9 @@
     self = [super init];
     if (self) {
         [self setZipCode:[aDecoder decodeObjectForKey:@"zipCode"]];
-        [self setTariffIdTOU:[aDecoder decodeObjectForKey:@"tariffIdTOU"]];
+        [self setTariffs:[aDecoder decodeObjectForKey:@"tariffs"]];
+        [self setLse:[aDecoder decodeObjectForKey:@"lse"]];
+        [self setShowHelp:[aDecoder decodeBoolForKey:@"showHelp"]];
         [self setMonthlyConsumption:[aDecoder decodeIntForKey:@"monthlyConsumption"]];
         [self setFavorites:[aDecoder decodeObjectForKey:@"favorites"]];
     }

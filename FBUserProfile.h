@@ -12,7 +12,6 @@
 @interface FBUserProfile : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *zipCode;
-@property (nonatomic, strong) NSString *tariffIdTOU;
 @property (nonatomic, strong) FBLSE *lse;
 @property (nonatomic, strong) NSMutableArray *tariffs;
 @property (nonatomic, assign) int monthlyConsumption;

@@ -201,9 +201,6 @@
     
     if (_selectedLSEIndex >= 0) {
         FBLSE *lse = [_lses objectAtIndex:_selectedLSEIndex];
-        [[[FBUserProfileStore sharedStore] userProfile] setLse:lse];
-        [[[FBUserProfileStore sharedStore] userProfile] setTariffs:_tariffs];
-        [[FBUserProfileStore sharedStore] saveUser];
 
         NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
         
@@ -215,6 +212,10 @@
         }
         [_tariffs removeObjectsAtIndexes:indexes];
 
+        [[[FBUserProfileStore sharedStore] userProfile] setLse:lse];
+        [[[FBUserProfileStore sharedStore] userProfile] setTariffs:_tariffs];
+        [[FBUserProfileStore sharedStore] saveUser];
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LSEUpdated" object:self];
         [[self navigationController] popToRootViewControllerAnimated:YES];
     } else {

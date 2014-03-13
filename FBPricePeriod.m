@@ -10,6 +10,11 @@
 
 @implementation FBPricePeriod
 
++(NSString *)priceAsString:(FBPricePeriod *)pricePeriod
+{
+    return [NSString stringWithFormat:@"$%.3f",(pricePeriod.rateAmount)];
+}
+
 -(void)readFromJSONDictionary:(NSDictionary *)d
 {
     self.name = [d objectForKey:@"name"];

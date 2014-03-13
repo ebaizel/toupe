@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FBLSE : NSObject
+@interface FBLSE : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *lseId;
 @property (nonatomic, strong) NSString *lseName;

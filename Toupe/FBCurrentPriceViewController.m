@@ -100,7 +100,7 @@
     
     FBUserProfile *user = [[FBUserProfileStore sharedStore] userProfile];
         
-    [[FBGenabilityStore sharedStore] getPrice:[user tariffIdTOU] withMonthlyConsumption:[user monthlyConsumption] forBlock:^(FBSmartPriceSummary *smartPriceSummary, NSError *err) {
+    [[FBGenabilityStore sharedStore] getPrice:@"518" withMonthlyConsumption:[user monthlyConsumption] forBlock:^(FBSmartPriceSummary *smartPriceSummary, NSError *err) {
 
         [[weakSelf navigationItem] setTitleView:currentTitleView];
         if (!err) {

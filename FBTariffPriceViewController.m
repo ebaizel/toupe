@@ -155,8 +155,9 @@
         }
         
         if (currentPrice) {
-            self.labelCurrentPrice.text = [NSString stringWithFormat:@" %.2f¢",(currentPrice.rateAmount * 100)];
-            
+//            self.labelCurrentPrice.text = [NSString stringWithFormat:@" %.2f¢",(currentPrice.rateAmount * 100)];
+//            self.labelCurrentPrice.text = [NSString stringWithFormat:@" $%.3f",(currentPrice.rateAmount)];
+            self.labelCurrentPrice.text = [NSString stringWithFormat:@" %@", [FBPricePeriod priceAsString:currentPrice]];
             // Set arrow and action text
             FBPricePeriod *nextPrice = nil;
             if ([[smartPriceSummary priceChanges] count] > 1) {
@@ -167,6 +168,9 @@
                 [[self labelUpcomingPriceChanges] setHidden:NO];
                 [[self scrollViewWeeklyPrice] setHidden:NO];
                 
+                CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
+                self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, scrollViewSize.height * [[smartPriceSummary priceChanges]count]);
+                
                 NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
                 [timeFormatter setTimeZone:[NSTimeZone localTimeZone]];
                 timeFormatter.dateFormat = @"HH:mm";
@@ -174,11 +178,13 @@
                 
                 if (nextPrice.rateAmount > currentPrice.rateAmount) {
                     [[self imageArrow] setImage:[UIImage imageNamed:@"redarrow.png"]];
-                    [[self labelAction1] setText:[NSString stringWithFormat:@"Price goes up to %.2f¢ at %@.", (nextPrice.rateAmount * 100), fromDateString]];
+//                    [[self labelAction1] setText:[NSString stringWithFormat:@"The price goes up to %.2f¢ at %@.", (nextPrice.rateAmount * 100), fromDateString]];
+                    [[self labelAction1] setText:[NSString stringWithFormat:@"The price goes up to %@ at %@.", [FBPricePeriod priceAsString:nextPrice], fromDateString]];
                     [[self labelAction2] setText:@"Now is a good time to use electricity."];
                 } else if (nextPrice.rateAmount < currentPrice.rateAmount) {
                     [[self imageArrow] setImage: [UIImage imageNamed:@"greenarrow.png"]];
-                    [[self labelAction1] setText:[NSString stringWithFormat:@"Price goes down to %.2f¢ at %@.", (nextPrice.rateAmount * 100), fromDateString]];
+//                    [[self labelAction1] setText:[NSString stringWithFormat:@"The price goes down to %.2f¢ at %@.", (nextPrice.rateAmount * 100), fromDateString]];
+                    [[self labelAction1] setText:[NSString stringWithFormat:@"The price goes down to %@ at %@.", [FBPricePeriod priceAsString:nextPrice], fromDateString]];
                     [[self labelAction2] setText:@"Try to wait to use electricity."];
                 }
             } else {
@@ -230,7 +236,7 @@
         [[self buttonSetFavorite] setBackgroundImage:[UIImage imageNamed:@"goldstar.png"] forState:UIControlStateNormal];
     } else {
         [[self buttonSetFavorite] setBackgroundColor:[UIColor clearColor]];
-        [[self buttonSetFavorite] setBackgroundImage:[UIImage imageNamed:@"whitestar.png"] forState:UIControlStateNormal];
+        [[self buttonSetFavorite] setBackgroundImage:[UIImage imageNamed:@"graystar.png"] forState:UIControlStateNormal];
     }
 }
 
@@ -242,7 +248,9 @@
     NSString *tariffDisplayName = [NSString stringWithFormat:@"%@ - %@", self.tariff.tariffCode, self.tariff.tariffName];
     self.textTariffName.text = @"";
     self.labelTariffName.text = tariffDisplayName;
-    self.labelLSEName.text = [NSString stringWithFormat:@"  %@",self.tariff.lseName];
+    self.labelLSEName.text = [NSString stringWithFormat:@"%@",self.tariff.lseName];
+    self.labelTariffName.adjustsFontSizeToFitWidth = YES;
+    self.labelLSEName.adjustsFontSizeToFitWidth = YES;
     
     self.viewLSETile.layer.cornerRadius = 5.0;
     self.viewLSETile.layer.masksToBounds = YES;
@@ -251,6 +259,10 @@
     self.viewPricesTile.layer.cornerRadius = 5.0;
     self.viewPricesTile.layer.masksToBounds = YES;
     self.viewPricesTile.backgroundColor = tileBackgroundColor;
+    
+    self.imageLSE.layer.cornerRadius = 5.0;
+    self.imageLSE.layer.masksToBounds = YES;
+    self.imageLSE.backgroundColor = [UIColor whiteColor];
 
     FBUserProfile *user = [[FBUserProfileStore sharedStore] userProfile];
     NSString *imageURL = [NSString stringWithFormat:@"%@%@.png", BaseImageURL, user.lse.lseId];

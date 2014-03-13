@@ -21,4 +21,33 @@
     self.customerLikelihood = [[d objectForKey:@"customerLikelihood"] floatValue];
     self.hasTimeOfUseRates = [[d objectForKey:@"hasTimeOfUseRates"] boolValue];
 }
+
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:_masterTariffId forKey:@"masterTariffId"];
+    [aCoder encodeObject:_tariffName forKey:@"tariffName"];
+    [aCoder encodeObject:_tariffCode forKey:@"tariffCode"];
+    [aCoder encodeObject:_tariffType forKey:@"tariffType"];
+    [aCoder encodeObject:_lseId forKey:@"lseId"];
+    [aCoder encodeObject:_lseName forKey:@"lseName"];
+    [aCoder encodeFloat:_customerLikelihood forKey:@"customerLikelihood"];
+    [aCoder encodeBool:_hasTimeOfUseRates forKey:@"hasTimeOfUseRates"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        [self setMasterTariffId:[aDecoder decodeObjectForKey:@"masterTariffId"]];
+        [self setTariffName:[aDecoder decodeObjectForKey:@"tariffName"]];
+        [self setTariffCode:[aDecoder decodeObjectForKey:@"tariffCode"]];
+        [self setTariffType:[aDecoder decodeObjectForKey:@"tariffType"]];
+        [self setLseId:[aDecoder decodeObjectForKey:@"lseId"]];
+        [self setLseName:[aDecoder decodeObjectForKey:@"lseName"]];
+        [self setCustomerLikelihood:[aDecoder decodeFloatForKey:@"customerLikelihood"]];
+        [self setHasTimeOfUseRates:[aDecoder decodeBoolForKey:@"hasTimeOfUseRates"]];
+    }
+    return self;
+}
+
 @end

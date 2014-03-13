@@ -10,12 +10,13 @@
 #import "iAd/ADBannerView.h"
 #import "FBTariffPriceViewController.h"
 #import "FBTariffDrawerViewController.h"
+#import "FBHelpViewController.h"
 
-@interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate, TariffDrawerDelegate>
+@interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate, TariffDrawerDelegate, HelpViewDelegate>
 
 {
     FBTariffDrawerViewController *tdvc;
-    FBTariffPriceViewController *currentTpvc;
+    FBHelpViewController *helpvc;
 }
 
 
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
 @property (weak, nonatomic) IBOutlet UIButton *buttonFAQ;
 @property (weak, nonatomic) IBOutlet UIButton *buttonRefresh;
+@property (weak, nonatomic) IBOutlet UILabel *labelPageOfPage;
 
 @property (strong, nonatomic) NSMutableArray *tariffs;
 @property (strong, nonatomic) NSMutableArray *pageViews;

@@ -90,6 +90,10 @@
 		0AD6127518CF911500FB4667 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6126F18CF911500FB4667 /* README.md */; };
 		0AD6127618CF911500FB4667 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6127018CF911500FB4667 /* release_notes.md */; };
 		0AD6127818CF917000FB4667 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD6127718CF917000FB4667 /* libz.dylib */; };
+		0AD6128718D11CFB00FB4667 /* FBHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD6128518D11CFB00FB4667 /* FBHelpViewController.m */; };
+		0AD6128818D11CFB00FB4667 /* FBHelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6128618D11CFB00FB4667 /* FBHelpViewController.xib */; };
+		0AD6128A18D1281400FB4667 /* helpscreenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6128918D1281400FB4667 /* helpscreenshot.png */; };
+		0AD6128C18D25CF100FB4667 /* graystar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6128B18D25CF100FB4667 /* graystar.png */; };
 		0AE9DEB318985F7B008B615D /* faq.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB218985F7B008B615D /* faq.png */; };
 		0AE9DEB518986019008B615D /* setup.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB418986019008B615D /* setup.png */; };
 		0AE9DEB71898667C008B615D /* genability.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB61898667C008B615D /* genability.png */; };
@@ -247,6 +251,11 @@
 		0AD6127218CF911500FB4667 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		0AD6127318CF911500FB4667 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		0AD6127718CF917000FB4667 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0AD6128418D11CFB00FB4667 /* FBHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBHelpViewController.h; sourceTree = "<group>"; };
+		0AD6128518D11CFB00FB4667 /* FBHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBHelpViewController.m; sourceTree = "<group>"; };
+		0AD6128618D11CFB00FB4667 /* FBHelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBHelpViewController.xib; sourceTree = "<group>"; };
+		0AD6128918D1281400FB4667 /* helpscreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helpscreenshot.png; sourceTree = "<group>"; };
+		0AD6128B18D25CF100FB4667 /* graystar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graystar.png; sourceTree = "<group>"; };
 		0AE9DEB218985F7B008B615D /* faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq.png; sourceTree = "<group>"; };
 		0AE9DEB418986019008B615D /* setup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setup.png; sourceTree = "<group>"; };
 		0AE9DEB61898667C008B615D /* genability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genability.png; sourceTree = "<group>"; };
@@ -384,6 +393,7 @@
 		0A9D7E0B184D744500BAE38D = {
 			isa = PBXGroup;
 			children = (
+				0AD6128318D11CD800FB4667 /* Help */,
 				0A3E8E4418CE7CEA00E45DBA /* Tariff Drawer */,
 				0AC9FAE118C2BAE50086B48F /* Day Price 2 */,
 				0AB66DFE18A1710D00441562 /* Day Price */,
@@ -560,6 +570,16 @@
 			path = TestFlightSDK3.0.0;
 			sourceTree = "<group>";
 		};
+		0AD6128318D11CD800FB4667 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				0AD6128418D11CFB00FB4667 /* FBHelpViewController.h */,
+				0AD6128518D11CFB00FB4667 /* FBHelpViewController.m */,
+				0AD6128618D11CFB00FB4667 /* FBHelpViewController.xib */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
 		0AE9DEB118985D0D008B615D /* Current Price */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +596,8 @@
 		0AE9DEB8189867E3008B615D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0AD6128B18D25CF100FB4667 /* graystar.png */,
+				0AD6128918D1281400FB4667 /* helpscreenshot.png */,
 				0A3E8E3818CE75E300E45DBA /* drawer.png */,
 				0A3E8E3218CE4A4000E45DBA /* whitestar.png */,
 				0A3E8E3318CE4A4000E45DBA /* goldstar.png */,
@@ -686,9 +708,11 @@
 				0A84C269189C49B900E4A91D /* FBHomeViewController.xib in Resources */,
 				0AC2DAD8189844C6005CB500 /* FBFAQViewController.xib in Resources */,
 				0A3E8E3518CE4A4000E45DBA /* goldstar.png in Resources */,
+				0AD6128C18D25CF100FB4667 /* graystar.png in Resources */,
 				0A018C6318C655D500A9787F /* redarrow.png in Resources */,
 				0AE9DEB71898667C008B615D /* genability.png in Resources */,
 				0A3E8E4318CE770C00E45DBA /* FBTariffDrawerViewController.xib in Resources */,
+				0AD6128818D11CFB00FB4667 /* FBHelpViewController.xib in Resources */,
 				0AE9DEB318985F7B008B615D /* faq.png in Resources */,
 				0AE9DEBE18986B65008B615D /* calculator.png in Resources */,
 				0AE9DEBC18986AA5008B615D /* tool.png in Resources */,
@@ -701,6 +725,7 @@
 				0A3E8E3918CE75E300E45DBA /* drawer.png in Resources */,
 				0AE9DED118988587008B615D /* refresh.png in Resources */,
 				0AB66E0318A17FDA00441562 /* FBDayViewController.xib in Resources */,
+				0AD6128A18D1281400FB4667 /* helpscreenshot.png in Resources */,
 				0AC9FAE618C2BB4F0086B48F /* FBPricePeriodViewController.xib in Resources */,
 				0AD6127618CF911500FB4667 /* release_notes.md in Resources */,
 				0A84C264189B35EB00E4A91D /* ciudad640x1136@2x.png in Resources */,
@@ -761,6 +786,7 @@
 				0A84C24D189B1A7000E4A91D /* SDWebImageDecoder.m in Sources */,
 				0A84C24A189B1A7000E4A91D /* NSData+ImageContentType.m in Sources */,
 				0AB66E0718A1800D00441562 /* FBDayPricePeriodViewController.m in Sources */,
+				0AD6128718D11CFB00FB4667 /* FBHelpViewController.m in Sources */,
 				0A5FC5241865174A00F69BA5 /* FBTariff.m in Sources */,
 				0A84C24F189B1A7000E4A91D /* SDWebImageDownloaderOperation.m in Sources */,
 				0A84C249189B1A7000E4A91D /* MKAnnotationView+WebCache.m in Sources */,

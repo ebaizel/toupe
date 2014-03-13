@@ -26,11 +26,19 @@
     return self;
 }
 
+- (void)setSelectedTariff:(FBTariff *)tariff
+{
+    selectedTariff = tariff;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     UINib *nib = [UINib nibWithNibName:@"FBTariffDrawerTableViewCell" bundle:nil];
     [[self tableDrawer] registerNib:nib forCellReuseIdentifier:@"FBTariffDrawerTableViewCell"];
+    
+    [[self labelViewAnotherRatePlan] setTextColor:[UIColor steelBlueColor]];
+    [[self buttonClose] setTitleColor:[UIColor steelBlueColor] forState:UIControlStateNormal];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -76,11 +84,16 @@
     
     // Configure the cell...
     FBTariff *tariff = (FBTariff *)[[[[FBUserProfileStore sharedStore] userProfile] tariffs] objectAtIndex:[indexPath row]];
-//    cell.textLabel.text = tariff.tariffName;
-//    cell.textLabel.textColor = [UIColor moneyGreenColor];
     cell.labelTariffName.text = tariff.tariffName;
-    cell.labelTariffName.textColor = [UIColor blueberryColor];
-//    cell.labelTariffName.textColor
+    
+    // Highlight the cell if it is the one already selected
+    if (selectedTariff && [selectedTariff.masterTariffId isEqualToString:tariff.masterTariffId]) {
+        [cell setBackgroundColor:[UIColor blueberryColor]];
+        cell.labelTariffName.textColor = [UIColor whiteColor];
+    } else {
+        cell.labelTariffName.textColor = [UIColor blueberryColor];
+    }
+    
     return cell;
 }
 

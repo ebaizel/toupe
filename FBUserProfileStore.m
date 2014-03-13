@@ -63,6 +63,7 @@
 {
     [self setUserProfile:[[FBUserProfile alloc] init]];
     self.userProfile.monthlyConsumption = 100;
+    self.userProfile.showHelp = YES;
 }
 
 - (NSString *)userArchivePath

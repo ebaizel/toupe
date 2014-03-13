@@ -40,10 +40,9 @@
     
     FBUserProfile *userProfile = [[FBUserProfileStore sharedStore] userProfile];
     
-    if ((userProfile == nil) || (userProfile.lse == nil)) {
+    if ((userProfile == nil) || (userProfile.zipCode == nil)) {
         [navc setNavigationBarHidden:YES animated:NO];
         FBWelcomeViewController *welcomeVC = [[FBWelcomeViewController alloc]init];
-        //[welcomeVC setIsRootView:YES];
         [navc pushViewController:welcomeVC animated:YES];
     }
     

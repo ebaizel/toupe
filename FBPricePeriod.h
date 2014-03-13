@@ -19,4 +19,5 @@
 @property (nonatomic, copy) NSDate *fromDateTime;
 @property (nonatomic, copy) NSDate *toDateTime;
 
++(NSString *)priceAsString:(FBPricePeriod *)pricePeriod;
 @end

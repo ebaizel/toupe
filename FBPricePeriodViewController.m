@@ -46,7 +46,8 @@
     self.labelDayName.text = dayName;
 
     // Set the Price
-    self.labelPrice.text = [NSString stringWithFormat:@"%.2f¢", (self.pricePeriod.rateAmount * 100)];
+//    self.labelPrice.text = [NSString stringWithFormat:@"%.2f¢", (self.pricePeriod.rateAmount * 100)];
+    self.labelPrice.text = [NSString stringWithFormat:@"%@", [FBPricePeriod priceAsString:self.pricePeriod]];
 
     // Set the From To Time
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
