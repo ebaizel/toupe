@@ -11,7 +11,6 @@
                 <outlet property="imageArrow" destination="Qr5-bl-ozy" id="cVD-bD-Vco"/>
                 <outlet property="imageLSE" destination="Y8f-xg-A65" id="rkZ-Yg-fdF"/>
                 <outlet property="labelAction1" destination="XIw-Qz-N0s" id="ofn-Sf-Q2x"/>
-                <outlet property="labelAction2" destination="Ghh-wI-0gF" id="urX-W2-GSt"/>
                 <outlet property="labelCurrentPrice" destination="mUC-Ri-ust" id="qiM-cU-UhF"/>
                 <outlet property="labelLSEName" destination="gdg-ro-QjZ" id="ayW-ON-X1v"/>
                 <outlet property="labelTariffName" destination="xi3-SB-36x" id="WEp-OZ-94F"/>
@@ -148,23 +147,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIw-Qz-N0s">
-                            <rect key="frame" x="50" y="89" width="222" height="21"/>
+                            <rect key="frame" x="50" y="87" width="222" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghh-wI-0gF">
-                            <rect key="frame" x="50" y="102" width="222" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the current price, per kWh." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCn-P9-mGf">
-                            <rect key="frame" x="49" y="76" width="222" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>

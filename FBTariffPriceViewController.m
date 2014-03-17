@@ -179,20 +179,20 @@
                 if (nextPrice.rateAmount > currentPrice.rateAmount) {
                     [[self imageArrow] setImage:[UIImage imageNamed:@"redarrow.png"]];
 //                    [[self labelAction1] setText:[NSString stringWithFormat:@"The price goes up to %.2f¢ at %@.", (nextPrice.rateAmount * 100), fromDateString]];
-                    [[self labelAction1] setText:[NSString stringWithFormat:@"The price goes up to %@ at %@.", [FBPricePeriod priceAsString:nextPrice], fromDateString]];
-                    [[self labelAction2] setText:@"Now is a good time to use electricity."];
+                    [[self labelAction1] setText:[NSString stringWithFormat:@"Up to %@ at %@", [FBPricePeriod priceAsString:nextPrice], fromDateString]];
+//                    [[self labelAction2] setText:@"Now is a good time to use electricity."];
                 } else if (nextPrice.rateAmount < currentPrice.rateAmount) {
                     [[self imageArrow] setImage: [UIImage imageNamed:@"greenarrow.png"]];
 //                    [[self labelAction1] setText:[NSString stringWithFormat:@"The price goes down to %.2f¢ at %@.", (nextPrice.rateAmount * 100), fromDateString]];
-                    [[self labelAction1] setText:[NSString stringWithFormat:@"The price goes down to %@ at %@.", [FBPricePeriod priceAsString:nextPrice], fromDateString]];
-                    [[self labelAction2] setText:@"Try to wait to use electricity."];
+                    [[self labelAction1] setText:[NSString stringWithFormat:@"Down to %@ at %@", [FBPricePeriod priceAsString:nextPrice], fromDateString]];
+//                    [[self labelAction2] setText:@"Try to wait to use electricity."];
                 }
             } else {
                 // This is a steady price
                 //[[self imageArrow] setImage:nil];
                 [[self imageArrow] setImage: [UIImage imageNamed:@"yellowbar.png"]];
-                [[self labelAction1] setText:@"This rate plan has constant pricing."];
-                [[self labelAction2] setText:@"Try a time of use plan for variable pricing."];
+                [[self labelAction1] setText:@"Rate plan has constant pricing"];
+//                [[self labelAction2] setText:@"Try a time of use plan for variable pricing."];
                 [[self labelUpcomingPriceChanges] setHidden:YES];
                 [[self scrollViewWeeklyPrice] setHidden:YES];
             }
