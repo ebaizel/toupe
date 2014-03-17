@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FAQDelegate;
+
 @interface FBFAQViewController : UIViewController
+- (IBAction)dismiss:(id)sender;
+@property (weak, nonatomic) id <FAQDelegate> delegate;
+@end
+
+@protocol FAQDelegate
+
+- (void)dismissFAQ;
 
 @end

@@ -189,7 +189,8 @@
                 }
             } else {
                 // This is a steady price
-                [[self imageArrow] setImage:nil];
+                //[[self imageArrow] setImage:nil];
+                [[self imageArrow] setImage: [UIImage imageNamed:@"yellowbar.png"]];
                 [[self labelAction1] setText:@"This rate plan has constant pricing."];
                 [[self labelAction2] setText:@"Try a time of use plan for variable pricing."];
                 [[self labelUpcomingPriceChanges] setHidden:YES];
@@ -270,6 +271,16 @@
     
     [self updatePrice];
     [self setFavoriteIcon];
+    
+}
+
+- (void)dismissHelp:(BOOL)alwaysShow
+{
+
+    [self dismissViewControllerAnimated:YES completion:^{
+        [[[FBUserProfileStore sharedStore] userProfile] setShowHelp:alwaysShow];
+        [[FBUserProfileStore sharedStore] saveUser];
+    }];
 }
 
 - (void)viewDidLoad

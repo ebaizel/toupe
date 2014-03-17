@@ -57,9 +57,10 @@
 
 - (void)dismissHelp:(BOOL)alwaysShow
 {
-    [self dismissViewControllerAnimated:YES completion:^{
-        [[[FBUserProfileStore sharedStore] userProfile] setShowHelp:alwaysShow];
-    }];
+    [helpvc.view removeFromSuperview];
+    helpvc = nil;
+    [[[FBUserProfileStore sharedStore] userProfile] setShowHelp:alwaysShow];
+    [[FBUserProfileStore sharedStore] saveUser];
 }
 
 - (IBAction)displayTariffDrawer:(id)sender {
@@ -70,6 +71,18 @@
 }
 
 - (void)dismissDrawer
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)displayFAQ:(id)sender {
+    faqvc = [[FBFAQViewController alloc]init];
+    faqvc.delegate = self;
+    [self presentViewController:faqvc animated:YES completion:nil];
+}
+
+
+- (void)dismissFAQ
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -97,18 +110,10 @@
     self.scrollViewCurrentPrice.contentSize = CGSizeMake(pagesScrollViewSize.width * self.tariffs.count, pagesScrollViewSize.height - 200);
     [self loadVisiblePages];
     
-    if ([[[FBUserProfileStore sharedStore] userProfile]showHelp]) {
-        helpvc = [[FBHelpViewController alloc] init];
-        helpvc.delegate = self;
-//        helpvc.view.backgroundColor = [UIColor whiteColor  alpha = 0.5;
-        [self presentViewController:helpvc animated:NO completion:nil];
+    if (helpvc) {
+        [self.view bringSubviewToFront:helpvc.view];
+        helpvc.view.layer.zPosition = 10;
     }
-    
-//    int numPages = 8;
-//    if ([self.tariffs count] < numPages) {
-//        numPages = self.tariffs.count;
-//    }
-//    [[self pageControl] setNumberOfPages:numPages];
 
 }
 
@@ -234,14 +239,14 @@
 
 - (void)setPageLabel
 {
-    self.labelPageOfPage.text = [NSString stringWithFormat:@"%d of %d", ([self getCurrentPage] +1), [[self tariffs]count]];
+    self.labelPageOfPage.text = [NSString stringWithFormat:@"%ld of %ld", ([self getCurrentPage] +1), (unsigned long)[[self tariffs]count]];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [[self buttonFAQ] setImage:[UIImage imageNamed:@"faq.png"] forState:UIControlStateNormal];
+//    [[self buttonFAQ] setImage:[UIImage imageNamed:@"faq.png"] forState:UIControlStateNormal];
     [[self buttonFAQ] setTintColor:[UIColor whiteColor]];
     [[self buttonSettings] setImage:[UIImage imageNamed:@"tool.png"] forState:UIControlStateNormal];
     [[self buttonSettings] setTintColor:[UIColor whiteColor]];
@@ -251,30 +256,35 @@
     self.scrollViewCurrentPrice.pagingEnabled=YES;
     self.pageControl.pageIndicatorTintColor = [UIColor blueberryColor];
     [self setPageLabel];
-    
+    self.view.backgroundColor = [UIColor skyBlueColor];
 
-//    [[self buttonTariffDrawer] setBackgroundColor:[UIColor clearColor]];
-//    [[self buttonTariffDrawer] setBackgroundImage:[UIImage imageNamed:@"drawer.png"] forState:UIControlStateNormal];
+    
+    if ([[[FBUserProfileStore sharedStore] userProfile]showHelp]) {
+        helpvc = [[FBHelpViewController alloc] init];
+        helpvc.delegate = self;        
+//        CGRect screenRect = [[UIScreen mainScreen] bounds];
+//        UIView* coverView = [[UIView alloc] initWithFrame:screenRect];
+//        coverView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+//        helpvc.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+        [self.view addSubview:helpvc.view];
+    }
+    
+    
+    //    [[self buttonTariffDrawer] setBackgroundColor:[UIColor clearColor]];
+    //    [[self buttonTariffDrawer] setBackgroundImage:[UIImage imageNamed:@"drawer.png"] forState:UIControlStateNormal];
     
     // Setup the background
-//    UIImageView *backgroundView;
-//    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-//    if (screenBounds.size.height == 568) {
-//        // code for 4-inch screen
-//        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blueorange640x1136.png"]];
-//    } else {
-//        // code for 3.5-inch screen
-//        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blueorange640x960.png"]];
-//    }
-//    [self.view addSubview:backgroundView];
-//    [self.view sendSubviewToBack:backgroundView];
-    
-//    self.view.backgroundColor = [UIColor icebergColor];
-    self.view.backgroundColor = [UIColor skyBlueColor];
-//    self.view.backgroundColor = [UIColor moneyGreenColor];
-//    self.view.backgroundColor = [UIColor hollyGreenColor];
-
-//    self.scrollViewWeeklyPrices = (UIScrollView *)self.weeklyPriceViewController.view;
+    //    UIImageView *backgroundView;
+    //    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    //    if (screenBounds.size.height == 568) {
+    //        // code for 4-inch screen
+    //        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blueorange640x1136.png"]];
+    //    } else {
+    //        // code for 3.5-inch screen
+    //        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"blueorange640x960.png"]];
+    //    }
+    //    [self.view addSubview:backgroundView];
+    //    [self.view sendSubviewToBack:backgroundView];
     
     [self refreshEverything];
 }
@@ -393,9 +403,7 @@
     }
 }
 
-- (IBAction)displayFAQ:(id)sender {
-    [[self navigationController] pushViewController:[[FBFAQViewController alloc] init] animated:YES];
-}
+
 
 - (IBAction)displaySettings:(id)sender {
 //    FBEnterZipCodeViewController *ezcvc = [[FBEnterZipCodeViewController alloc]init];

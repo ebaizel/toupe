@@ -11,14 +11,15 @@
 #import "FBTariffPriceViewController.h"
 #import "FBTariffDrawerViewController.h"
 #import "FBHelpViewController.h"
+#import "FBFAQViewController.h"
 
-@interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate, TariffDrawerDelegate, HelpViewDelegate>
+@interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate, TariffDrawerDelegate, HelpViewDelegate, FAQDelegate>
 
 {
     FBTariffDrawerViewController *tdvc;
     FBHelpViewController *helpvc;
+    FBFAQViewController *faqvc;
 }
-
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewCurrentPrice;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;

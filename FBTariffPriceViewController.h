@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "FBTariff.h"
 #import "FBDayViewController.h"
+#import "FBHelpViewController.h"
 
 @protocol TariffPriceViewDelegate;
 
-@interface FBTariffPriceViewController : UIViewController <UIScrollViewDelegate>
+@interface FBTariffPriceViewController : UIViewController <UIScrollViewDelegate, HelpViewDelegate>
 {
     UIColor *tileBackgroundColor;
+    FBHelpViewController *helpvc;
 }
 
 @property (strong, nonatomic) FBTariff *tariff;

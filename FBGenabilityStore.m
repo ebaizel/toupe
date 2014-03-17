@@ -64,7 +64,7 @@
     
     [connect setCompletionBlock:^(FBTariffSearchResult *tariffSearchResult, NSError *err) {
         if (!err) {
-            NSLog(@"**SUCCESS.  There are %d tariffs.", [[tariffSearchResult tariffs] count]);
+            NSLog(@"**SUCCESS.  There are %lu tariffs.", (unsigned long)[[tariffSearchResult tariffs] count]);
             NSLog(@"**SUCCESS.  Tariffs are %@", [tariffSearchResult tariffs]);
             block([tariffSearchResult tariffs], nil);
         } else {

@@ -1,18 +1,18 @@
 //
-//  FBFAQViewController.m
+//  FBHelp20ViewController.m
 //  Toupe
 //
-//  Created by emileleon on 1/28/14.
+//  Created by emileleon on 3/17/14.
 //  Copyright (c) 2014 Fresh Basil. All rights reserved.
 //
 
-#import "FBFAQViewController.h"
+#import "FBHelp20ViewController.h"
 
-@interface FBFAQViewController ()
+@interface FBHelp20ViewController ()
 
 @end
 
-@implementation FBFAQViewController
+@implementation FBHelp20ViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,8 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Setup the navigation bar
-    [[self navigationItem] setTitle:@"FAQ"];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,7 +35,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)dismiss:(id)sender {
-    [[self delegate]dismissFAQ];
-}
 @end
