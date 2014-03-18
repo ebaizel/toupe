@@ -31,10 +31,11 @@
     _textZipCode.text = [[[FBUserProfileStore sharedStore] userProfile] zipCode];
     _textMonthlyConsumption.text = [NSString stringWithFormat:@"%d", [[[FBUserProfileStore sharedStore] userProfile] monthlyConsumption]];
     _switchShowHelp.on = [[[FBUserProfileStore sharedStore] userProfile] showHelp];
+    _switchShowHelp.onTintColor = [UIColor skyBlueColor];
     
     _buttonContinue.layer.cornerRadius = 5.0;
     _buttonContinue.layer.masksToBounds = YES;
-    _buttonContinue.backgroundColor = [UIColor moneyGreenColor];
+    _buttonContinue.backgroundColor = [UIColor skyBlueColor];
 
 }
 

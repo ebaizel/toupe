@@ -34,9 +34,10 @@
     [super viewDidLoad];
     _zipCodeTextField.text = [[[FBUserProfileStore sharedStore] userProfile] zipCode];
     [[self navigationController] setNavigationBarHidden:YES];
+
     self.viewButtonBackground.layer.cornerRadius = 5.0;
     self.viewButtonBackground.layer.masksToBounds = YES;
-    self.viewButtonBackground.backgroundColor = [UIColor moneyGreenColor];
+    self.viewButtonBackground.backgroundColor = [UIColor skyBlueColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated

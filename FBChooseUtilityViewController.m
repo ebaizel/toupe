@@ -57,17 +57,19 @@
 //    selectionColor.backgroundColor = [UIColor honeydewColor];
 //    cell.selectedBackgroundView = selectionColor;
     
-    cell.labelTariffName.textColor = [UIColor moneyGreenColor];
+    cell.labelTariffName.textColor = [UIColor skyBlueColor];
     //    cell.labelTariffName.text = [NSString stringWithFormat:@"%@ - %@",[tariff tariffCode], [tariff tariffName]];
     cell.labelTariffName.text = [lse lseName];
     cell.labelLSEName.textColor = [UIColor black75PercentColor];
     cell.labelLSEName.text = [lse lseName];
 
     if ([indexPath row] == _selectedLSEIndex) {
-        //cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        [cell setBackgroundColor:[UIColor honeydewColor]];        
+        [cell setBackgroundColor:[UIColor skyBlueColor]];
+        cell.labelTariffName.textColor = [UIColor whiteColor];
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        [cell setBackgroundColor:[UIColor whiteColor]];
+        cell.labelTariffName.textColor = [UIColor skyBlueColor];
+//        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     [cell setNeedsDisplay];
@@ -90,6 +92,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     _selectedLSEIndex = [indexPath row];
+    [[self viewButtonBackground] setHidden:NO];
+    [[self buttonDone] setHidden:NO];
     [_lseTable reloadData];
 }
 
@@ -176,7 +180,7 @@
     
     self.viewButtonBackground.layer.cornerRadius = 5.0;
     self.viewButtonBackground.layer.masksToBounds = YES;
-    self.viewButtonBackground.backgroundColor = [UIColor moneyGreenColor];
+    self.viewButtonBackground.backgroundColor = [UIColor skyBlueColor];
 
 }
 
