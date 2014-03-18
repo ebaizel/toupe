@@ -46,6 +46,9 @@
     cell.tag = [indexPath row];
     cell.backgroundColor = [UIColor whiteColor];
     cell.tintColor = [UIColor whiteColor];
+    
+    cell.layer.cornerRadius = 5.0;
+    cell.layer.masksToBounds = YES;
 
     //    FBTariff *tariff = [[self tariffs] objectAtIndex:[indexPath row]];
     FBLSE *lse = [[self lses] objectAtIndex:[indexPath row]];
@@ -193,6 +196,8 @@
     [[self lseTable] registerNib:nib forCellReuseIdentifier:@"FBChooseTariffViewCell"];
     [self fetchTariffs];
     [self adjustLSETableHeight];
+    
+    self.lseTable.separatorColor = [UIColor clearColor];
     
     self.viewButtonBackground.layer.cornerRadius = 5.0;
     self.viewButtonBackground.layer.masksToBounds = YES;
