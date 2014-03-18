@@ -54,14 +54,15 @@
     [[[FBUserProfileStore sharedStore] userProfile] setZipCode:_textZipCode.text];
     [[[FBUserProfileStore sharedStore] userProfile] setMonthlyConsumption:_textMonthlyConsumption.text.intValue];
     [[[FBUserProfileStore sharedStore] userProfile] setShowHelp:_switchShowHelp.on];
-    [[FBUserProfileStore sharedStore] saveUser];
-    
-    if (zipChanged) {
-        [[self navigationController] pushViewController:[[FBChooseUtilityViewController alloc] init] animated: YES];
-    } else {
-        [[self navigationController] popViewControllerAnimated:YES];        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedUserSettings" object:self];
-    }
+
+    [[self navigationController] pushViewController:[[FBChooseUtilityViewController alloc] init] animated: YES];
+//    if (zipChanged) {
+//        [[self navigationController] pushViewController:[[FBChooseUtilityViewController alloc] init] animated: YES];
+//    } else {
+//        [[FBUserProfileStore sharedStore] saveUser];        
+//        [[self navigationController] popViewControllerAnimated:YES];        
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedUserSettings" object:self];
+//    }
     
     
 //    [[self navigationController] popViewControllerAnimated:YES];

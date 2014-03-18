@@ -28,7 +28,7 @@
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvF-Q7-aeF">
                             <rect key="frame" x="20" y="32" width="280" height="330"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">We're going to quickly walk through the most important features so you get the most out of Toupe.
+                            <string key="text">We're going to quickly walk through the most important features so you can get the most out of Toupe.
 
 Tap Next to begin.</string>
                             <color key="textColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>

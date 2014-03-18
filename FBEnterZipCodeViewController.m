@@ -91,7 +91,7 @@
 
 - (IBAction)continue:(id)sender {
     [[[FBUserProfileStore sharedStore] userProfile] setZipCode:_zipCodeTextField.text];
-    [[FBUserProfileStore sharedStore] saveUser];
+//    [[FBUserProfileStore sharedStore] saveUser];
     [self.view endEditing:YES];
     [[self navigationController] pushViewController:[[FBChooseUtilityViewController alloc] init] animated: YES];
 }

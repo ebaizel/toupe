@@ -117,8 +117,12 @@
             _tariffs = tariffsResult;
             _lses = [self parseLSEsFromTariffs];
             
-            [[weakSelf lseTable] reloadData];
-            [weakSelf adjustLSETableHeight];
+            if (_lses && ([_lses count] > 0)) {
+                [[weakSelf lseTable] reloadData];
+                [weakSelf adjustLSETableHeight];
+            } else {
+                [self displayNoLSEAlert];
+            }
         } else {
             UIAlertView *av =[[UIAlertView alloc]
                               initWithTitle:@"Error"
@@ -129,6 +133,18 @@
             [av show];
         }
     }];
+}
+
+-(void)displayNoLSEAlert
+{
+    NSString *msg = [NSString stringWithFormat:@"No utilities found"];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:msg
+                                                    message:@"Please go back and try a different zip code"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 - (NSMutableArray *)parseLSEsFromTariffs
