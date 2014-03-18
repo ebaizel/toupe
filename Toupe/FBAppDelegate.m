@@ -26,6 +26,7 @@
     
     // Override point for customization after application launch.
     UINavigationController *navc = [[UINavigationController alloc]init];
+    navc.navigationBar.tintColor = [UIColor black50PercentColor];
     [navc setNavigationBarHidden:YES];
         
     FBHomeViewController *home = [[FBHomeViewController alloc]init];
@@ -33,10 +34,10 @@
 
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
                                                                            fontWithName:@"Helvetica" size:24], NSFontAttributeName,
-                                [UIColor moneyGreenColor], NSForegroundColorAttributeName, nil];
+                                [UIColor skyBlueColor], NSForegroundColorAttributeName, nil];
     navc.navigationBar.titleTextAttributes = attributes;
     
-    [[UIBarButtonItem appearance] setTintColor:[UIColor moneyGreenColor]];
+//    [[UIBarButtonItem appearance] setTintColor:[UIColor blueberryColor]];
     
     FBUserProfile *userProfile = [[FBUserProfileStore sharedStore] userProfile];
     

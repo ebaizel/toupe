@@ -78,7 +78,8 @@
 - (IBAction)displayFAQ:(id)sender {
     faqvc = [[FBFAQViewController alloc]init];
     faqvc.delegate = self;
-    [self presentViewController:faqvc animated:YES completion:nil];
+//    [self presentViewController:faqvc animated:YES completion:nil];
+    [[self navigationController] pushViewController:faqvc animated:YES];
 }
 
 

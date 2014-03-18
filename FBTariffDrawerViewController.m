@@ -37,8 +37,8 @@
     UINib *nib = [UINib nibWithNibName:@"FBTariffDrawerTableViewCell" bundle:nil];
     [[self tableDrawer] registerNib:nib forCellReuseIdentifier:@"FBTariffDrawerTableViewCell"];
     
-    [[self labelViewAnotherRatePlan] setTextColor:[UIColor steelBlueColor]];
-    [[self buttonClose] setTitleColor:[UIColor steelBlueColor] forState:UIControlStateNormal];
+    [[self labelViewAnotherRatePlan] setTextColor:[UIColor black50PercentColor]];
+    [[self buttonClose] setTitleColor:[UIColor skyBlueColor] forState:UIControlStateNormal];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -88,10 +88,11 @@
     
     // Highlight the cell if it is the one already selected
     if (selectedTariff && [selectedTariff.masterTariffId isEqualToString:tariff.masterTariffId]) {
-        [cell setBackgroundColor:[UIColor blueberryColor]];
+        [cell setBackgroundColor:[UIColor skyBlueColor]];
         cell.labelTariffName.textColor = [UIColor whiteColor];
     } else {
-        cell.labelTariffName.textColor = [UIColor blueberryColor];
+        [cell setBackgroundColor:[UIColor clearColor]];
+        cell.labelTariffName.textColor = [UIColor skyBlueColor];
     }
     
     return cell;

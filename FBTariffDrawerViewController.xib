@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4">
-                    <rect key="frame" x="20" y="54" width="284" height="383"/>
+                    <rect key="frame" x="20" y="68" width="284" height="403"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -28,14 +28,14 @@
                     </connections>
                 </tableView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View another rate plan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKu-YH-HVP">
-                    <rect key="frame" x="20" y="22" width="172" height="21"/>
+                    <rect key="frame" x="20" y="32" width="172" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.24980041059999999" blue="0.89589986310000003" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="49" placeholderIntrinsicHeight="26" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oU-9f-92X">
-                    <rect key="frame" x="251" y="20" width="49" height="26"/>
+                    <rect key="frame" x="251" y="30" width="49" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="Close">
@@ -49,14 +49,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GKu-YH-HVP" firstAttribute="top" secondItem="jB0-YK-WV1" secondAttribute="top" constant="22" id="CYf-YB-6GC"/>
+                <constraint firstItem="GKu-YH-HVP" firstAttribute="top" secondItem="jB0-YK-WV1" secondAttribute="top" constant="32" id="CYf-YB-6GC"/>
                 <constraint firstItem="GKu-YH-HVP" firstAttribute="leading" secondItem="4" secondAttribute="leading" id="EUP-H3-OaI"/>
                 <constraint firstItem="4" firstAttribute="leading" secondItem="jB0-YK-WV1" secondAttribute="leading" constant="20" id="KTX-YP-oxz"/>
                 <constraint firstItem="4" firstAttribute="centerX" secondItem="jB0-YK-WV1" secondAttribute="centerX" constant="2" id="NMY-8k-ywR"/>
-                <constraint firstItem="4" firstAttribute="top" secondItem="GKu-YH-HVP" secondAttribute="bottom" constant="11" id="QZB-Ls-QkI"/>
+                <constraint firstItem="4" firstAttribute="top" secondItem="GKu-YH-HVP" secondAttribute="bottom" constant="15" id="QZB-Ls-QkI"/>
                 <constraint firstItem="GKu-YH-HVP" firstAttribute="bottom" secondItem="0oU-9f-92X" secondAttribute="bottom" constant="-3" id="Ul9-xx-EIh"/>
                 <constraint firstItem="GKu-YH-HVP" firstAttribute="centerY" secondItem="0oU-9f-92X" secondAttribute="centerY" constant="-0.5" id="We1-35-Z6i"/>
-                <constraint firstAttribute="centerY" secondItem="4" secondAttribute="centerY" constant="-5.5" id="YhZ-Cf-ewR"/>
+                <constraint firstAttribute="centerY" secondItem="4" secondAttribute="centerY" constant="-29.5" id="YhZ-Cf-ewR"/>
                 <constraint firstAttribute="trailing" secondItem="0oU-9f-92X" secondAttribute="trailing" constant="20" id="fVz-K3-r2A"/>
                 <constraint firstItem="GKu-YH-HVP" firstAttribute="leading" secondItem="jB0-YK-WV1" secondAttribute="leading" constant="20" id="xca-XK-1u5"/>
             </constraints>

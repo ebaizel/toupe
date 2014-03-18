@@ -99,6 +99,10 @@
 		0AD6128A18D1281400FB4667 /* helpscreenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6128918D1281400FB4667 /* helpscreenshot.png */; };
 		0AD6128C18D25CF100FB4667 /* graystar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6128B18D25CF100FB4667 /* graystar.png */; };
 		0AD6128E18D36C7800FB4667 /* yellowbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6128D18D36C7800FB4667 /* yellowbar.png */; };
+		0AE297BC18D7ADCF00695883 /* FBFAQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE297BB18D7ADCF00695883 /* FBFAQ.m */; };
+		0AE297BF18D7AE3600695883 /* FBFAQStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE297BE18D7AE3600695883 /* FBFAQStore.m */; };
+		0AE297C318D7B1E900695883 /* FBFAQDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE297C118D7B1E900695883 /* FBFAQDetailViewController.m */; };
+		0AE297C418D7B1E900695883 /* FBFAQDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AE297C218D7B1E900695883 /* FBFAQDetailViewController.xib */; };
 		0AE9DEB318985F7B008B615D /* faq.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB218985F7B008B615D /* faq.png */; };
 		0AE9DEB518986019008B615D /* setup.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB418986019008B615D /* setup.png */; };
 		0AE9DEB71898667C008B615D /* genability.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AE9DEB61898667C008B615D /* genability.png */; };
@@ -272,6 +276,13 @@
 		0AD6128918D1281400FB4667 /* helpscreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = helpscreenshot.png; sourceTree = "<group>"; };
 		0AD6128B18D25CF100FB4667 /* graystar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graystar.png; sourceTree = "<group>"; };
 		0AD6128D18D36C7800FB4667 /* yellowbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowbar.png; sourceTree = "<group>"; };
+		0AE297BA18D7ADCF00695883 /* FBFAQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFAQ.h; sourceTree = "<group>"; };
+		0AE297BB18D7ADCF00695883 /* FBFAQ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFAQ.m; sourceTree = "<group>"; };
+		0AE297BD18D7AE3600695883 /* FBFAQStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFAQStore.h; sourceTree = "<group>"; };
+		0AE297BE18D7AE3600695883 /* FBFAQStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFAQStore.m; sourceTree = "<group>"; };
+		0AE297C018D7B1E900695883 /* FBFAQDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFAQDetailViewController.h; sourceTree = "<group>"; };
+		0AE297C118D7B1E900695883 /* FBFAQDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFAQDetailViewController.m; sourceTree = "<group>"; };
+		0AE297C218D7B1E900695883 /* FBFAQDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBFAQDetailViewController.xib; sourceTree = "<group>"; };
 		0AE9DEB218985F7B008B615D /* faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq.png; sourceTree = "<group>"; };
 		0AE9DEB418986019008B615D /* setup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setup.png; sourceTree = "<group>"; };
 		0AE9DEB61898667C008B615D /* genability.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = genability.png; sourceTree = "<group>"; };
@@ -546,6 +557,13 @@
 				0AC2DAD4189844C6005CB500 /* FBFAQViewController.h */,
 				0AC2DAD5189844C6005CB500 /* FBFAQViewController.m */,
 				0AC2DAD6189844C6005CB500 /* FBFAQViewController.xib */,
+				0AE297BA18D7ADCF00695883 /* FBFAQ.h */,
+				0AE297BB18D7ADCF00695883 /* FBFAQ.m */,
+				0AE297BD18D7AE3600695883 /* FBFAQStore.h */,
+				0AE297BE18D7AE3600695883 /* FBFAQStore.m */,
+				0AE297C018D7B1E900695883 /* FBFAQDetailViewController.h */,
+				0AE297C118D7B1E900695883 /* FBFAQDetailViewController.m */,
+				0AE297C218D7B1E900695883 /* FBFAQDetailViewController.xib */,
 			);
 			name = FAQ;
 			sourceTree = "<group>";
@@ -783,6 +801,7 @@
 				0AC2DADD189859E9005CB500 /* FBSetupViewController.xib in Resources */,
 				0AC9FAED18C503B50086B48F /* toupe.png in Resources */,
 				0A58AA0918D79F0C00EA3717 /* FBHelp5ViewController.xib in Resources */,
+				0AE297C418D7B1E900695883 /* FBFAQDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,10 +851,12 @@
 				0AD6128718D11CFB00FB4667 /* FBHelpViewController.m in Sources */,
 				0A5FC5241865174A00F69BA5 /* FBTariff.m in Sources */,
 				0A84C24F189B1A7000E4A91D /* SDWebImageDownloaderOperation.m in Sources */,
+				0AE297BF18D7AE3600695883 /* FBFAQStore.m in Sources */,
 				0A84C249189B1A7000E4A91D /* MKAnnotationView+WebCache.m in Sources */,
 				0AC187FD1861009900A0DD9F /* FBUserProfileStore.m in Sources */,
 				0AF4FDEF18D76E03005432CF /* FBHelp20ViewController.m in Sources */,
 				0A5FC51B1864D8B300F69BA5 /* FBPricePeriod.m in Sources */,
+				0AE297C318D7B1E900695883 /* FBFAQDetailViewController.m in Sources */,
 				0AC9FAE518C2BB4F0086B48F /* FBPricePeriodViewController.m in Sources */,
 				0AE9DEC718987C75008B615D /* FBEnterZipCodeViewController.m in Sources */,
 				0A3E8E4718CE7D1900E45DBA /* FBTariffDrawerTableViewCell.m in Sources */,
@@ -849,6 +870,7 @@
 				0A3E8E4218CE770C00E45DBA /* FBTariffDrawerViewController.m in Sources */,
 				0AE9DECC18987F2A008B615D /* FBChooseTariffViewController.m in Sources */,
 				0AC2DAD7189844C6005CB500 /* FBFAQViewController.m in Sources */,
+				0AE297BC18D7ADCF00695883 /* FBFAQ.m in Sources */,
 				0A9D7E54184E63AC00BAE38D /* FBCurrentPriceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

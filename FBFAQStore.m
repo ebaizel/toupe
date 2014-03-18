@@ -1,0 +1,67 @@
+//
+//  FBFAQStore.m
+//  Toupe
+//
+//  Created by emileleon on 3/17/14.
+//  Copyright (c) 2014 Fresh Basil. All rights reserved.
+//
+
+#import "FBFAQStore.h"
+#import "FBFAQ.h"
+
+@implementation FBFAQStore
+
++ (FBFAQStore *)sharedStore
+{
+    static FBFAQStore *sharedStore = nil;
+    if (!sharedStore) {
+        sharedStore = [[super allocWithZone:nil] init];
+    }
+    return sharedStore;
+}
+
++ (id)allocWithZone:(struct _NSZone *)zone
+{
+    return [self sharedStore];
+}
+
+- (NSMutableArray *)getFAQs
+{
+    if (!faqs){
+        faqs = [[NSMutableArray alloc]init];
+        FBFAQ *faq = [[FBFAQ alloc]init];
+        faq.question = @"Where do you get the data?";
+        faq.answer = @"Genability";
+        [faqs addObject:faq];
+        
+        faq = [[FBFAQ alloc]init];
+        faq.question = @"In what unit is the pricing?";
+        faq.answer = @"Cost per kilowatt hour (kWh)";
+        [faqs addObject:faq];
+        
+        faq = [[FBFAQ alloc]init];
+        faq.question = @"How accurate is the data?";
+        faq.answer = @"Very accurate.  Compare it to your utility bill to see for yourself!";
+        [faqs addObject:faq];
+
+        faq = [[FBFAQ alloc]init];
+        faq.question = @"Who built this app?";
+        faq.answer = @"Fresh Basil.  Contact us at freshbasilllc@gmail.com";
+        [faqs addObject:faq];
+
+        faq = [[FBFAQ alloc]init];
+        faq.question = @"Where can I send feedback?";
+        faq.answer = @"Send all questions and comments to freshbasilllc@gmail.com";
+        [faqs addObject:faq];
+
+        faq = [[FBFAQ alloc]init];
+        faq.question = @"What can I do with the price information?";
+        faq.answer = @"Quite a bit!  First, if you are not on a Time of Use (TOU) plan, see if your utility offers a TOU plan.\nTOU plans offer you a chance to take more control of your electricity bill.";
+        [faqs addObject:faq];
+
+    }
+    
+    return faqs;
+}
+
+@end

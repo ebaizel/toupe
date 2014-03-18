@@ -189,8 +189,10 @@
                 }
             } else {
                 // This is a steady price
-                //[[self imageArrow] setImage:nil];
+
                 [[self imageArrow] setImage: [UIImage imageNamed:@"yellowbar.png"]];
+                self.imageArrow.layer.cornerRadius = 5.0;
+                self.imageArrow.layer.masksToBounds = YES;
                 [[self labelAction1] setText:@"Rate plan has constant pricing"];
 //                [[self labelAction2] setText:@"Try a time of use plan for variable pricing."];
                 [[self labelUpcomingPriceChanges] setHidden:YES];
