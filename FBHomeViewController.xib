@@ -74,9 +74,12 @@
                         <action selector="displaySettings:" destination="-1" eventType="touchUpInside" id="bEd-Tm-mCg"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyh-JO-vAH">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyh-JO-vAH">
                     <rect key="frame" x="20" y="22" width="33" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="33" id="jkA-4W-VAb"/>
+                    </constraints>
                     <state key="normal" image="drawer.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -84,9 +87,12 @@
                         <action selector="displayTariffDrawer:" destination="-1" eventType="touchUpInside" id="ySh-In-8FB"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ao-XQ-NXo">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ao-XQ-NXo">
                     <rect key="frame" x="61" y="22" width="33" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="33" id="FeM-RK-i2T"/>
+                    </constraints>
                     <state key="normal" image="refresh.png"/>
                     <connections>
                         <action selector="refresh:" destination="-1" eventType="touchUpInside" id="F6H-L2-Uyn"/>
@@ -104,20 +110,26 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="oyf-q9-fqa" secondAttribute="trailing" constant="24" id="2cj-ze-HvX"/>
                 <constraint firstAttribute="centerX" secondItem="At0-dc-SWc" secondAttribute="centerX" id="5Cz-o9-m4M"/>
+                <constraint firstItem="Vyh-JO-vAH" firstAttribute="bottom" secondItem="0ao-XQ-NXo" secondAttribute="bottom" id="5MT-0B-Wh0"/>
                 <constraint firstItem="oyf-q9-fqa" firstAttribute="leading" secondItem="fxN-Ph-BhQ" secondAttribute="trailing" constant="16" id="7Jp-Lr-8B6"/>
                 <constraint firstItem="oyf-q9-fqa" firstAttribute="top" secondItem="1" secondAttribute="top" constant="30" id="9Ai-zU-pok"/>
                 <constraint firstItem="fxN-Ph-BhQ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="30" id="HEv-vZ-o6u"/>
+                <constraint firstItem="ZaM-SP-F7z" firstAttribute="centerY" secondItem="fxN-Ph-BhQ" secondAttribute="centerY" constant="-0.5" id="ICk-O7-M0n"/>
                 <constraint firstItem="Cvv-X8-qeD" firstAttribute="top" secondItem="Xbo-Gb-MJJ" secondAttribute="bottom" constant="-3" id="L7N-kX-00u"/>
                 <constraint firstAttribute="centerX" secondItem="Cvv-X8-qeD" secondAttribute="centerX" id="Ot5-xL-eak"/>
                 <constraint firstAttribute="centerX" secondItem="Xbo-Gb-MJJ" secondAttribute="centerX" id="Pae-hJ-K1r"/>
                 <constraint firstItem="Xbo-Gb-MJJ" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="RIi-K9-Xns"/>
+                <constraint firstItem="0ao-XQ-NXo" firstAttribute="top" secondItem="1" secondAttribute="top" constant="22" id="Rar-dQ-LGz"/>
+                <constraint firstItem="Vyh-JO-vAH" firstAttribute="top" secondItem="1" secondAttribute="top" constant="22" id="bNP-rG-aca"/>
                 <constraint firstItem="Xbo-Gb-MJJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="45" id="cl7-uI-ECR"/>
-                <constraint firstAttribute="centerX" secondItem="ZaM-SP-F7z" secondAttribute="centerX" id="eqC-px-RWZ"/>
                 <constraint firstItem="At0-dc-SWc" firstAttribute="top" secondItem="1" secondAttribute="top" constant="-14" id="jSg-gJ-3t7"/>
                 <constraint firstAttribute="trailing" secondItem="Xbo-Gb-MJJ" secondAttribute="trailing" id="o4N-AU-KF8"/>
+                <constraint firstItem="fxN-Ph-BhQ" firstAttribute="bottom" secondItem="0ao-XQ-NXo" secondAttribute="bottom" constant="-2" id="o5L-OG-mxE"/>
+                <constraint firstAttribute="centerX" secondItem="ZaM-SP-F7z" secondAttribute="centerX" id="pd7-yT-hsg"/>
                 <constraint firstAttribute="bottom" secondItem="Cvv-X8-qeD" secondAttribute="bottom" id="rOX-sU-cG5"/>
+                <constraint firstItem="Vyh-JO-vAH" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="rvj-av-kdp"/>
                 <constraint firstItem="Cvv-X8-qeD" firstAttribute="leading" secondItem="Xbo-Gb-MJJ" secondAttribute="leading" id="sfO-hd-q2L"/>
-                <constraint firstAttribute="centerY" secondItem="ZaM-SP-F7z" secondAttribute="centerY" constant="200.5" id="ucL-Jf-Rbu"/>
+                <constraint firstItem="0ao-XQ-NXo" firstAttribute="leading" secondItem="Vyh-JO-vAH" secondAttribute="trailing" constant="8" id="vFz-2e-QLf"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

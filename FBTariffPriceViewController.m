@@ -165,7 +165,8 @@
             }
             
             if (nextPrice!=nil) {
-                [[self labelUpcomingPriceChanges] setHidden:NO];
+//                [[self labelUpcomingPriceChanges] setHidden:NO];
+                [[self labelUpcomingPriceChanges] setHidden:YES];
                 [[self scrollViewWeeklyPrice] setHidden:NO];
                 
                 CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;

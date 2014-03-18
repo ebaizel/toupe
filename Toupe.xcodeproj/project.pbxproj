@@ -11,6 +11,8 @@
 		0A018C6318C655D500A9787F /* redarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A018C6118C655D500A9787F /* redarrow.png */; };
 		0A018C6718C9273700A9787F /* FBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A018C6518C9273700A9787F /* FBSettingsViewController.m */; };
 		0A018C6818C9273700A9787F /* FBSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A018C6618C9273700A9787F /* FBSettingsViewController.xib */; };
+		0A39BCF618D8C134007C0F24 /* yellowarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A39BCF518D8C134007C0F24 /* yellowarrow.png */; };
+		0A39BCF818D8C244007C0F24 /* yellowarrowdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A39BCF718D8C244007C0F24 /* yellowarrowdown.png */; };
 		0A3E8E3418CE4A4000E45DBA /* whitestar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3218CE4A4000E45DBA /* whitestar.png */; };
 		0A3E8E3518CE4A4000E45DBA /* goldstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3318CE4A4000E45DBA /* goldstar.png */; };
 		0A3E8E3918CE75E300E45DBA /* drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3818CE75E300E45DBA /* drawer.png */; };
@@ -138,6 +140,8 @@
 		0A018C6418C9273700A9787F /* FBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSettingsViewController.h; sourceTree = "<group>"; };
 		0A018C6518C9273700A9787F /* FBSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSettingsViewController.m; sourceTree = "<group>"; };
 		0A018C6618C9273700A9787F /* FBSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBSettingsViewController.xib; sourceTree = "<group>"; };
+		0A39BCF518D8C134007C0F24 /* yellowarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowarrow.png; sourceTree = "<group>"; };
+		0A39BCF718D8C244007C0F24 /* yellowarrowdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowarrowdown.png; sourceTree = "<group>"; };
 		0A3E8E3218CE4A4000E45DBA /* whitestar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitestar.png; sourceTree = "<group>"; };
 		0A3E8E3318CE4A4000E45DBA /* goldstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldstar.png; sourceTree = "<group>"; };
 		0A3E8E3818CE75E300E45DBA /* drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawer.png; sourceTree = "<group>"; };
@@ -648,6 +652,8 @@
 		0AE9DEB8189867E3008B615D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0A39BCF718D8C244007C0F24 /* yellowarrowdown.png */,
+				0A39BCF518D8C134007C0F24 /* yellowarrow.png */,
 				0AD6128D18D36C7800FB4667 /* yellowbar.png */,
 				0AD6128B18D25CF100FB4667 /* graystar.png */,
 				0AD6128918D1281400FB4667 /* helpscreenshot.png */,
@@ -802,6 +808,8 @@
 				0AC9FAED18C503B50086B48F /* toupe.png in Resources */,
 				0A58AA0918D79F0C00EA3717 /* FBHelp5ViewController.xib in Resources */,
 				0AE297C418D7B1E900695883 /* FBFAQDetailViewController.xib in Resources */,
+				0A39BCF618D8C134007C0F24 /* yellowarrow.png in Resources */,
+				0A39BCF818D8C244007C0F24 /* yellowarrowdown.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
