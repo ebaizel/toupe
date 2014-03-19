@@ -13,6 +13,8 @@
 		0A018C6818C9273700A9787F /* FBSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A018C6618C9273700A9787F /* FBSettingsViewController.xib */; };
 		0A39BCF618D8C134007C0F24 /* yellowarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A39BCF518D8C134007C0F24 /* yellowarrow.png */; };
 		0A39BCF818D8C244007C0F24 /* yellowarrowdown.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A39BCF718D8C244007C0F24 /* yellowarrowdown.png */; };
+		0A39BCFC18D90C2C007C0F24 /* FBWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39BCFA18D90C2C007C0F24 /* FBWebViewController.m */; };
+		0A39BCFD18D90C2C007C0F24 /* FBWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A39BCFB18D90C2C007C0F24 /* FBWebViewController.xib */; };
 		0A3E8E3418CE4A4000E45DBA /* whitestar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3218CE4A4000E45DBA /* whitestar.png */; };
 		0A3E8E3518CE4A4000E45DBA /* goldstar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3318CE4A4000E45DBA /* goldstar.png */; };
 		0A3E8E3918CE75E300E45DBA /* drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E8E3818CE75E300E45DBA /* drawer.png */; };
@@ -142,6 +144,9 @@
 		0A018C6618C9273700A9787F /* FBSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBSettingsViewController.xib; sourceTree = "<group>"; };
 		0A39BCF518D8C134007C0F24 /* yellowarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowarrow.png; sourceTree = "<group>"; };
 		0A39BCF718D8C244007C0F24 /* yellowarrowdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowarrowdown.png; sourceTree = "<group>"; };
+		0A39BCF918D90C2C007C0F24 /* FBWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBWebViewController.h; sourceTree = "<group>"; };
+		0A39BCFA18D90C2C007C0F24 /* FBWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBWebViewController.m; sourceTree = "<group>"; };
+		0A39BCFB18D90C2C007C0F24 /* FBWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBWebViewController.xib; sourceTree = "<group>"; };
 		0A3E8E3218CE4A4000E45DBA /* whitestar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitestar.png; sourceTree = "<group>"; };
 		0A3E8E3318CE4A4000E45DBA /* goldstar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldstar.png; sourceTree = "<group>"; };
 		0A3E8E3818CE75E300E45DBA /* drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawer.png; sourceTree = "<group>"; };
@@ -575,6 +580,9 @@
 		0AC2DADB1898553B005CB500 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				0AC9FAE718C5021C0086B48F /* FBWelcomeViewController.h */,
+				0AC9FAE818C5021C0086B48F /* FBWelcomeViewController.m */,
+				0AC9FAE918C5021C0086B48F /* FBWelcomeViewController.xib */,
 				0AE9DEC418987C75008B615D /* FBEnterZipCodeViewController.h */,
 				0AE9DEC518987C75008B615D /* FBEnterZipCodeViewController.m */,
 				0AE9DEC618987C75008B615D /* FBEnterZipCodeViewController.xib */,
@@ -584,9 +592,9 @@
 				0A766C9A189ACFDC00869088 /* FBChooseTariffViewCell.h */,
 				0A766C9B189ACFDC00869088 /* FBChooseTariffViewCell.m */,
 				0A766C9D189AD00300869088 /* FBChooseTariffViewCell.xib */,
-				0AC9FAE718C5021C0086B48F /* FBWelcomeViewController.h */,
-				0AC9FAE818C5021C0086B48F /* FBWelcomeViewController.m */,
-				0AC9FAE918C5021C0086B48F /* FBWelcomeViewController.xib */,
+				0A39BCF918D90C2C007C0F24 /* FBWebViewController.h */,
+				0A39BCFA18D90C2C007C0F24 /* FBWebViewController.m */,
+				0A39BCFB18D90C2C007C0F24 /* FBWebViewController.xib */,
 			);
 			name = Setup;
 			sourceTree = "<group>";
@@ -788,6 +796,7 @@
 				0AE9DED118988587008B615D /* refresh.png in Resources */,
 				0AB66E0318A17FDA00441562 /* FBDayViewController.xib in Resources */,
 				0AD6128A18D1281400FB4667 /* helpscreenshot.png in Resources */,
+				0A39BCFD18D90C2C007C0F24 /* FBWebViewController.xib in Resources */,
 				0AC9FAE618C2BB4F0086B48F /* FBPricePeriodViewController.xib in Resources */,
 				0AD6127618CF911500FB4667 /* release_notes.md in Resources */,
 				0A84C264189B35EB00E4A91D /* ciudad640x1136@2x.png in Resources */,
@@ -839,6 +848,7 @@
 				0A84C24B189B1A7000E4A91D /* SDImageCache.m in Sources */,
 				0A766C9918999BC400869088 /* FBTariffSearchResult.m in Sources */,
 				0A84C252189B1A7000E4A91D /* UIButton+WebCache.m in Sources */,
+				0A39BCFC18D90C2C007C0F24 /* FBWebViewController.m in Sources */,
 				0A766C9C189ACFDC00869088 /* FBChooseTariffViewCell.m in Sources */,
 				0A5FC5211864DE2200F69BA5 /* FBConnection.m in Sources */,
 				0A84C255189B1A7000E4A91D /* UIImage+WebP.m in Sources */,

@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewButtonBackground;
 @property (assign, nonatomic) BOOL isRootView;
+- (IBAction)buttonShowGenability:(id)sender;
 - (IBAction)continue:(id)sender;
 @end

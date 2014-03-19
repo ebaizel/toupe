@@ -25,34 +25,38 @@
 
     
     // Override point for customization after application launch.
-    UINavigationController *navc = [[UINavigationController alloc]init];
-    navc.navigationBar.tintColor = [UIColor black50PercentColor];
-    [navc setNavigationBarHidden:YES];
+    @try {
+        UINavigationController *navc = [[UINavigationController alloc]init];
+        navc.navigationBar.tintColor = [UIColor black50PercentColor];
+        [navc setNavigationBarHidden:YES];
+            
+        FBHomeViewController *home = [[FBHomeViewController alloc]init];
+        [navc pushViewController:home animated:YES];
+
+        NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                               fontWithName:@"Helvetica" size:24], NSFontAttributeName,
+                                    [UIColor skyBlueColor], NSForegroundColorAttributeName, nil];
+        navc.navigationBar.titleTextAttributes = attributes;
         
-    FBHomeViewController *home = [[FBHomeViewController alloc]init];
-    [navc pushViewController:home animated:YES];
+    //    [[UIBarButtonItem appearance] setTintColor:[UIColor blueberryColor]];
+        
+        FBUserProfile *userProfile = [[FBUserProfileStore sharedStore] userProfile];
+        
+        if ((userProfile == nil) || (userProfile.zipCode == nil)) {
+            [navc setNavigationBarHidden:YES animated:NO];
+            FBWelcomeViewController *welcomeVC = [[FBWelcomeViewController alloc]init];
+            [navc pushViewController:welcomeVC animated:YES];
+        }
+        
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        [[self window] setRootViewController:navc];
 
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
-                                                                           fontWithName:@"Helvetica" size:24], NSFontAttributeName,
-                                [UIColor skyBlueColor], NSForegroundColorAttributeName, nil];
-    navc.navigationBar.titleTextAttributes = attributes;
-    
-//    [[UIBarButtonItem appearance] setTintColor:[UIColor blueberryColor]];
-    
-    FBUserProfile *userProfile = [[FBUserProfileStore sharedStore] userProfile];
-    
-    if ((userProfile == nil) || (userProfile.zipCode == nil)) {
-        [navc setNavigationBarHidden:YES animated:NO];
-        FBWelcomeViewController *welcomeVC = [[FBWelcomeViewController alloc]init];
-        [navc pushViewController:welcomeVC animated:YES];
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
     }
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [[self window] setRootViewController:navc];
-
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
+    @catch (NSException *e) {
+        NSLog(@"Caught Exception in app delegate");
+    }
     return YES;
 }
 							

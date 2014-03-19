@@ -11,18 +11,17 @@
                 <outlet property="buttonRefresh" destination="0ao-XQ-NXo" id="qu3-3a-shb"/>
                 <outlet property="buttonSettings" destination="fxN-Ph-BhQ" id="jxs-ER-tqd"/>
                 <outlet property="labelPageOfPage" destination="ZaM-SP-F7z" id="jf9-A5-C8B"/>
-                <outlet property="pageControl" destination="At0-dc-SWc" id="fh3-Lw-YDy"/>
                 <outlet property="scrollViewCurrentPrice" destination="Xbo-Gb-MJJ" id="gpW-Zu-tbi"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbo-Gb-MJJ">
-                    <rect key="frame" x="0.0" y="45" width="320" height="388"/>
+                    <rect key="frame" x="0.0" y="45" width="320" height="476"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
@@ -30,19 +29,13 @@
                         <outlet property="delegate" destination="-1" id="OvD-9y-Vu7"/>
                     </connections>
                 </scrollView>
-                <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="At0-dc-SWc">
-                    <rect key="frame" x="140" y="-14" width="39" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="pageIndicatorTintColor" red="0.4039215686" green="0.59999999999999998" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="currentPageIndicatorTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                </pageControl>
                 <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cvv-X8-qeD">
-                    <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                    <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.87058830259999997" green="0.062745101750000004" blue="0.96470594409999999" alpha="1" colorSpace="deviceRGB"/>
                     <color key="tintColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="MvB-Kv-QE3"/>
+                        <constraint firstAttribute="height" constant="50" id="54F-av-2d6"/>
                     </constraints>
                 </adBannerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyf-q9-fqa">
@@ -109,7 +102,6 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="oyf-q9-fqa" secondAttribute="trailing" constant="24" id="2cj-ze-HvX"/>
-                <constraint firstAttribute="centerX" secondItem="At0-dc-SWc" secondAttribute="centerX" id="5Cz-o9-m4M"/>
                 <constraint firstItem="Vyh-JO-vAH" firstAttribute="bottom" secondItem="0ao-XQ-NXo" secondAttribute="bottom" id="5MT-0B-Wh0"/>
                 <constraint firstItem="oyf-q9-fqa" firstAttribute="leading" secondItem="fxN-Ph-BhQ" secondAttribute="trailing" constant="16" id="7Jp-Lr-8B6"/>
                 <constraint firstItem="oyf-q9-fqa" firstAttribute="top" secondItem="1" secondAttribute="top" constant="30" id="9Ai-zU-pok"/>
@@ -122,7 +114,6 @@
                 <constraint firstItem="0ao-XQ-NXo" firstAttribute="top" secondItem="1" secondAttribute="top" constant="22" id="Rar-dQ-LGz"/>
                 <constraint firstItem="Vyh-JO-vAH" firstAttribute="top" secondItem="1" secondAttribute="top" constant="22" id="bNP-rG-aca"/>
                 <constraint firstItem="Xbo-Gb-MJJ" firstAttribute="top" secondItem="1" secondAttribute="top" constant="45" id="cl7-uI-ECR"/>
-                <constraint firstItem="At0-dc-SWc" firstAttribute="top" secondItem="1" secondAttribute="top" constant="-14" id="jSg-gJ-3t7"/>
                 <constraint firstAttribute="trailing" secondItem="Xbo-Gb-MJJ" secondAttribute="trailing" id="o4N-AU-KF8"/>
                 <constraint firstItem="fxN-Ph-BhQ" firstAttribute="bottom" secondItem="0ao-XQ-NXo" secondAttribute="bottom" constant="-2" id="o5L-OG-mxE"/>
                 <constraint firstAttribute="centerX" secondItem="ZaM-SP-F7z" secondAttribute="centerX" id="pd7-yT-hsg"/>
@@ -132,7 +123,7 @@
                 <constraint firstItem="0ao-XQ-NXo" firstAttribute="leading" secondItem="Vyh-JO-vAH" secondAttribute="trailing" constant="8" id="vFz-2e-QLf"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
     <resources>

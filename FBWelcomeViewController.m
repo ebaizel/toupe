@@ -8,6 +8,7 @@
 
 #import "FBWelcomeViewController.h"
 #import "FBEnterZipCodeViewController.h"
+#import "FBWebViewController.h"
 
 @interface FBWelcomeViewController ()
 
@@ -49,4 +50,15 @@
     [[self navigationController] pushViewController:[[FBEnterZipCodeViewController alloc]init] animated:YES];
 }
 
+- (IBAction)buttonShowGenability:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"http://www.genability.com"];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    FBWebViewController *wvc = [[FBWebViewController alloc]init];
+    [[wvc webView] loadRequest:req];
+    
+    [[wvc navigationItem] setTitle:@"Genability"];
+    
+    // Push the view controller.
+    [self.navigationController pushViewController:wvc animated:YES];
+}
 @end
