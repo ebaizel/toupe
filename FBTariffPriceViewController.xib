@@ -16,7 +16,6 @@
                 <outlet property="labelTariffName" destination="xi3-SB-36x" id="WEp-OZ-94F"/>
                 <outlet property="labelUpcomingPriceChanges" destination="nO1-oT-EBi" id="F8B-sX-hIO"/>
                 <outlet property="scrollViewWeeklyPrice" destination="6ID-sF-H7t" id="KS7-bj-H3q"/>
-                <outlet property="textTariffName" destination="oJr-fH-f13" id="PLT-OH-o4X"/>
                 <outlet property="view" destination="1" id="3"/>
                 <outlet property="viewLSETile" destination="PgV-Nk-uUN" id="gQ0-vc-Ehw"/>
                 <outlet property="viewPricesTile" destination="uOq-Qs-m9p" id="mot-K0-czJ"/>
@@ -31,16 +30,6 @@
                     <rect key="frame" x="19" y="20" width="283" height="59"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJr-fH-f13">
-                            <rect key="frame" x="-1" y="3" width="285" height="29"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="29" id="FfG-rE-wbr"/>
-                            </constraints>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="230" placeholderIntrinsicHeight="30" text="Utility Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gdg-ro-QjZ">
                             <rect key="frame" x="40" y="30" width="230" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -92,10 +81,7 @@
                         <constraint firstItem="gdg-ro-QjZ" firstAttribute="leading" secondItem="xi3-SB-36x" secondAttribute="leading" constant="1" id="ThE-jc-SKk"/>
                         <constraint firstItem="gdg-ro-QjZ" firstAttribute="top" secondItem="xi3-SB-36x" secondAttribute="bottom" constant="-4" id="V0K-nX-5YO"/>
                         <constraint firstItem="fEJ-ng-vco" firstAttribute="top" secondItem="PgV-Nk-uUN" secondAttribute="top" constant="1" id="cKl-Fq-06f"/>
-                        <constraint firstAttribute="bottom" secondItem="oJr-fH-f13" secondAttribute="bottom" constant="27" id="dug-kp-5Hd"/>
                         <constraint firstItem="Y8f-xg-A65" firstAttribute="top" secondItem="fEJ-ng-vco" secondAttribute="bottom" id="jIl-eh-quu"/>
-                        <constraint firstAttribute="width" secondItem="oJr-fH-f13" secondAttribute="width" constant="-2" id="jfb-c8-krn"/>
-                        <constraint firstItem="oJr-fH-f13" firstAttribute="leading" secondItem="PgV-Nk-uUN" secondAttribute="leading" constant="-1" id="tIX-WU-rmN"/>
                         <constraint firstItem="Y8f-xg-A65" firstAttribute="leading" secondItem="PgV-Nk-uUN" secondAttribute="leading" constant="3" id="yY3-wL-A2b"/>
                         <constraint firstItem="xi3-SB-36x" firstAttribute="top" secondItem="PgV-Nk-uUN" secondAttribute="top" constant="1" id="z4m-1R-UzB"/>
                     </constraints>

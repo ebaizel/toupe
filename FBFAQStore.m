@@ -31,7 +31,7 @@
         faqs = [[NSMutableArray alloc]init];
         FBFAQ *faq = [[FBFAQ alloc]init];
         faq.question = @"Where do you get the data?";
-        faq.answer = @"Genability";
+        faq.answer = @"Genability http://www.genability.com";
         [faqs addObject:faq];
         
         faq = [[FBFAQ alloc]init];
@@ -46,17 +46,22 @@
 
         faq = [[FBFAQ alloc]init];
         faq.question = @"Who built this app?";
-        faq.answer = @"Fresh Basil.  Contact us at freshbasilllc@gmail.com";
+        faq.answer = @"Fresh Basil.  Contact us at: info@freshbasilllc.com";
         [faqs addObject:faq];
 
         faq = [[FBFAQ alloc]init];
         faq.question = @"Where can I send feedback?";
-        faq.answer = @"Send all questions and comments to freshbasilllc@gmail.com";
+        faq.answer = @"Send all questions and comments to: info@freshbasilllc.com";
         [faqs addObject:faq];
 
         faq = [[FBFAQ alloc]init];
         faq.question = @"What can I do with the price information?";
         faq.answer = @"Quite a bit!  First, if you are not on a Time of Use (TOU) plan, see if your utility offers a TOU plan.\nTOU plans offer you a chance to take more control of your electricity bill.";
+        [faqs addObject:faq];
+        
+        faq = [[FBFAQ alloc]init];
+        faq.question = @"Is the price the cumulative price?";
+        faq.answer = @"Not likely.  Typically your bill includes other items like fixed charges and taxes.  Toupe displays the consumption prices, i.e. the price you pay per kWh used.";
         [faqs addObject:faq];
 
     }
