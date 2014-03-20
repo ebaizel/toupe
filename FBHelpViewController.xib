@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOJ-Bi-udr">
-                    <rect key="frame" x="20" y="395" width="65" height="34"/>
+                <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="34" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOJ-Bi-udr">
+                    <rect key="frame" x="20" y="395" width="64" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="&lt; Prev">
@@ -32,9 +32,12 @@
                         <action selector="goToPreviousPage:" destination="-1" eventType="touchUpInside" id="WIq-zC-KNM"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilD-Lx-ncT">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilD-Lx-ncT">
                     <rect key="frame" x="227" y="397" width="73" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5VK-cX-MHD"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Next >">
                         <color key="titleColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
@@ -44,7 +47,7 @@
                         <action selector="goToNextPage:" destination="-1" eventType="touchUpInside" id="cgv-e4-NhL"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-X6-xKr">
+                <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="52" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zf-X6-xKr">
                     <rect key="frame" x="237" y="435" width="52" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -56,17 +59,17 @@
                         <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="Ci7-ih-42q"/>
                     </connections>
                 </button>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJX-vx-ZzT">
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJX-vx-ZzT">
                     <rect key="frame" x="24" y="434" width="51" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </switch>
-                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="md9-eO-euo">
-                    <rect key="frame" x="115" y="393" width="91" height="37"/>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="91" placeholderIntrinsicHeight="37" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="md9-eO-euo">
+                    <rect key="frame" x="114" y="393" width="92" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="currentPageIndicatorTintColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
                 </pageControl>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Always show   help on startup" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-3W-aqN">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Always show   help on startup" translatesAutoresizingMaskIntoConstraints="NO" id="Ndd-3W-aqN">
                     <rect key="frame" x="83" y="420" width="132" height="59"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="textColor" red="0.89019614459999996" green="0.87843143940000001" blue="0.054901964960000001" alpha="1" colorSpace="deviceRGB"/>
@@ -74,6 +77,21 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
             </subviews>
+            <constraints>
+                <constraint firstItem="YJX-vx-ZzT" firstAttribute="centerY" secondItem="Ndd-3W-aqN" secondAttribute="centerY" id="19h-w2-tQu"/>
+                <constraint firstAttribute="trailing" secondItem="8Zf-X6-xKr" secondAttribute="trailing" constant="31" id="BHz-Y4-1N9"/>
+                <constraint firstItem="ilD-Lx-ncT" firstAttribute="baseline" secondItem="oOJ-Bi-udr" secondAttribute="baseline" id="IRn-GS-3fc"/>
+                <constraint firstItem="oOJ-Bi-udr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="Ngz-MX-ghl"/>
+                <constraint firstItem="8Zf-X6-xKr" firstAttribute="bottom" secondItem="YJX-vx-ZzT" secondAttribute="bottom" id="QDs-2d-ief"/>
+                <constraint firstItem="8Zf-X6-xKr" firstAttribute="top" secondItem="ilD-Lx-ncT" secondAttribute="bottom" constant="8" symbolic="YES" id="atX-Vh-g6j"/>
+                <constraint firstAttribute="bottom" secondItem="YJX-vx-ZzT" secondAttribute="bottom" constant="15" id="f1P-JR-SJ7"/>
+                <constraint firstAttribute="trailing" secondItem="ilD-Lx-ncT" secondAttribute="trailing" constant="20" symbolic="YES" id="hD5-Bb-adh"/>
+                <constraint firstItem="ilD-Lx-ncT" firstAttribute="leading" secondItem="Ndd-3W-aqN" secondAttribute="trailing" constant="12" id="hfi-N1-0qn"/>
+                <constraint firstAttribute="bottom" secondItem="Ndd-3W-aqN" secondAttribute="bottom" constant="1" id="hmU-Jo-oRR"/>
+                <constraint firstItem="8Zf-X6-xKr" firstAttribute="leading" secondItem="Ndd-3W-aqN" secondAttribute="trailing" constant="22" id="m8D-QS-xyo"/>
+                <constraint firstItem="YJX-vx-ZzT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="pCT-K3-B3r"/>
+                <constraint firstItem="Ndd-3W-aqN" firstAttribute="leading" secondItem="YJX-vx-ZzT" secondAttribute="trailing" constant="10" id="xjJ-UI-eEk"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>

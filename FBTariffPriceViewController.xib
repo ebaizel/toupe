@@ -75,6 +75,7 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Y8f-xg-A65" firstAttribute="width" secondItem="fEJ-ng-vco" secondAttribute="width" constant="2" id="0Z3-Kc-JWY"/>
+                        <constraint firstAttribute="height" constant="59" id="2V6-gN-tK7"/>
                         <constraint firstItem="Y8f-xg-A65" firstAttribute="leading" secondItem="fEJ-ng-vco" secondAttribute="leading" id="HjQ-cI-Wg8"/>
                         <constraint firstItem="gdg-ro-QjZ" firstAttribute="leading" secondItem="Y8f-xg-A65" secondAttribute="trailing" constant="5" id="N4a-j4-mSd"/>
                         <constraint firstItem="Y8f-xg-A65" firstAttribute="top" secondItem="PgV-Nk-uUN" secondAttribute="top" constant="33" id="T5A-OA-i1B"/>
@@ -181,8 +182,7 @@
                 <constraint firstItem="PgV-Nk-uUN" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" id="DT8-0b-A3X"/>
                 <constraint firstAttribute="centerX" secondItem="uOq-Qs-m9p" secondAttribute="centerX" constant="-0.5" id="HBJ-km-8lB"/>
                 <constraint firstItem="uOq-Qs-m9p" firstAttribute="width" secondItem="PgV-Nk-uUN" secondAttribute="width" id="Iwo-9q-7tS"/>
-                <constraint firstItem="uOq-Qs-m9p" firstAttribute="top" secondItem="PgV-Nk-uUN" secondAttribute="top" constant="63" id="RFy-jb-rNN"/>
-                <constraint firstAttribute="centerY" secondItem="PgV-Nk-uUN" secondAttribute="centerY" constant="144.5" id="kei-Oo-8zd"/>
+                <constraint firstItem="uOq-Qs-m9p" firstAttribute="top" secondItem="1" secondAttribute="top" constant="83" id="p0c-Sp-cna"/>
                 <constraint firstAttribute="centerX" secondItem="PgV-Nk-uUN" secondAttribute="centerX" constant="-0.5" id="pVC-4E-v1i"/>
                 <constraint firstAttribute="bottom" secondItem="uOq-Qs-m9p" secondAttribute="bottom" constant="17" id="vYd-Ak-cjb"/>
             </constraints>

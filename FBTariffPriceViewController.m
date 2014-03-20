@@ -135,8 +135,8 @@
     
     CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
     self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, height * count);
-    NSLog(@"scroll content size is: %@", NSStringFromCGSize(self.scrollViewWeeklyPrice.contentSize));
-    NSLog(@"scroll frame size is: %@", NSStringFromCGSize(scrollViewSize));
+    //NSLog(@"scroll content size is: %@", NSStringFromCGSize(self.scrollViewWeeklyPrice.contentSize));
+    //NSLog(@"scroll frame size is: %@", NSStringFromCGSize(scrollViewSize));
 
 }
 
@@ -258,8 +258,7 @@
     
     self.viewLSETile.layer.cornerRadius = 5.0;
     self.viewLSETile.layer.masksToBounds = YES;
-//    self.viewLSETile.backgroundColor = tileBackgroundColor;
-    self.viewLSETile.backgroundColor = [UIColor purpleColor];
+    self.viewLSETile.backgroundColor = tileBackgroundColor;
     
     self.viewPricesTile.layer.cornerRadius = 5.0;
     self.viewPricesTile.layer.masksToBounds = YES;

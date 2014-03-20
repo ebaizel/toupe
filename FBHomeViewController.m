@@ -17,6 +17,7 @@
 #import "FBWelcomeViewController.h"
 #import "FBTariffDrawerViewController.h"
 #import "FBUserProfileStore.h"
+#import "FBHelp5ViewController.h"
 
 @interface FBHomeViewController ()
 
@@ -243,11 +244,21 @@
     self.labelPageOfPage.text = [NSString stringWithFormat:@"%d of %ld", ([self getCurrentPage] +1), (unsigned long)[[self tariffs]count]];
 }
 
+- (void)viewWillLayoutSubviews
+{
+    if ([[[FBUserProfileStore sharedStore] userProfile]showHelp]) {
+        helpvc = [[FBHelpViewController alloc] init];
+        helpvc.delegate = self;
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        helpvc.view.frame = screenRect;
+        [self.view addSubview:helpvc.view];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-//    [[self buttonFAQ] setImage:[UIImage imageNamed:@"faq.png"] forState:UIControlStateNormal];
     [[self buttonFAQ] setTintColor:[UIColor whiteColor]];
     [[self buttonSettings] setImage:[UIImage imageNamed:@"tool.png"] forState:UIControlStateNormal];
     [[self buttonSettings] setTintColor:[UIColor whiteColor]];
@@ -259,18 +270,6 @@
     [self setPageLabel];
     self.view.backgroundColor = [UIColor skyBlueColor];
 
-    
-    if ([[[FBUserProfileStore sharedStore] userProfile]showHelp]) {
-        helpvc = [[FBHelpViewController alloc] init];
-        helpvc.delegate = self;        
-//        CGRect screenRect = [[UIScreen mainScreen] bounds];
-//        UIView* coverView = [[UIView alloc] initWithFrame:screenRect];
-//        coverView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
-//        helpvc.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
-        [self.view addSubview:helpvc.view];
-    }
-    
-    
     //    [[self buttonTariffDrawer] setBackgroundColor:[UIColor clearColor]];
     //    [[self buttonTariffDrawer] setBackgroundImage:[UIImage imageNamed:@"drawer.png"] forState:UIControlStateNormal];
     
@@ -374,7 +373,7 @@
         tpvc.view.layer.zPosition = 1;
         //[self.pageViews replaceObjectAtIndex:page withObject:tpvc.view];
         [self.pageViews replaceObjectAtIndex:page withObject:tpvc];
-        NSLog(@"scroll view is %@", NSStringFromCGPoint(self.scrollViewCurrentPrice.contentOffset));
+//        NSLog(@"scroll view is %@", NSStringFromCGPoint(self.scrollViewCurrentPrice.contentOffset));
     }
 }
 

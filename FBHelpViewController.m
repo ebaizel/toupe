@@ -44,6 +44,8 @@
     
     [[self pageControl] setNumberOfPages:[helpvcs count]];
     [[self pageControl] setCurrentPage:0];
+    
+    NSLog(@"help view frame size is %@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -58,6 +60,7 @@
 
 - (void)setCurrentView
 {
+    NSLog(@"help view frame size is %@", NSStringFromCGRect(self.view.frame));    
     UIViewController *currentView = (UIViewController *)[helpvcs objectAtIndex:pageNum];
 //    currentView.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
     currentView.view.backgroundColor = [UIColor clearColor];

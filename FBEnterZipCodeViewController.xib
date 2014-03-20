@@ -41,7 +41,7 @@
                         <action selector="continue:" destination="-1" eventType="touchUpInside" id="9Cf-Sw-SvW"/>
                     </connections>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toupe.png" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-zI-vUj">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="toupe.png" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-zI-vUj">
                     <rect key="frame" x="100" y="50" width="120" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -82,6 +82,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="wSP-17-8TU" firstAttribute="top" secondItem="l6f-zI-vUj" secondAttribute="bottom" constant="8" id="5Lu-Du-PKY"/>
                 <constraint firstItem="VB4-oR-cIu" firstAttribute="width" secondItem="FPg-Qv-Zyv" secondAttribute="width" id="7g2-Ix-zz8"/>
                 <constraint firstItem="wSP-17-8TU" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="Bg1-b4-jHC"/>
                 <constraint firstAttribute="centerX" secondItem="l6f-zI-vUj" secondAttribute="centerX" id="E6Q-yL-RQk"/>
@@ -89,12 +90,10 @@
                 <constraint firstItem="FPg-Qv-Zyv" firstAttribute="top" secondItem="wSP-17-8TU" secondAttribute="bottom" constant="8" id="ajo-ad-g8m"/>
                 <constraint firstItem="wSP-17-8TU" firstAttribute="centerX" secondItem="l6f-zI-vUj" secondAttribute="centerX" id="c0f-kg-dZP"/>
                 <constraint firstAttribute="trailing" secondItem="wSP-17-8TU" secondAttribute="trailing" constant="20" symbolic="YES" id="fnP-1f-efR"/>
-                <constraint firstAttribute="centerY" secondItem="l6f-zI-vUj" secondAttribute="centerY" constant="130" id="hlX-Je-Mxs"/>
                 <constraint firstItem="FPg-Qv-Zyv" firstAttribute="leading" secondItem="VB4-oR-cIu" secondAttribute="leading" id="pvI-OE-Pfk"/>
                 <constraint firstItem="VB4-oR-cIu" firstAttribute="top" secondItem="FPg-Qv-Zyv" secondAttribute="bottom" constant="22" id="rH5-Xh-6i1"/>
                 <constraint firstItem="wSP-17-8TU" firstAttribute="centerX" secondItem="HQI-GW-zkM" secondAttribute="centerX" id="raM-Ql-3Ze"/>
                 <constraint firstAttribute="bottom" secondItem="HQI-GW-zkM" secondAttribute="bottom" constant="20" id="slx-Kf-gww"/>
-                <constraint firstItem="wSP-17-8TU" firstAttribute="bottom" secondItem="l6f-zI-vUj" secondAttribute="bottom" constant="39" id="tUE-XR-EdV"/>
                 <constraint firstItem="FPg-Qv-Zyv" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="90" id="uwZ-Ce-Eos"/>
                 <constraint firstItem="l6f-zI-vUj" firstAttribute="top" secondItem="1" secondAttribute="top" constant="50" id="yBo-zz-GiM"/>
             </constraints>
