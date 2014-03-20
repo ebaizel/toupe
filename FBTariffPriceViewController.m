@@ -134,7 +134,7 @@
     }
     
     CGSize scrollViewSize = self.scrollViewWeeklyPrice.frame.size;
-    self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, height * count);
+    self.scrollViewWeeklyPrice.contentSize = CGSizeMake(scrollViewSize.width, height * (count + 1));
     //NSLog(@"scroll content size is: %@", NSStringFromCGSize(self.scrollViewWeeklyPrice.contentSize));
     //NSLog(@"scroll frame size is: %@", NSStringFromCGSize(scrollViewSize));
 
