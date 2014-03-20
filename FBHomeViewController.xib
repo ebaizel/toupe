@@ -37,6 +37,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="54F-av-2d6"/>
                     </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="btc-6H-0CS"/>
+                    </connections>
                 </adBannerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyf-q9-fqa">
                     <rect key="frame" x="276" y="30" width="20" height="20"/>

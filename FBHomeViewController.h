@@ -13,16 +13,17 @@
 #import "FBHelpViewController.h"
 #import "FBFAQViewController.h"
 
-@interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate, TariffDrawerDelegate, HelpViewDelegate, FAQDelegate>
+@interface FBHomeViewController : UIViewController <UIScrollViewDelegate, ADBannerViewDelegate, TariffDrawerDelegate, HelpViewDelegate, FAQDelegate, ADBannerViewDelegate>
 
 {
     FBTariffDrawerViewController *tdvc;
     FBHelpViewController *helpvc;
     FBFAQViewController *faqvc;
+    BOOL bannerIsVisible;
+    BOOL helpHasBeenDisplayed;
 }
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollViewCurrentPrice;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet ADBannerView *bannerAd;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
 @property (weak, nonatomic) IBOutlet UIButton *buttonFAQ;

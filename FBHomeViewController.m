@@ -18,6 +18,7 @@
 #import "FBTariffDrawerViewController.h"
 #import "FBUserProfileStore.h"
 #import "FBHelp5ViewController.h"
+#import <iAd/iAd.h>
 
 @interface FBHomeViewController ()
 
@@ -25,10 +26,41 @@
 
 @implementation FBHomeViewController
 
+- (void)awakeFromNib
+{
+    self.canDisplayBannerAds = YES;
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    if (bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+        // Assumes the banner view is placed at the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+        [UIView commitAnimations];
+        bannerIsVisible = NO;
+    }
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    if (!bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        // Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, 0);
+        [UIView commitAnimations];
+        bannerIsVisible = YES;
+    }
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        helpHasBeenDisplayed = NO;
         self.automaticallyAdjustsScrollViewInsets = NO;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(refreshEverything)
@@ -160,7 +192,6 @@
     
     if (selectedTariff) {
         //Move the scroll view content offset
-        self.pageControl.currentPage = (count > _tariffs.count ? _tariffs.count : count);
         CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
         CGPoint newOffset = CGPointMake(pageWidth * count, 0);
         [self.scrollViewCurrentPrice setContentOffset:newOffset animated:NO];
@@ -209,7 +240,6 @@
     //[self loadPageAtIndex:page];
     // Update the page control
     NSInteger page = [self getCurrentPage];
-    self.pageControl.currentPage = page;
     
     // Work out which pages you want to load
     NSInteger firstPage = page - 1;
@@ -246,7 +276,8 @@
 
 - (void)viewWillLayoutSubviews
 {
-    if ([[[FBUserProfileStore sharedStore] userProfile]showHelp]) {
+    if ([[[FBUserProfileStore sharedStore] userProfile]showHelp] && !helpHasBeenDisplayed) {
+        helpHasBeenDisplayed = YES;
         helpvc = [[FBHelpViewController alloc] init];
         helpvc.delegate = self;
         CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -266,7 +297,6 @@
     [[self buttonRefresh] setTintColor:[UIColor whiteColor]];
     
     self.scrollViewCurrentPrice.pagingEnabled=YES;
-    self.pageControl.pageIndicatorTintColor = [UIColor blueberryColor];
     [self setPageLabel];
     self.view.backgroundColor = [UIColor skyBlueColor];
 
@@ -294,10 +324,6 @@
 {
     // Remove all subviews of the scrollview
     self.tariffs = [[[FBUserProfileStore sharedStore] userProfile] tariffs];
-    
-    self.pageControl.numberOfPages = [_tariffs count];
-    NSLog(@"**number of pages is %li", (long)self.pageControl.numberOfPages);
-    
     self.pageViews = [[NSMutableArray alloc] init];
     for (NSInteger i = 0; i < _tariffs.count; ++i) {
         [self.pageViews addObject:[NSNull null]];
@@ -319,18 +345,15 @@
         
         if (selectedTariff) {
             //Move the scroll view content offset
-            self.pageControl.currentPage = count;
             CGFloat pageWidth = self.scrollViewCurrentPrice.frame.size.width;
             CGPoint newOffset = CGPointMake(pageWidth * count, 0);
             [self.scrollViewCurrentPrice setContentOffset:newOffset animated:NO];
 
         } else {
-            self.pageControl.currentPage = 0;
             CGPoint point = CGPointMake(0.0f, 0.0f);
             self.scrollViewCurrentPrice.contentOffset = point;
         }
     } else {
-        self.pageControl.currentPage = 0;
         CGPoint point = CGPointMake(0.0f, 0.0f);
         self.scrollViewCurrentPrice.contentOffset = point;
     }
@@ -340,7 +363,6 @@
         numPages = (unsigned int)self.tariffs.count;
     }
     [self setPageLabel];
-    [[self pageControl] setNumberOfPages:numPages];
 
 }
 

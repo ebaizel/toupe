@@ -31,6 +31,8 @@
         [navc setNavigationBarHidden:YES];
             
         FBHomeViewController *home = [[FBHomeViewController alloc]init];
+        [UIViewController prepareInterstitialAds];
+        home.interstitialPresentationPolicy = ADInterstitialPresentationPolicyAutomatic;
         [navc pushViewController:home animated:YES];
 
         NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
