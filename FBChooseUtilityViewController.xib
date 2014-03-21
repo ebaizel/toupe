@@ -61,7 +61,7 @@
                         <outlet property="delegate" destination="-1" id="hSg-Xz-L8q"/>
                     </connections>
                 </tableView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="toupe.png" translatesAutoresizingMaskIntoConstraints="NO" id="pvN-BX-aWJ">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="cflblue2.png" translatesAutoresizingMaskIntoConstraints="NO" id="pvN-BX-aWJ">
                     <rect key="frame" x="100" y="44" width="120" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -98,6 +98,6 @@
         </view>
     </objects>
     <resources>
-        <image name="toupe.png" width="120" height="120"/>
+        <image name="cflblue2.png" width="120" height="120"/>
     </resources>
 </document>

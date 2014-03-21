@@ -41,7 +41,7 @@
                         <action selector="continue:" destination="-1" eventType="touchUpInside" id="9Cf-Sw-SvW"/>
                     </connections>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="toupe.png" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-zI-vUj">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="cflblue2.png" translatesAutoresizingMaskIntoConstraints="NO" id="l6f-zI-vUj">
                     <rect key="frame" x="100" y="50" width="120" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -105,6 +105,6 @@
         </view>
     </objects>
     <resources>
-        <image name="toupe.png" width="120" height="120"/>
+        <image name="cflblue2.png" width="120" height="120"/>
     </resources>
 </document>

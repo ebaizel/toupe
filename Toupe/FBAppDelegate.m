@@ -14,6 +14,7 @@
 #import "FBUserProfileStore.h"
 #import "FBWelcomeViewController.h"
 #import "TestFlight.h"
+#import "FBLaunchViewController.h"
 
 @implementation FBAppDelegate
 
@@ -52,6 +53,8 @@
         
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         [[self window] setRootViewController:navc];
+        
+//        [[self window] setRootViewController:[[FBLaunchViewController alloc]init]];
 
         self.window.backgroundColor = [UIColor whiteColor];
         [self.window makeKeyAndVisible];

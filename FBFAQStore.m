@@ -64,6 +64,11 @@
         faq.answer = @"Not likely.  Typically your bill includes other items like fixed charges and taxes.  Toupe displays the consumption prices, i.e. the price you pay per kWh used.";
         [faqs addObject:faq];
 
+        faq = [[FBFAQ alloc]init];
+        faq.question = @"Why the name Toupe?";
+        faq.answer = @"Toupe is a play on Time of Use, also known as TOU.  Another explanation is, we had to choose something.";
+        [faqs addObject:faq];
+        
     }
     
     return faqs;

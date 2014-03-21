@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A00EE8E18DCC82500E7ABF0 /* FBLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A00EE8C18DCC82500E7ABF0 /* FBLaunchViewController.m */; };
+		0A00EE8F18DCC82500E7ABF0 /* FBLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A00EE8D18DCC82500E7ABF0 /* FBLaunchViewController.xib */; };
+		0A00EE9318DCC8EF00E7ABF0 /* cflwhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A00EE9218DCC8EF00E7ABF0 /* cflwhite.png */; };
+		0A00EE9518DCD17600E7ABF0 /* cflblue.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A00EE9418DCD17600E7ABF0 /* cflblue.png */; };
+		0A00EE9D18DCD5B400E7ABF0 /* cflblue2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A00EE9C18DCD5B400E7ABF0 /* cflblue2.png */; };
 		0A018C6218C655D500A9787F /* greenarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A018C6018C655D500A9787F /* greenarrow.png */; };
 		0A018C6318C655D500A9787F /* redarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A018C6118C655D500A9787F /* redarrow.png */; };
 		0A018C6718C9273700A9787F /* FBSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A018C6518C9273700A9787F /* FBSettingsViewController.m */; };
@@ -137,6 +142,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A00EE8B18DCC82500E7ABF0 /* FBLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLaunchViewController.h; sourceTree = "<group>"; };
+		0A00EE8C18DCC82500E7ABF0 /* FBLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLaunchViewController.m; sourceTree = "<group>"; };
+		0A00EE8D18DCC82500E7ABF0 /* FBLaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBLaunchViewController.xib; sourceTree = "<group>"; };
+		0A00EE9218DCC8EF00E7ABF0 /* cflwhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cflwhite.png; sourceTree = "<group>"; };
+		0A00EE9418DCD17600E7ABF0 /* cflblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cflblue.png; sourceTree = "<group>"; };
+		0A00EE9C18DCD5B400E7ABF0 /* cflblue2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cflblue2.png; sourceTree = "<group>"; };
 		0A018C6018C655D500A9787F /* greenarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenarrow.png; sourceTree = "<group>"; };
 		0A018C6118C655D500A9787F /* redarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redarrow.png; sourceTree = "<group>"; };
 		0A018C6418C9273700A9787F /* FBSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSettingsViewController.h; sourceTree = "<group>"; };
@@ -344,6 +355,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A00EE8A18DCC80F00E7ABF0 /* launch */ = {
+			isa = PBXGroup;
+			children = (
+				0A00EE9218DCC8EF00E7ABF0 /* cflwhite.png */,
+				0A00EE8B18DCC82500E7ABF0 /* FBLaunchViewController.h */,
+				0A00EE8C18DCC82500E7ABF0 /* FBLaunchViewController.m */,
+				0A00EE8D18DCC82500E7ABF0 /* FBLaunchViewController.xib */,
+			);
+			name = launch;
+			sourceTree = "<group>";
+		};
 		0A3E8E4418CE7CEA00E45DBA /* Tariff Drawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +457,7 @@
 		0A9D7E0B184D744500BAE38D = {
 			isa = PBXGroup;
 			children = (
+				0A00EE8A18DCC80F00E7ABF0 /* launch */,
 				0AC2DAD3189844B0005CB500 /* FAQ */,
 				0AD6128318D11CD800FB4667 /* Help */,
 				0A3E8E4418CE7CEA00E45DBA /* Tariff Drawer */,
@@ -660,6 +683,8 @@
 		0AE9DEB8189867E3008B615D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0A00EE9C18DCD5B400E7ABF0 /* cflblue2.png */,
+				0A00EE9418DCD17600E7ABF0 /* cflblue.png */,
 				0A39BCF718D8C244007C0F24 /* yellowarrowdown.png */,
 				0A39BCF518D8C134007C0F24 /* yellowarrow.png */,
 				0AD6128D18D36C7800FB4667 /* yellowbar.png */,
@@ -773,6 +798,7 @@
 				0A58AA0418D79A9600EA3717 /* FBHelp30ViewController.xib in Resources */,
 				0AE9DEB518986019008B615D /* setup.png in Resources */,
 				0A3E8E3418CE4A4000E45DBA /* whitestar.png in Resources */,
+				0A00EE9D18DCD5B400E7ABF0 /* cflblue2.png in Resources */,
 				0A84C269189C49B900E4A91D /* FBHomeViewController.xib in Resources */,
 				0AC2DAD8189844C6005CB500 /* FBFAQViewController.xib in Resources */,
 				0A3E8E3518CE4A4000E45DBA /* goldstar.png in Resources */,
@@ -788,6 +814,7 @@
 				0AE9DEC318987708008B615D /* FBChooseUtilityViewController.xib in Resources */,
 				0AB66E0818A1800D00441562 /* FBDayPricePeriodViewController.xib in Resources */,
 				0AE9DEC818987C75008B615D /* FBEnterZipCodeViewController.xib in Resources */,
+				0A00EE9318DCC8EF00E7ABF0 /* cflwhite.png in Resources */,
 				0AE9DECD18987F2A008B615D /* FBChooseTariffViewController.xib in Resources */,
 				0AD6128E18D36C7800FB4667 /* yellowbar.png in Resources */,
 				0AF4FDEB18D76DEA005432CF /* FBHelp10ViewController.xib in Resources */,
@@ -808,6 +835,7 @@
 				0AD6127518CF911500FB4667 /* README.md in Resources */,
 				0AF4FDF018D76E03005432CF /* FBHelp20ViewController.xib in Resources */,
 				0AB66DF4189EE89E00441562 /* FBTariffPriceViewController.xib in Resources */,
+				0A00EE9518DCD17600E7ABF0 /* cflblue.png in Resources */,
 				0A018C6218C655D500A9787F /* greenarrow.png in Resources */,
 				0AB66DFD18A01D1C00441562 /* blueorange640x1136@2x.png in Resources */,
 				0A018C6818C9273700A9787F /* FBSettingsViewController.xib in Resources */,
@@ -817,6 +845,7 @@
 				0AC9FAED18C503B50086B48F /* toupe.png in Resources */,
 				0A58AA0918D79F0C00EA3717 /* FBHelp5ViewController.xib in Resources */,
 				0AE297C418D7B1E900695883 /* FBFAQDetailViewController.xib in Resources */,
+				0A00EE8F18DCC82500E7ABF0 /* FBLaunchViewController.xib in Resources */,
 				0A39BCF618D8C134007C0F24 /* yellowarrow.png in Resources */,
 				0A39BCF818D8C244007C0F24 /* yellowarrowdown.png in Resources */,
 			);
@@ -842,6 +871,7 @@
 				0A84C24C189B1A7000E4A91D /* SDWebImageCompat.m in Sources */,
 				0A018C6718C9273700A9787F /* FBSettingsViewController.m in Sources */,
 				0A84C268189C49B900E4A91D /* FBHomeViewController.m in Sources */,
+				0A00EE8E18DCC82500E7ABF0 /* FBLaunchViewController.m in Sources */,
 				0A84C251189B1A7000E4A91D /* SDWebImagePrefetcher.m in Sources */,
 				0A84C256189B1A7000E4A91D /* UIImageView+WebCache.m in Sources */,
 				0A9D7E28184D744500BAE38D /* FBAppDelegate.m in Sources */,
@@ -1041,6 +1071,7 @@
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1061,6 +1092,7 @@
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
