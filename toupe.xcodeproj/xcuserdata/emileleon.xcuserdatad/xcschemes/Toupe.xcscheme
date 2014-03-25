@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A9D7E13184D744500BAE38D"
                BuildableName = "Toupe.app"
-               BlueprintName = "Toupe"
-               ReferencedContainer = "container:Toupe.xcodeproj">
+               BlueprintName = "toupe"
+               ReferencedContainer = "container:toupe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A9D7E37184D744500BAE38D"
                BuildableName = "ToupeTests.xctest"
-               BlueprintName = "ToupeTests"
-               ReferencedContainer = "container:Toupe.xcodeproj">
+               BlueprintName = "toupetests"
+               ReferencedContainer = "container:toupe.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A9D7E13184D744500BAE38D"
             BuildableName = "Toupe.app"
-            BlueprintName = "Toupe"
-            ReferencedContainer = "container:Toupe.xcodeproj">
+            BlueprintName = "toupe"
+            ReferencedContainer = "container:toupe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A9D7E13184D744500BAE38D"
             BuildableName = "Toupe.app"
-            BlueprintName = "Toupe"
-            ReferencedContainer = "container:Toupe.xcodeproj">
+            BlueprintName = "toupe"
+            ReferencedContainer = "container:toupe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A9D7E13184D744500BAE38D"
             BuildableName = "Toupe.app"
-            BlueprintName = "Toupe"
-            ReferencedContainer = "container:Toupe.xcodeproj">
+            BlueprintName = "toupe"
+            ReferencedContainer = "container:toupe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

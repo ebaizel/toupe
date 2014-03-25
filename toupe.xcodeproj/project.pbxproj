@@ -226,7 +226,7 @@
 		0A84C265189C49B900E4A91D /* FBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBHomeViewController.h; sourceTree = "<group>"; };
 		0A84C266189C49B900E4A91D /* FBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBHomeViewController.m; sourceTree = "<group>"; };
 		0A84C267189C49B900E4A91D /* FBHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBHomeViewController.xib; sourceTree = "<group>"; };
-		0A9D7E14184D744500BAE38D /* Toupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A9D7E14184D744500BAE38D /* toupe.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toupe.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9D7E17184D744500BAE38D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A9D7E19184D744500BAE38D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0A9D7E1B184D744500BAE38D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -241,7 +241,7 @@
 		0A9D7E2F184D744500BAE38D /* FBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FBViewController.h; path = Toupe/FBViewController.h; sourceTree = "<group>"; };
 		0A9D7E30184D744500BAE38D /* FBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FBViewController.m; path = Toupe/FBViewController.m; sourceTree = "<group>"; };
 		0A9D7E32184D744500BAE38D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0A9D7E38184D744500BAE38D /* ToupeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToupeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A9D7E38184D744500BAE38D /* toupetests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = toupetests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9D7E39184D744500BAE38D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0A9D7E41184D744500BAE38D /* ToupeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToupeTests-Info.plist"; sourceTree = "<group>"; };
 		0A9D7E43184D744500BAE38D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -482,8 +482,8 @@
 		0A9D7E15184D744500BAE38D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D7E14184D744500BAE38D /* Toupe.app */,
-				0A9D7E38184D744500BAE38D /* ToupeTests.xctest */,
+				0A9D7E14184D744500BAE38D /* toupe.temp_caseinsensitive_rename.app */,
+				0A9D7E38184D744500BAE38D /* toupetests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -715,9 +715,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0A9D7E13184D744500BAE38D /* Toupe */ = {
+		0A9D7E13184D744500BAE38D /* toupe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A9D7E49184D744500BAE38D /* Build configuration list for PBXNativeTarget "Toupe" */;
+			buildConfigurationList = 0A9D7E49184D744500BAE38D /* Build configuration list for PBXNativeTarget "toupe" */;
 			buildPhases = (
 				0A9D7E10184D744500BAE38D /* Sources */,
 				0A9D7E11184D744500BAE38D /* Frameworks */,
@@ -727,14 +727,14 @@
 			);
 			dependencies = (
 			);
-			name = Toupe;
+			name = toupe;
 			productName = Toupe;
-			productReference = 0A9D7E14184D744500BAE38D /* Toupe.app */;
+			productReference = 0A9D7E14184D744500BAE38D /* toupe.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0A9D7E37184D744500BAE38D /* ToupeTests */ = {
+		0A9D7E37184D744500BAE38D /* toupetests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A9D7E4C184D744500BAE38D /* Build configuration list for PBXNativeTarget "ToupeTests" */;
+			buildConfigurationList = 0A9D7E4C184D744500BAE38D /* Build configuration list for PBXNativeTarget "toupetests" */;
 			buildPhases = (
 				0A9D7E34184D744500BAE38D /* Sources */,
 				0A9D7E35184D744500BAE38D /* Frameworks */,
@@ -745,9 +745,9 @@
 			dependencies = (
 				0A9D7E3E184D744500BAE38D /* PBXTargetDependency */,
 			);
-			name = ToupeTests;
+			name = toupetests;
 			productName = ToupeTests;
-			productReference = 0A9D7E38184D744500BAE38D /* ToupeTests.xctest */;
+			productReference = 0A9D7E38184D744500BAE38D /* toupetests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -768,7 +768,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0A9D7E0F184D744500BAE38D /* Build configuration list for PBXProject "Toupe" */;
+			buildConfigurationList = 0A9D7E0F184D744500BAE38D /* Build configuration list for PBXProject "toupe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -781,8 +781,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A9D7E13184D744500BAE38D /* Toupe */,
-				0A9D7E37184D744500BAE38D /* ToupeTests */,
+				0A9D7E13184D744500BAE38D /* toupe */,
+				0A9D7E37184D744500BAE38D /* toupetests */,
 			);
 		};
 /* End PBXProject section */
@@ -936,7 +936,7 @@
 /* Begin PBXTargetDependency section */
 		0A9D7E3E184D744500BAE38D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0A9D7E13184D744500BAE38D /* Toupe */;
+			target = 0A9D7E13184D744500BAE38D /* toupe */;
 			targetProxy = 0A9D7E3D184D744500BAE38D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1035,7 +1035,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Emile Baizel (8AL33R6B84)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1048,7 +1048,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-Objc";
-				PROVISIONING_PROFILE = "CDAFEE50-2CB3-4D6A-9CEE-AEF09C5007DF";
+				PROVISIONING_PROFILE = "9A0F63C0-239E-4B11-ABDF-A6982C018367";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1061,6 +1061,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toupe/Toupe-Prefix.pch";
 				INFOPLIST_FILE = "Toupe/Toupe-Info.plist";
@@ -1069,7 +1070,8 @@
 					"$(PROJECT_DIR)/TestFlightSDK3.0.0",
 				);
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = toupe;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1082,6 +1084,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toupe/Toupe-Prefix.pch";
 				INFOPLIST_FILE = "Toupe/Toupe-Info.plist";
@@ -1090,7 +1093,8 @@
 					"$(PROJECT_DIR)/TestFlightSDK3.0.0",
 				);
 				OTHER_LDFLAGS = "-Objc";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = toupe;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1140,7 +1144,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A9D7E0F184D744500BAE38D /* Build configuration list for PBXProject "Toupe" */ = {
+		0A9D7E0F184D744500BAE38D /* Build configuration list for PBXProject "toupe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A9D7E47184D744500BAE38D /* Debug */,
@@ -1149,7 +1153,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A9D7E49184D744500BAE38D /* Build configuration list for PBXNativeTarget "Toupe" */ = {
+		0A9D7E49184D744500BAE38D /* Build configuration list for PBXNativeTarget "toupe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A9D7E4A184D744500BAE38D /* Debug */,
@@ -1158,7 +1162,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A9D7E4C184D744500BAE38D /* Build configuration list for PBXNativeTarget "ToupeTests" */ = {
+		0A9D7E4C184D744500BAE38D /* Build configuration list for PBXNativeTarget "toupetests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A9D7E4D184D744500BAE38D /* Debug */,
