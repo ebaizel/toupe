@@ -226,7 +226,7 @@
 		0A84C265189C49B900E4A91D /* FBHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBHomeViewController.h; sourceTree = "<group>"; };
 		0A84C266189C49B900E4A91D /* FBHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBHomeViewController.m; sourceTree = "<group>"; };
 		0A84C267189C49B900E4A91D /* FBHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBHomeViewController.xib; sourceTree = "<group>"; };
-		0A9D7E14184D744500BAE38D /* toupe.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toupe.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A9D7E14184D744500BAE38D /* toupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toupe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A9D7E17184D744500BAE38D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A9D7E19184D744500BAE38D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0A9D7E1B184D744500BAE38D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -482,7 +482,7 @@
 		0A9D7E15184D744500BAE38D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D7E14184D744500BAE38D /* toupe.temp_caseinsensitive_rename.app */,
+				0A9D7E14184D744500BAE38D /* toupe.app */,
 				0A9D7E38184D744500BAE38D /* toupetests.xctest */,
 			);
 			name = Products;
@@ -729,7 +729,7 @@
 			);
 			name = toupe;
 			productName = Toupe;
-			productReference = 0A9D7E14184D744500BAE38D /* toupe.temp_caseinsensitive_rename.app */;
+			productReference = 0A9D7E14184D744500BAE38D /* toupe.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0A9D7E37184D744500BAE38D /* toupetests */ = {

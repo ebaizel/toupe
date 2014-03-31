@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A9D7E13184D744500BAE38D"
-               BuildableName = "Toupe.app"
+               BuildableName = "toupe.app"
                BlueprintName = "toupe"
                ReferencedContainer = "container:toupe.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0A9D7E37184D744500BAE38D"
-               BuildableName = "ToupeTests.xctest"
+               BuildableName = "toupetests.xctest"
                BlueprintName = "toupetests"
                ReferencedContainer = "container:toupe.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A9D7E13184D744500BAE38D"
-            BuildableName = "Toupe.app"
+            BuildableName = "toupe.app"
             BlueprintName = "toupe"
             ReferencedContainer = "container:toupe.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A9D7E13184D744500BAE38D"
-            BuildableName = "Toupe.app"
+            BuildableName = "toupe.app"
             BlueprintName = "toupe"
             ReferencedContainer = "container:toupe.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0A9D7E13184D744500BAE38D"
-            BuildableName = "Toupe.app"
+            BuildableName = "toupe.app"
             BlueprintName = "toupe"
             ReferencedContainer = "container:toupe.xcodeproj">
          </BuildableReference>

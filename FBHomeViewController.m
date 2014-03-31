@@ -271,7 +271,7 @@
 
 - (void)setPageLabel
 {
-    self.labelPageOfPage.text = [NSString stringWithFormat:@"%ld of %ld", ([self getCurrentPage] +1), (unsigned long)[[self tariffs]count]];
+    self.labelPageOfPage.text = [NSString stringWithFormat:@"%zd of %lu", ([self getCurrentPage] +1), (unsigned long)[[self tariffs]count]];
 }
 
 - (void)viewWillLayoutSubviews
