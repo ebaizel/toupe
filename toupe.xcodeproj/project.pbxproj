@@ -99,6 +99,8 @@
 		0AC9FAEA18C5021C0086B48F /* FBWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9FAE818C5021C0086B48F /* FBWelcomeViewController.m */; };
 		0AC9FAEB18C5021C0086B48F /* FBWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9FAE918C5021C0086B48F /* FBWelcomeViewController.xib */; };
 		0AC9FAED18C503B50086B48F /* toupe.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC9FAEC18C503B50086B48F /* toupe.png */; };
+		0AD5B26418EA8D6900545FF7 /* FBGenabilityCreds.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5B26318EA8D6900545FF7 /* FBGenabilityCreds.m */; };
+		0AD5B26718EA90D300545FF7 /* FBGenabilityCredsSAMPLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5B26618EA90D300545FF7 /* FBGenabilityCredsSAMPLE.m */; };
 		0AD6127418CF911500FB4667 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AD6126E18CF911500FB4667 /* libTestFlight.a */; };
 		0AD6127518CF911500FB4667 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6126F18CF911500FB4667 /* README.md */; };
 		0AD6127618CF911500FB4667 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0AD6127018CF911500FB4667 /* release_notes.md */; };
@@ -283,6 +285,10 @@
 		0AC9FAE818C5021C0086B48F /* FBWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBWelcomeViewController.m; sourceTree = "<group>"; };
 		0AC9FAE918C5021C0086B48F /* FBWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBWelcomeViewController.xib; sourceTree = "<group>"; };
 		0AC9FAEC18C503B50086B48F /* toupe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toupe.png; sourceTree = "<group>"; };
+		0AD5B26218EA8D6900545FF7 /* FBGenabilityCreds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBGenabilityCreds.h; sourceTree = "<group>"; };
+		0AD5B26318EA8D6900545FF7 /* FBGenabilityCreds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGenabilityCreds.m; sourceTree = "<group>"; };
+		0AD5B26518EA90D300545FF7 /* FBGenabilityCredsSAMPLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBGenabilityCredsSAMPLE.h; sourceTree = "<group>"; };
+		0AD5B26618EA90D300545FF7 /* FBGenabilityCredsSAMPLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGenabilityCredsSAMPLE.m; sourceTree = "<group>"; };
 		0AD6126E18CF911500FB4667 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		0AD6126F18CF911500FB4667 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		0AD6127018CF911500FB4667 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -505,6 +511,10 @@
 		0A9D7E1D184D744500BAE38D /* Toupe */ = {
 			isa = PBXGroup;
 			children = (
+				0AD5B26518EA90D300545FF7 /* FBGenabilityCredsSAMPLE.h */,
+				0AD5B26618EA90D300545FF7 /* FBGenabilityCredsSAMPLE.m */,
+				0AD5B26218EA8D6900545FF7 /* FBGenabilityCreds.h */,
+				0AD5B26318EA8D6900545FF7 /* FBGenabilityCreds.m */,
 				0AC2DAD0189842A9005CB500 /* Colours.h */,
 				0AC2DAD1189842A9005CB500 /* Colours.m */,
 				0A9D7E26184D744500BAE38D /* FBAppDelegate.h */,
@@ -881,6 +891,7 @@
 				0A39BCFC18D90C2C007C0F24 /* FBWebViewController.m in Sources */,
 				0A766C9C189ACFDC00869088 /* FBChooseTariffViewCell.m in Sources */,
 				0A5FC5211864DE2200F69BA5 /* FBConnection.m in Sources */,
+				0AD5B26718EA90D300545FF7 /* FBGenabilityCredsSAMPLE.m in Sources */,
 				0A84C255189B1A7000E4A91D /* UIImage+WebP.m in Sources */,
 				0AC2DAD2189842A9005CB500 /* Colours.m in Sources */,
 				0A9D7E24184D744500BAE38D /* main.m in Sources */,
@@ -889,6 +900,7 @@
 				0AE9DEC218987708008B615D /* FBChooseUtilityViewController.m in Sources */,
 				0AB66DF3189EE89E00441562 /* FBTariffPriceViewController.m in Sources */,
 				0A58AA0818D79F0C00EA3717 /* FBHelp5ViewController.m in Sources */,
+				0AD5B26418EA8D6900545FF7 /* FBGenabilityCreds.m in Sources */,
 				0AC2DACB189832F9005CB500 /* FBRootNavigationController.m in Sources */,
 				0A84C254189B1A7000E4A91D /* UIImage+MultiFormat.m in Sources */,
 				0A58AA0318D79A9600EA3717 /* FBHelp30ViewController.m in Sources */,

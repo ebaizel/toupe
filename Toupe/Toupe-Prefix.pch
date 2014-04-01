@@ -6,6 +6,7 @@
 
 #import <Availability.h>
 #import "Colours.h"
+#import "FBGenabilityCreds.h"
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
@@ -18,5 +19,5 @@
 
 #define BaseColor [UIColor steelBlueColor]
 #define BaseURL @"http://api.genability.com"
-#define AuthCreds @"appId=3b5ba2f0&appKey=9ddcfa56f00b45dcf83f62150c3e8b70"
+#define AuthCreds [FBGenabilityCreds genCreds]
 #define BaseImageURL @"http://cdn.genability.net/lses/"
